@@ -202,8 +202,8 @@
 
                     <!-- Page title starts -->
                     <div>
-                        <a href="@yield('retour')" class="mb-1 text-primary d-flex align-items-center">
-                            <i class="ri-arrow-left-s-line fs-3 lh-1 me-1 ms-n2"></i> Retour
+                        <a href="{{route('pages.recherche-patient')}}" class="mb-1 text-primary d-flex align-items-center">
+                            <i class="ri-arrow-left-s-line fs-3 lh-1 me-1 ms-n2"></i>Retour à l'acceuil
                         </a>
                         <h4 class="mb-1 text-primary fw-semibold">@yield('titre')</h4>
                     </div>
@@ -212,7 +212,7 @@
                 <!-- App Hero header ends -->
 
                 <!-- App body starts -->
-                @yield('content') 
+                @yield('content') ;
                 <!-- App footer starts -->
                 <div class="app-footer text-end">
                     <span>© Bootstrap Gallery 2024</span>
@@ -250,7 +250,7 @@
 
     <!-- Custom JS files -->
     <script src="assets/js/custom.js"></script>
-    @yield('script') ; 
+    @yield('script') ;
 </body>
 
 

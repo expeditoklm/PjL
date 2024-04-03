@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/recherche-patient', [PagesController::class, 'recherchePatient'])->name('pages.recherche-patient');
+Route::get('/voir-patient', [PagesController::class, 'voirPatient'])->name('pages.voir-patient');
+Route::get('/liste-visite-patient', [PagesController::class, 'listeVisitePatient'])->name('pages.liste-viste-patient');
+Route::get('/visite-patient', [PagesController::class, 'VisitePatient'])->name('pages.viste-patient');
+Route::get('/liste-analyse-patient', [PagesController::class, 'listeAnalysePatient'])->name('pages.liste-analyse-patient');
+Route::get('/analyse-patient', [PagesController::class, 'AnalysePatient'])->name('pages.analyse-patient');
+

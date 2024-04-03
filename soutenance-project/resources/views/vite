@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.bootstrapget.com/demos/templatemonster/adminy-admin-template/widgets.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 25 Mar 2024 00:11:31 GMT -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Gallery - Adminy Bootstrap 5 Dashboard</title>
+
+  <!-- Meta -->
+  <meta name="description" content="Marketplace for Bootstrap Admin Dashboards" />
+  <meta name="author" content="Bootstrap Gallery" />
+  <link rel="canonical" href="https://www.bootstrap.gallery/">
+  <meta property="og:url" content="https://www.bootstrap.gallery/">
+  <meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
+  <meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
+  <meta property="og:type" content="Website">
+  <meta property="og:site_name" content="Bootstrap Gallery">
+  <link rel="shortcut icon" href="assets/images/favicon.svg" />
+
+  <!-- *************
+			************ CSS Files *************
+		************* -->
+  <link rel="stylesheet" href="assets/fonts/remix/remixicon.css" />
+  <link rel="stylesheet" href="assets/css/main.min.css" />
+
+
+  <!-- Mega Menu -->
+  <link rel="stylesheet" href="assets/vendor/megamenu/css/megamenu.css">
+
+  <!-- Data Tables -->
+  <link rel="stylesheet" href="assets/vendor/datatables/dataTables.bs5.css" />
+  <link rel="stylesheet" href="assets/vendor/datatables/dataTables.bs5-custom.css" />
+  <link rel="stylesheet" href="assets/vendor/datatables/buttons/dataTables.bs5-custom.css" />
+
+  <!-- *************
+			************ Vendor Css Files *************
+		************ -->
+</head>
+
+<body>
+  <!-- Page wrapper starts -->
+  <div class="page-wrapper">
+
+    <!-- Main container starts -->
+    <div class="main-container">
+
+      <!-- Sidebar wrapper starts -->
+      <nav id="sidebar" class="sidebar-wrapper">
+
+        <div class="sidebar-container">
+
+          <!-- Sidebar menu starts -->
+          <div class="sidebar-menu">
+            <!-- Top curve -->
+            <div class="nav-circle1"></div>
+            <div class="nav-square1"></div>
+            <a href="index.html" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="CRM Dashboard"></i>
+              <i class="ri-bar-chart-line"></i>
+            </a>
+            <a href="widgets.html" class="active" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Widgets">
+              <i class="ri-pie-chart-line"></i>
+            </a>
+            <a href="support.html" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Support">
+              <i class="ri-shake-hands-line"></i>
+            </a>
+            <a href="contacts.html" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Contacts">
+              <i class="ri-emoji-sticker-line"></i>
+            </a>
+            <a href="subscribers.html" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Subscribers">
+              <i class="ri-profile-line"></i>
+            </a>
+            <a href="profile.html" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="User Profile">
+              <i class="ri-user-smile-line"></i>
+            </a>
+            <!-- Bottom curve -->
+            <div class="nav-circle2"></div>
+            <div class="nav-square2"></div>
+          </div>
+          <!-- Sidebar menu ends -->
+
+        </div>
+      </nav>
+      <!-- Sidebar wrapper ends -->
+
+      <!-- App container starts -->
+      <div class="app-container">
+
+        <!-- App header starts -->
+        <div class="app-header d-flex align-items-center">
+
+          <!-- App logo starts -->
+          <div class="d-flex align-items-center">
+
+            <!-- App brand starts -->
+            <div class="app-brand me-3 d-flex align-items-center">
+              <a href="index.html" class="d-lg-block d-none">
+                <img src="assets/images/logo.svg" class="logo" alt="Bootstrap Gallery">
+              </a>
+              <a href="index.html" class="d-lg-none d-md-block">
+                <img src="assets/images/logo-sm.svg" class="logo" alt="Bootstrap Gallery">
+              </a>
+            </div>
+            <!-- App brand ends -->
+
+
+
+          </div>
+          <!-- App logo ends -->
+
+          <!-- App header actions starts -->
+          <div class="header-actions">
+
+            <div class="d-sm-flex d-none">
+
+              <!-- Settings starts -->
+              <a class="dropdown-toggle d-flex" href="account-settings.html" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Settings" data-bs-custom-class="custom-tooltip-danger">
+                <i class="ri-settings-2-line fs-4 lh-1 text-primary"></i>
+              </a>
+              <!-- Settings end -->
+
+              <!-- Messages starts -->
+              <div class="dropdown">
+                <a class="dropdown-toggle d-flex position-relative" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="ri-message-3-line fs-4 lh-1 text-primary"></i>
+                  <span class="count-label"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                  <h5 class="fw-semibold px-3 py-2 text-primary">Messages</h5>
+                  <div class="dropdown-item">
+                    <div class="d-flex py-2">
+                      <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                      <div class="m-0">
+                        <h6 class="mb-1 fw-semibold">Lilly Hardin</h6>
+                        <p class="mb-1">Membership has been ended.</p>
+                        <p class="small m-0 text-light">2 mins ago</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown-item">
+                    <div class="d-flex py-2">
+                      <img src="assets/images/user1.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                      <div class="m-0">
+                        <h6 class="mb-1 fw-semibold">Lara Mosley</h6>
+                        <p class="mb-1">New customer registered.</p>
+                        <p class="small m-0 text-light">3 mins ago</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown-item">
+                    <div class="d-flex py-2">
+                      <img src="assets/images/user4.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                      <div class="m-0">
+                        <h6 class="mb-1 fw-semibold">Ethel Valdez</h6>
+                        <p class="mb-1">Check out every table in detail.</p>
+                        <p class="small m-0 text-light">5 mins ago</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-grid mx-3 my-1">
+                    <a href="javascript:void(0)" class="btn btn-primary">View all</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Messages ends -->
+
+
+
+            </div>
+
+
+
+            <!-- Account settings starts -->
+            <div class="dropdown ms-4">
+              <a id="userSettings" class="dropdown-toggle user-settings" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="me-2 text-truncate d-lg-block d-none">
+                  <span class="d-flex opacity-50 small">Admin</span>
+                  <span>Chao Xing</span>
+                </div>
+                <div class="position-relative">
+                  <img src="assets/images/user4.png" class="rounded-5 img-3x" alt="Bootstrap Gallery" />
+                  <span class="user-status busy"></span>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end">
+                <div class="mx-3 my-2 d-grid">
+                  <p class="mb-2">In a meeting</p>
+                  <a href="login.html" class="btn btn-danger">Logout</a>
+                </div>
+              </div>
+            </div>
+            <!-- Account settings ends -->
+
+          </div>
+          <!-- App header actions ends -->
+
+        </div>
+        <!-- App header ends -->
+
+        <!-- App hero header starts -->
+        <div class="app-hero-header d-flex align-items-center">
+
+          <!-- Page title starts -->
+          <div>
+            <a href="index.html" class="mb-1 text-primary d-flex align-items-center">
+              <i class="ri-arrow-left-s-line fs-3 lh-1 me-1 ms-n2"></i> Back to home
+            </a>
+            <h4 class="mb-1 text-primary fw-semibold">UI Widgets</h4>
+          </div>
+          <!-- Page title ends -->
+
+
+
+
+        </div>
+        <!-- App Hero header ends -->
+
+        <!-- App body starts -->
+        <div class="app-body">
+
+          <!-- User stats starts -->
+          <div class="mx-n4 p-4 bg-primary mb-4">
+
+            <div class="d-flex align-items-center flex-row flex-wrap">
+              <img src="assets/images/user5.png" class="img-5x rounded-circle" alt="Admin Dashboard">
+
+              <div class="ms-3 text-white">
+                <h5 class="mb-1">Clarence Wyatt</h5>
+                <h6 class="m-0 fw-light">UX Designer</h6>
+              </div>
+
+
+              <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
+                <i class="ri-phone-line fs-2 lh-1 me-2"></i>
+                <div>
+                  <h6 class="mb-1">Contact</h6>
+                  <p class="m-0 fw-light small">000 000 0000</p>
+                </div>
+              </div>
+              <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
+                <i class="ri-map-pin-line fs-2 lh-1 me-2"></i>
+                <div>
+                  <h6 class="mb-1">Location</h6>
+                  <p class="m-0 fw-light small">United States</p>
+                </div>
+              </div>
+              <div class="ms-auto d-flex gap-2">
+                <a href="index.html" class="btn bg-primary-subtle position-relative">
+                  <span>Infos Basic</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">9+</span>
+                </a>
+                <a href="javascript:void(0)" class="btn bg-primary-subtle position-relative">
+                  <span>Visites</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">8</span>
+                </a>
+                <a href="javascript:void(0)" class="btn bg-primary-subtle position-relative">
+                  <span>Analyses</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                </a>
+                <a href="javascript:void(0)" class="btn bg-primary-subtle position-relative">
+                  <span>Soins administrés</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+                </a>
+                <a href="javascript:void(0)" class="btn bg-primary-subtle position-relative">
+                  <span>Fichiers</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                </a>
+                <a href="javascript:void(0)" class="btn bg-primary-subtle position-relative">
+                  <span>Notes</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+          <!-- User stats ends -->
+          <!-- App content start -->
+          <div class="app-body">
+
+            <!-- Row start -->
+            <div class="row gx-3">
+              <div class="col-sm-12">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="custom-tabs-container">
+                      <ul class="nav nav-tabs" id="customTab3" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link active" id="tab-oneAA" data-bs-toggle="tab" href="#oneAA" role="tab" aria-controls="oneAA" aria-selected="true"><i class="ri-user-smile-line"></i>Consultation</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" id="tab-twoAA" data-bs-toggle="tab" href="#twoAA" role="tab" aria-controls="twoAA" aria-selected="false" tabindex="-1"><i class="ri-money-dollar-circle-line"></i>Examens Cliniques</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" id="tab-threeAA" data-bs-toggle="tab" href="#threeAA" role="tab" aria-controls="threeAA" aria-selected="false" tabindex="-1"><i class="ri-at-fill"></i>Prescriptions</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="customTabContent3">
+                        <div class="tab-pane fade show active" id="oneAA" role="tabpanel" aria-labelledby="tab-oneAA">
+
+                          <!-- Row start -->
+                          <div class="row gx-3">
+                            <div class="col-xl-3 col-sm-4 col-12">
+                              <div class="mb-3">
+                                <label class="form-label" for="email">Motif</label>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Enter email address"></textarea>
+                              </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-4 col-12">
+                              <div class="mb-3">
+                                <label class="form-label" for="email">Antécedants</label>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Enter email address"></textarea>
+                              </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-4 col-12">
+                              <div class="mb-3">
+                                <label class="form-label" for="email">Anamnèse</label>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Enter email address"></textarea>
+                              </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-4 col-12">
+                              <div class="mb-3">
+                                <label class="form-label" for="email">Signes Associé</label>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Enter email address"></textarea>
+                              </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-4 col-12">
+                              <div class="mb-3">
+                                <label class="form-label" for="email">Allergies</label>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Enter email address"></textarea>
+                              </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-4 col-12">
+                              <div class="mb-3">
+                                <label class="form-label" for="email">Diagnostique Retenu</label>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Enter email address"></textarea>
+                              </div>
+                            </div>
+                            <div class="col-xl-3 col-sm-4 col-12">
+                              <div class="mb-3">
+                                <label class="form-label" for="email">Bilan</label>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Enter email address"></textarea>
+                              </div>
+                            </div>
+
+
+                          </div>
+                          <!-- Row end -->
+
+                        </div>
+                        <div class="tab-pane fade" id="twoAA" role="tabpanel" aria-labelledby="tab-twoAA">
+
+                          <!-- Row start -->
+                          <div class=" mb-3">
+
+                            <div class="card mb-3">
+                              <div class="card-header">
+                                <h5 class="card-title">Simple Data Table</h5>
+                              </div>
+                              <div class="card-body">
+                                <div class="table-responsive">
+                                  <table id="basicExample" class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+                                        <th>Start date</th>
+                                        <th>Salary</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh</td>
+                                        <td>61</td>
+                                        <td>2021/04/25</td>
+                                        <td>$320,800</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Serge Baldwin</td>
+                                        <td>Data Coordinator</td>
+                                        <td>Singapore</td>
+                                        <td>64</td>
+                                        <td>2022/04/09</td>
+                                        <td>$138,575</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Zenaida Frank</td>
+                                        <td>Software Engineer</td>
+                                        <td>New York</td>
+                                        <td>63</td>
+                                        <td>2020/01/04</td>
+                                        <td>$125,250</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Zorita Serrano</td>
+                                        <td>Software Engineer</td>
+                                        <td>San Francisco</td>
+                                        <td>56</td>
+                                        <td>2022/06/01</td>
+                                        <td>$115,000</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Jennifer Acosta</td>
+                                        <td>Junior Javascript Developer</td>
+                                        <td>Edinburgh</td>
+                                        <td>43</td>
+                                        <td>2022/02/01</td>
+                                        <td>$75,650</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Cara Stevens</td>
+                                        <td>Sales Assistant</td>
+                                        <td>New York</td>
+                                        <td>46</td>
+                                        <td>2021/12/06</td>
+                                        <td>$145,600</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Hermione Butler</td>
+                                        <td>Regional Director</td>
+                                        <td>London</td>
+                                        <td>47</td>
+                                        <td>2021/03/21</td>
+                                        <td>$356,250</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Lael Greer</td>
+                                        <td>Systems Administrator</td>
+                                        <td>London</td>
+                                        <td>21</td>
+                                        <td>2020/02/27</td>
+                                        <td>$103,500</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Jonas Alexander</td>
+                                        <td>Developer</td>
+                                        <td>San Francisco</td>
+                                        <td>30</td>
+                                        <td>2020/07/14</td>
+                                        <td>$86,500</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Shad Decker</td>
+                                        <td>Regional Director</td>
+                                        <td>Edinburgh</td>
+                                        <td>51</td>
+                                        <td>2021/11/13</td>
+                                        <td>$183,000</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Michael Bruce</td>
+                                        <td>Javascript Developer</td>
+                                        <td>Singapore</td>
+                                        <td>29</td>
+                                        <td>2021/06/27</td>
+                                        <td>$183,000</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Donna Snider</td>
+                                        <td>Customer Support</td>
+                                        <td>New York</td>
+                                        <td>27</td>
+                                        <td>2021/01/25</td>
+                                        <td>$112,000</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Row end -->
+
+                        </div>
+                        <div class="tab-pane fade" id="threeAA" role="tabpanel" aria-labelledby="tab-threeAA">
+                          <!-- Row start -->
+                          <div class=" mb-3">
+                            <div class="card mb-3">
+                              <div class="card-header">
+                                <h5 class="card-title">Soins Prescits</h5>
+                              </div>
+                              <div class="card-body">
+                                <div class="table-responsive">
+                                  <table id="spaceButtons" class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th>#</th>
+                                        <th>Libellé</th>
+                                        <th>Détails</th>
+                                        
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>Donna Snider</td>
+                                        <td>Customer Support</td>
+                                        <td>Customer Support</td>
+                                      </tr>
+                                    </tbody>
+                                    <tfoot>
+                                      <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                      </tr>
+                                    </tfoot>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mb-3">
+                            <div class="card-header">
+                              <h5 class="card-title">Analyses</h5>
+                            </div>
+                            <div class="card-body">
+                              <div class="table-responsive">
+                                <table id="customButtons" class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>#</th>
+                                      <th>Libelle</th>
+                                      <th>Détails</th>
+                                      
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                        <td>Donna Snider</td>
+                                        <td>Customer Support</td>
+                                        <td>Customer Support</td>
+                                      </tr>
+                                    </tbody>
+                                  <tfoot>
+                                    <tr>
+                                      <th>Name</th>
+                                      <th>Position</th>
+                                      <th>Office</th>
+                                      
+                                    </tr>
+                                  </tfoot>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card mb-3">
+                            <div class="card-header">
+                              <h5 class="card-title">Ordonnances</h5>
+                            </div>
+                            <div class="card-body">
+                              <div class="table-responsive">
+                                <table id="apiCallbacks" class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>#</th>
+                                      <th>Libellé</th>
+                                      <th>Dose</th>
+                                      <th>Forme</th>
+                                      <th>Qte à Acheter</th>
+                                      <th>Nb-fois</th>
+                                      <th>Inter.de Prise</th>
+                                      <th>Date-premiere-prise</th>
+                                      <th>Autres Instructions</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Tiger Nixon</td>
+                                      <td>System Architect</td>
+                                      <td>Edinburgh</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Garrett Winters</td>
+                                      <td>Accountant</td>
+                                      <td>Tokyo</td>
+                                      <td>63</td>
+                                      <td>2021/07/25</td>
+                                      <td>$170,750</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Ashton Cox</td>
+                                      <td>Junior Technical Author</td>
+                                      <td>San Francisco</td>
+                                      <td>66</td>
+                                      <td>2020/01/12</td>
+                                      <td>$86,000</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Suki Burks</td>
+                                      <td>Developer</td>
+                                      <td>London</td>
+                                      <td>53</td>
+                                      <td>2020/10/22</td>
+                                      <td>$114,500</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Prescott Bartlett</td>
+                                      <td>Technical Author</td>
+                                      <td>London</td>
+                                      <td>27</td>
+                                      <td>2021/05/07</td>
+                                      <td>$145,000</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Gavin Cortez</td>
+                                      <td>Team Leader</td>
+                                      <td>San Francisco</td>
+                                      <td>22</td>
+                                      <td>2021/10/26</td>
+                                      <td>$235,500</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Martena Mccray</td>
+                                      <td>Post-Sales support</td>
+                                      <td>Edinburgh</td>
+                                      <td>46</td>
+                                      <td>2021/03/09</td>
+                                      <td>$324,050</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Cara Stevens</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                      <td>Sales Assistant</td>
+                                      <td>New York</td>
+                                      <td>46</td>
+                                      <td>2021/12/06</td>
+                                      <td>$145,600</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Hermione Butler</td>
+                                      <td>Regional Director</td>
+                                      <td>London</td>
+                                      <td>47</td>
+                                      <td>2021/03/21</td>
+                                      <td>$356,250</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Lael Greer</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                      <td>Systems Administrator</td>
+                                      <td>London</td>
+                                      <td>21</td>
+                                      <td>2020/02/27</td>
+                                      <td>$103,500</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Jonas Alexander</td>
+                                      <td>Developer</td>
+                                      <td>San Francisco</td>
+                                      <td>30</td>
+                                      <td>2020/07/14</td>
+                                      <td>$86,500</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Shad Decker</td>
+                                      <td>Regional Director</td>
+                                      <td>Edinburgh</td>
+                                      <td>51</td>
+                                      <td>2021/11/13</td>
+                                      <td>$183,000</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Michael Bruce</td>
+                                      <td>Javascript Developer</td>
+                                      <td>Singapore</td>
+                                      <td>29</td>
+                                      <td>2021/06/27</td>
+                                      <td>$183,000</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Donna Snider</td>
+                                      <td>Customer Support</td>
+                                      <td>New York</td>
+                                      <td>27</td>
+                                      <td>2021/01/25</td>
+                                      <td>$112,000</td>
+                                      <td>61</td>
+                                      <td>2021/04/25</td>
+                                      <td>$320,800</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- Row end -->
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Row end -->
+
+        </div>
+        <!-- App content ends -->
+
+      </div>
+      <!-- App body ends -->
+
+      <!-- App footer starts -->
+      <div class="app-footer text-end">
+        <span>© Bootstrap Gallery 2024</span>
+      </div>
+      <!-- App footer ends -->
+
+    </div>
+    <!-- App container ends -->
+
+  </div>
+  <!-- Main container ends -->
+
+  </div>
+  <!-- Page wrapper ends -->
+
+  <!-- *************
+			************ JavaScript Files *************
+		************* -->
+  <!-- Required jQuery first, then Bootstrap Bundle JS -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/modernizr.js"></script>
+
+  <!-- Megamenu JS -->
+  <script src="assets/vendor/megamenu/js/megamenu.js"></script>
+  <script src="assets/vendor/megamenu/js/custom.js"></script>
+
+  <!-- *************
+			************ Vendor Js Files *************
+		************* -->
+
+  <!-- Apex Graphs -->
+  <script src="assets/vendor/apex/apexcharts.min.js"></script>
+  <script src="assets/vendor/apex/custom/graphs/sparkline.js"></script>
+
+  <!-- Data Tables -->
+  <script src="assets/vendor/datatables/dataTables.min.js"></script>
+  <script src="assets/vendor/datatables/dataTables.bootstrap.min.js"></script>
+  <script src="assets/vendor/datatables/custom/custom-datatables.js"></script>
+  <!-- DataTable Buttons -->
+  <script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/jszip.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/pdfmake.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/vfs_fonts.js"></script>
+  <script src="assets/vendor/datatables/buttons/buttons.html5.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/buttons.print.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/buttons.colVis.min.js"></script>
+
+  <!-- Custom JS files -->
+  <script src="assets/js/custom.js"></script>
+</body>
+
+
+<!-- Mirrored from www.bootstrapget.com/demos/templatemonster/adminy-admin-template/widgets.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 25 Mar 2024 00:11:38 GMT -->
+
+</html>

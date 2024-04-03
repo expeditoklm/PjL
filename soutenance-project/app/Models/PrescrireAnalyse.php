@@ -7,21 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property integer $consultation_id
- * @property string $description
- * @property string $observation
- * @property integer $typeExamen_id
+ * @property string $detailsAnalyse
+ * @property integer $typeAnalyse_id
  * @property boolean $deleted
  * @property string $created_at
  * @property string $updated_at
  * @property Consultation $consultation
- * @property TypeExamen $typeExamen
+ * @property TypeAnalysis $typeAnalysis
  */
-class ExamenClinique extends Model
+class PrescrireAnalyse extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['consultation_id', 'description', 'observation', 'typeExamen_id', 'deleted', 'created_at', 'updated_at'];
+    protected $fillable = ['consultation_id', 'detailsAnalyse', 'typeAnalyse_id', 'deleted', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -34,8 +33,8 @@ class ExamenClinique extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function typeExamen()
+    public function typeAnalysis()
     {
-        return $this->belongsTo('App\Models\TypeExamen', 'typeExamen_id');
+        return $this->belongsTo('App\Models\TypeAnalysis', 'typeAnalyse_id');
     }
 }
