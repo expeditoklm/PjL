@@ -33,6 +33,19 @@ class PagesController extends Controller
     {
         return view('pages/analysePatient');
     }
+
+    public function listeSoinPatient()
+    {
+        return view('pages/listeSoinPatient');
+    }
+    public function SoinPatient()
+    {
+        return view('pages/soinPatient');
+    }
+    public function listePatientRechercher()
+    {
+        return view('pages/listesPatientsRechercher');
+    }
     
     
     

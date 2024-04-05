@@ -9,7 +9,7 @@
 @endsection
 @section('content')
 @section('titre')
-    LISTE ANALYSES
+    LISTE SOINS
   @endsection
 
   <!-- User stats ends -->
@@ -20,7 +20,7 @@
     <div class="row gx-3">
       <div class="card mb-3">
         <div class="card-header">
-          <h5 class="card-title">Liste des Analyses</h5>
+          <h5 class="card-title">Liste des Soins</h5>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -35,13 +35,13 @@
                   <td>
                     <div class="card ">
                       <div class="list-group w-auto">
-                        <a href="{{route('pages.analyse-patient')}}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <a href="{{route('pages.soin-patient')}}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                           <img src="assets/images/products/product1.jpg" alt="Bootstrap Gallery" class="rounded-circle flex-shrink-0 img-3x" />
                           <div class="d-flex gap-2 w-100 justify-content-between">
                             <div>
-                              <h6 class="mb-0">Type de l'analyse</h6>
+                              <h6 class="mb-0">Libelle Soins</h6>
                               <p class="mb-0 text-light">
-                              Resultat de l'analyse.
+                              Observations / Recommandations
                               </p>
                             </div>
                             <small class="text-light text-nowrap">date</small>

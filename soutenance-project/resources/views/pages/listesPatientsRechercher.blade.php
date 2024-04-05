@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,8 +26,9 @@
     <link rel="stylesheet" href="assets/fonts/remix/remixicon.css" />
     <link rel="stylesheet" href="assets/css/main.min.css" />
 
-    @yield('css') 
-
+    <link rel="stylesheet" href="assets/vendor/datatables/dataTables.bs5.css" />
+    <link rel="stylesheet" href="assets/vendor/datatables/dataTables.bs5-custom.css" />
+    <link rel="stylesheet" href="assets/vendor/datatables/buttons/dataTables.bs5-custom.css" />
 
     <!-- Mega Menu -->
     <link rel="stylesheet" href="assets/vendor/megamenu/css/megamenu.css">
@@ -205,87 +205,76 @@
                         <a href="{{route('pages.recherche-patient')}}" class="mb-1 text-primary d-flex align-items-center">
                             <i class="ri-arrow-left-s-line fs-3 lh-1 me-1 ms-n2"></i>Retour à l'acceuil
                         </a>
-                        <h4 class="mb-1 text-primary fw-semibold">@yield('titre')</h4>
+                        <h4 class="mb-1 text-primary fw-semibold">PATIENT(S) RETROUVES</h4>
                     </div>
                     <!-- Page title ends -->
                 </div>
                 <!-- App Hero header ends -->
-                <div class="app-body">
-
-    <!-- User stats starts -->
-    <div class="mx-n4 p-4 bg-primary mb-4">
-
-        <div class="d-flex align-items-center flex-row flex-wrap">
-            <img src="assets/images/user5.png" class="img-5x rounded-circle" alt="Admin Dashboard">
-
-            <div class="ms-3 text-white">
-                <h5 class="mb-1">Clarence Wyatt</h5>
-                <h6 class="m-0 fw-light">UX Designer</h6>
-            </div>
-
-
-            <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
-                <i class="ri-phone-line fs-2 lh-1 me-2"></i>
-                <div>
-                    <h6 class="mb-1">Contact</h6>
-                    <p class="m-0 fw-light small">000 000 0000</p>
-                </div>
-            </div>
-            <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
-                <i class="ri-map-pin-line fs-2 lh-1 me-2"></i>
-                <div>
-                    <h6 class="mb-1">Location</h6>
-                    <p class="m-0 fw-light small">United States</p>
-                </div>
-            </div>
-            <div class="ms-auto d-flex gap-2">
-                <a href="{{ Route::is('pages.voir-patient') ? 'javascript:void(0)' : route('pages.voir-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Infos Basic</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">9+</span>
-                </a>
-                <a href="{{ Route::is('pages.liste-viste-patient') ? 'javascript:void(0)' : route('pages.liste-viste-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Visites</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">8</span>
-                </a>
-                <a href="{{ Route::is('pages.liste-analyse-patient') ? 'javascript:void(0)' : route('pages.liste-analyse-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Analyses</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-                </a>
-                <a href="{{ Route::is('pages.liste-soin-patient') ? 'javascript:void(0)' : route('pages.liste-soin-patient') }}" class="btn bg-primary-subtle position-relative">
-
-                    <span>Soins</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
-                </a>
-                <a href="{{ Route::is('pages.voir-patient') ? 'javascript:void(0)' : route('pages.voir-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Fichiers</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
-                </a>
-                <a href="{{ Route::is('pages.voir-patient') ? 'javascript:void(0)' : route('pages.voir-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Notes</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
-                </a>
-            </div>
-        </div>
-
-    </div>
 
                 <!-- App body starts -->
-                @yield('content') 
+                <div class="app-body">
+
+                    <!-- Row start -->
+                    <div class="row gx-3">
+
+
+
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h5 class="card-title">Liste Des Patients</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="hideSearchExample" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>CIN</th>
+                                                <th>NOM & PRENOM</th>
+                                                <th>DATE DE NAISSANCE</th>
+                                                <th>TELEPHONE</th>
+                                                <th>PAYS</th>
+                                                <th>VILLE</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Sakura Yamamoto</td>
+                                                <td>Support Engineer</td>
+                                                <td>Tokyo</td>
+                                                <td>37</td>
+                                                <td>2020/08/19</td>
+                                                <td>$139,575</td>
+                                                <td><a href="{{route('pages.voir-patient')}}"><i class="ri-bar-chart-line"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sakura Yamamoto</td>
+                                                <td>Support Engineer</td>
+                                                <td>Tokyo</td>
+                                                <td>37</td>
+                                                <td>2020/08/19</td>
+                                                <td>$139,575</td>
+                                                <td><a href="{{route('pages.voir-patient')}}"><i class="ri-bar-chart-line"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->
+                </div>
                 <!-- App footer starts -->
                 <div class="app-footer text-end">
                     <span>© Bootstrap Gallery 2024</span>
                 </div>
                 <!-- App footer ends -->
-
             </div>
             <!-- App container ends -->
-
         </div>
         <!-- Main container ends -->
-
     </div>
     <!-- Page wrapper ends -->
-
     <!-- *************
 			************ JavaScript Files *************
 		************* -->
@@ -308,7 +297,20 @@
 
     <!-- Custom JS files -->
     <script src="assets/js/custom.js"></script>
-    @yield('script') 
+    <!-- Data Tables -->
+    <script src="assets/vendor/datatables/dataTables.min.js"></script>
+    <script src="assets/vendor/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="assets/vendor/datatables/custom/custom-datatables.js"></script>
+    <!-- DataTable Buttons -->
+    <script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
+    <script src="assets/vendor/datatables/buttons/jszip.min.js"></script>
+    <script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
+    <script src="assets/vendor/datatables/buttons/pdfmake.min.js"></script>
+    <script src="assets/vendor/datatables/buttons/vfs_fonts.js"></script>
+    <script src="assets/vendor/datatables/buttons/buttons.html5.min.js"></script>
+    <script src="assets/vendor/datatables/buttons/buttons.print.min.js"></script>
+    <script src="assets/vendor/datatables/buttons/buttons.colVis.min.js"></script>
+  
 </body>
 
 

@@ -10,63 +10,7 @@
 @section('titre')
     LISTE CONSULTATIONS
   @endsection
-<div class="app-body">
 
-  <!-- User stats starts -->
-  <div class="mx-n4 p-4 bg-primary mb-4">
-
-    <div class="d-flex align-items-center flex-row flex-wrap">
-      <img src="assets/images/user5.png" class="img-5x rounded-circle" alt="Admin Dashboard">
-
-      <div class="ms-3 text-white">
-        <h5 class="mb-1">Clarence Wyatt</h5>
-        <h6 class="m-0 fw-light">UX Designer</h6>
-      </div>
-
-
-      <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
-        <i class="ri-phone-line fs-2 lh-1 me-2"></i>
-        <div>
-          <h6 class="mb-1">Contact</h6>
-          <p class="m-0 fw-light small">000 000 0000</p>
-        </div>
-      </div>
-      <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
-        <i class="ri-map-pin-line fs-2 lh-1 me-2"></i>
-        <div>
-          <h6 class="mb-1">Location</h6>
-          <p class="m-0 fw-light small">United States</p>
-        </div>
-      </div>
-      <div class="ms-auto d-flex gap-2">
-        <a href="{{route('pages.voir-patient')}}" class="btn bg-primary-subtle position-relative">
-          <span>Infos Basic</span>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">9+</span>
-        </a>
-        <a href="javascript:void(0)" class="btn bg-primary-subtle position-relative">
-          <span>Visites</span>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">8</span>
-        </a>
-        <a href="{{route('pages.liste-analyse-patient')}}" class="btn bg-primary-subtle position-relative">
-          <span>Analyses</span>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-        </a>
-        <a href="javascript:void(0)" class="btn bg-primary-subtle position-relative">
-          <span>Soins administrés</span>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
-        </a>
-        <a href="javascript:void(0)" class="btn bg-primary-subtle position-relative">
-          <span>Fichiers</span>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
-        </a>
-        <a href="javascript:void(0)" class="btn bg-primary-subtle position-relative">
-          <span>Notes</span>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
-        </a>
-      </div>
-    </div>
-
-  </div>
   <!-- User stats ends -->
   <!-- App content start -->
   <div class="app-body">
@@ -94,12 +38,12 @@
                           <img src="assets/images/products/product1.jpg" alt="Bootstrap Gallery" class="rounded-circle flex-shrink-0 img-3x" />
                           <div class="d-flex gap-2 w-100 justify-content-between">
                             <div>
-                              <h6 class="mb-0">List group item heading</h6>
+                              <h6 class="mb-0">Motif de la visite</h6>
                               <p class="mb-0 text-light">
-                                Some placeholder content in a paragraph.
+                                Diagnostique Retenue
                               </p>
                             </div>
-                            <small class="text-light text-nowrap">now</small>
+                            <small class="text-light text-nowrap">date</small>
                           </div>
                         </a>
                       </div>
