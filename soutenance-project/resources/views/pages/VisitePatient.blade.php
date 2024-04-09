@@ -48,11 +48,16 @@ CONSULTATION
 
                 <!-- Row start -->
                 <div class="row gx-3">
-                  <div class="col-xl-3 col-sm-4 col-12">
+                  <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
+                    <h5 class="card-title"></h5>
+                    <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#modifConsultation">Modifier</button>
+                  </div>
+                  <div class="col-xl-3 col-sm-4 col-12 ">
                     <div class="mb-3">
                       <label class="form-label" for="email">Motif</label>
                       <textarea name="" id="" cols="30" rows="5" class="form-control" value="Enter email address"></textarea>
                     </div>
+
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
@@ -114,20 +119,21 @@ CONSULTATION
                 <div class=" mb-3">
 
                   <div class="card mb-3">
-                    <div class="card-header">
-                      <h5 class="card-title">Simple Data Table</h5>
+                    <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
+                      <h5 class="card-title">Liste des Examens</h5>
+                      <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#addExamen">Nouveau</button>
                     </div>
+
                     <div class="card-body">
                       <div class="table-responsive">
                         <table id="basicExample" class="table table-striped">
                           <thead>
                             <tr>
-                              <th>Name</th>
-                              <th>Position</th>
-                              <th>Office</th>
-                              <th>Age</th>
-                              <th>Start date</th>
-                              <th>Salary</th>
+                              <th>#</th>
+                              <th>Type Examen</th>
+                              <th>Description</th>
+                              <th>Observation</th>
+                              <th>Action</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -136,8 +142,11 @@ CONSULTATION
                               <td>System Architect</td>
                               <td>Edinburgh</td>
                               <td>61</td>
-                              <td>2021/04/25</td>
-                              <td>$320,800</td>
+
+                              <td>
+                                <a href="#" class="m-2"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                                <a href="#" class="m-2"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                              </td>
                             </tr>
 
                           </tbody>
@@ -153,9 +162,11 @@ CONSULTATION
                 <!-- Row start -->
                 <div class=" mb-3">
                   <div class="card mb-3">
-                    <div class="card-header">
+                    <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
                       <h5 class="card-title">Soins Prescits</h5>
+                      <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#addSoin">Nouveau</button>
                     </div>
+
                     <div class="card-body">
                       <div class="table-responsive">
                         <table id="spaceButtons" class="table table-striped">
@@ -187,9 +198,11 @@ CONSULTATION
                   </div>
                 </div>
                 <div class="card mb-3">
-                  <div class="card-header">
+                  <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
                     <h5 class="card-title">Analyses</h5>
+                    <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#addAnalyse">Nouveau</button>
                   </div>
+
                   <div class="card-body">
                     <div class="table-responsive">
                       <table id="customButtons" class="table table-striped">
@@ -227,9 +240,12 @@ CONSULTATION
                 </div>
 
                 <div class="card mb-3">
-                  <div class="card-header">
+                  <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
                     <h5 class="card-title">Ordonnances</h5>
+                    <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#addOrdonnance">Nouveau</button>
                   </div>
+
+
                   <div class="card-body">
                     <div class="table-responsive">
                       <table id="apiCallbacks" class="table table-striped">
@@ -280,9 +296,13 @@ CONSULTATION
 
                   <div class="col-md-12 col-12">
                     <div class="card mb-3">
-                      <div class="card-header">
-                        <h5 class="card-title">Fichiers issus de l'analyse</h5>
+                      <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
+                        <h5 class="card-title">Fichiers de Consultation</h5>
+                        <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#addFichierAnalyse">Nouveau</button>
                       </div>
+
+
+
                       <div class="card-body">
                         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                           <div class="carousel-indicators">
@@ -326,24 +346,19 @@ CONSULTATION
                       </div>
                     </div>
                   </div>
-
-
-
-
                 </div>
-
               </div>
               <div class="tab-pane fade" id="fiveAA" role="tabpanel" aria-labelledby="tab-fiveAA">
-
                 <!-- Row start -->
                 <div class=" mb-3">
-
                   <div class="card mb-3">
-                    <div class="card-header">
-                      <button class="btn btn-primary">Enregistrer</button>
+                    <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
+                      <h5 class="card-title"></h5>
+                      <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#modifSortieMedicale">Modifier</button>
                     </div>
+
                     <div class="card-body">
-                      
+
                       <p><span class="text-primary">Sortie Medicale</span> : <span>Evacuation</span> <br></p>
                       <ul>
                         <li><span class="text-primary m-2">Motif Evacuation </span>: <span>Lorem ipsum dolor sit amet consecteturelit. Iure, doloribus!</span> </li>
@@ -352,8 +367,9 @@ CONSULTATION
                         <li><span class="text-primary m-2">Période Permission</span> : <span>25/05/2024 - 20/10/2024</span> </li>
                         <li><span class="text-primary m-2">Cause Déces</span> : <span>jjqjj zdzjcj </span> </li>
                         <li><span class="text-primary m-2">Lieu Déces</span> : <span>Evacuation</span> </li>
+                        <li><span class="text-primary m-2">Date de Déces</span> : <span>Evacuation</span> </li>
                       </ul>
-                      
+
                     </div>
                   </div>
                 </div>
@@ -370,13 +386,582 @@ CONSULTATION
   </div>
 </div>
 </div>
+
+
 <!-- Row end -->
 
-</div>
+
 <!-- App content ends -->
 
 
 <!-- App body ends -->
+
+
+
+
+<!-- Modal Fullscreen -->
+<div class="modal fade" id="addExamen" tabindex="-1" aria-labelledby="addExamenLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="addExamenLabel">
+          Formulaire d'Examen Clinique
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row gx-3">
+          <div class="col-sm-12">
+            <div class="card mb-3">
+              <div class="card-header">
+                <h5 class="card-title">Nouvel Enregistrement</h5>
+              </div>
+              <form action="">
+                <div class="card-body">
+
+                  <!-- Row start -->
+                  <div class="row gx-3">
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Type Examen</label>
+                        <select class="form-select" id="abcd" aria-label="Default select example">
+                          <option selected="">Selectionner l'Examen</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <input name="" id="" class="form-control" placeholder="Ou entrez le type d'examen">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Description</label>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="phn">Observation</label>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <!-- Row end -->
+
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex gap-2 justify-content-end">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary">Valider</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Modal Fullscreen -->
+<div class="modal fade" id="addSoin" tabindex="-1" aria-labelledby="addSoinLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="addSoinLabel">
+          Formulaire de Prescription de Soin
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row gx-3">
+          <div class="col-sm-12">
+            <div class="card mb-3">
+              <div class="card-header">
+                <h5 class="card-title">Nouvel Enregistrement</h5>
+              </div>
+              <form action="">
+                <div class="card-body">
+
+                  <!-- Row start -->
+                  <div class="row gx-3">
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Libellé</label>
+                        <input name="" id="" class="form-control" placeholder="Ou entrez le type d'examen">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Details</label>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Row end -->
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex gap-2 justify-content-end">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary">Valider</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Modal Fullscreen -->
+<div class="modal fade" id="addAnalyse" tabindex="-1" aria-labelledby="addAnalyseLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="addAnalyseLabel">
+          Formulaire de Prescription d'Analyyse
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row gx-3">
+          <div class="col-sm-12">
+            <div class="card mb-3">
+              <div class="card-header">
+                <h5 class="card-title">Nouvel Enregistrement</h5>
+              </div>
+              <form action="">
+                <div class="card-body">
+
+                  <!-- Row start -->
+                  <div class="row gx-3">
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Type Analyse</label>
+                        <select class="form-select" id="abcd" aria-label="Default select example">
+                          <option selected="">Selectionner l'Examen</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <input name="" id="" class="form-control" placeholder="Ou entrez le type d'examen">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Details</label>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Row end -->
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex gap-2 justify-content-end">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary">Valider</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal Fullscreen -->
+<div class="modal fade" id="addOrdonnance" tabindex="-1" aria-labelledby="addOrdonnanceLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="addOrdonnanceLabel">
+          Formulaire de Prescription d'Ordonnance
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row gx-3">
+          <div class="col-sm-12">
+            <div class="card mb-3">
+              <div class="card-header">
+                <h5 class="card-title">Nouvel Enregistrement</h5>
+              </div>
+              <form action="">
+                <div class="card-body">
+
+                  <!-- Row start -->
+                  <div class="row gx-3">
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Libellé Médocs</label>
+                        <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Forme Médocs</label>
+                        <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Qte à Acheter</label>
+                        <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Nombre de fois</label>
+                        <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Intervalle de prise</label>
+                        <select class="form-select" id="abcd" aria-label="Default select example">
+                          <option selected="">Selectionner l'Examen</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Date de premiere prise</label>
+                        <input name="" id="" type="date" class="form-control" placeholder="entrez le type d'examen">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Autres Instructions</label>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Row end -->
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex gap-2 justify-content-end">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary">Valider</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Fullscreen -->
+<div class="modal fade" id="addFichierAnalyse" tabindex="-1" aria-labelledby="addFichierAnalyseLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="addFichierAnalyseLabel">
+        Formulaire d'Enregistrement de Fichier
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row gx-3">
+          <div class="col-sm-12">
+            <div class="card mb-3">
+              <div class="card-header">
+                <h5 class="card-title">Nouvel Enregistrement</h5>
+              </div>
+              <form action="">
+                <div class="card-body">
+
+                  <!-- Row start -->
+                  <div class="row gx-3">
+                    <div class="col-xl-3 col-sm-4 col-12">
+
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Libellé Fichier</label>
+                        <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                      </div>
+
+
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+
+
+                      <div class="mb-3">
+                        <label class="form-label" for="name"> Fichier</label>
+                        <input name="" id="" type="file" class="form-control" placeholder="Ou entrez le type d'examen">
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- Row end -->
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex gap-2 justify-content-end">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary">Valider</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal Fullscreen -->
+<div class="modal fade" id="modifConsultation" tabindex="-1" aria-labelledby="modifConsultationLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="modifConsultationLabel">
+          Formulaire de Consultation
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row gx-3">
+          <div class="col-sm-12">
+            <div class="card mb-3">
+              <div class="card-header">
+                <h5 class="card-title">Modifier la Consultation</h5>
+              </div>
+              <div class="card-body">
+
+                <!-- Row start -->
+                <div class="row gx-3">
+                  <div class="col-xl-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                      <label class="form-label" for="name">Motif</label>
+                      <div class="simpleEditor"></div>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                      <label class="form-label" for="email">Anamnèse</label>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                      <label class="form-label" for="phn">Signes Associés</label>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                      <label class="form-label" for="company">Antécedants</label>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                      <label class="form-label" for="bAddress">Diagnostique Retenu</label>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                      <label class="form-label" for="terri">Bilan</label>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-4 col-12">
+                    <div class="mb-3">
+                      <label class="form-label" for="idType">Allergies</label>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+
+                    </div>
+                  </div>
+
+                </div>
+                <!-- Row end -->
+
+              </div>
+              <div class="card-footer">
+                <div class="d-flex gap-2 justify-content-end">
+                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                  <button type="button" class="btn btn-primary">Modifier</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal Fullscreen -->
+<div class="modal fade" id="modifSortieMedicale" tabindex="-1" aria-labelledby="modifSortieMedicaleLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="addSortieMedicaleLabel">
+          Formulaire de Sortie Médicale
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div class="modal-body">
+        <div class="row gx-3">
+          <div class="col-sm-12">
+            <div class="card mb-3">
+              <div class="card-header">
+                <h5 class="card-title">Nouvel Enregistrement</h5>
+              </div>
+              <form action="">
+                <div class="card-body">
+
+                  <!-- Row start -->
+                  <div class="row gx-3">
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Mode de Sortie Médicale</label>
+                        <select class="form-select" id="selectOptions" aria-label="Default select example">
+                          <option selected="">Selectionner le Mode de Sortie</option>
+                          <option value="Sortie Normale">Sortie Normale</option>
+                          <option value="Contre Avis Médical">Contre Avis Médical</option>
+                          <option value="Evacuation">Evacuation</option>
+                          <option value="Permission">Permission</option>
+                          <option value="Deces">Decès </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12" id="MotifE" style="display: none;">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Motif Evacuation</label>
+                        <textarea name="" cols="30" rows="5" class="form-control"></textarea>
+
+                        
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12"  id="HopitalD" style="display: none;">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Hopital Destination</label>
+                        <input name="" class="form-control" placeholder="entrez le type d'examen">
+                      </div>
+                    </div>
+                    
+                    <div class="col-xl-3 col-sm-4 col-12" id="MotifP" style="display: none;">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Motif Permission</label>
+                        <textarea name=""  cols="30" rows="5" class="form-control"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12" id="PeriodeP" style="display: none;">
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Période Permission</label>
+                        <input name="" type="date" class="form-control" placeholder="entrez le type d'examen">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12" id="CauseD" style="display: none;">
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Cause Déces</label>
+                        <textarea name="" cols="30" rows="5" class="form-control"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12" id="LieuD" style="display: none;">
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Lieu Déces</label>
+                        <input name="" type="text" class="form-control" placeholder="entrez le type d'examen">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12" id="DateD" style="display: none;">
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Date Déces</label>
+                        <input name="" type="date" class="form-control" placeholder="entrez le type d'examen">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Row end -->
+                </div>
+                <div class="card-footer">
+                  <div class="d-flex gap-2 justify-content-end">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary">Valider</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 
 @endsection
 
@@ -395,4 +980,80 @@ CONSULTATION
 <script src="assets/vendor/datatables/buttons/buttons.html5.min.js"></script>
 <script src="assets/vendor/datatables/buttons/buttons.print.min.js"></script>
 <script src="assets/vendor/datatables/buttons/buttons.colVis.min.js"></script>
+
+
+<script>
+  // Récupération de l'élément select et des inputs
+const selectOptions = document.getElementById('selectOptions');
+const MotifE = document.getElementById('MotifE');
+const HopitalD = document.getElementById('HopitalD');
+const MotifP = document.getElementById('MotifP');
+const PeriodeP = document.getElementById('PeriodeP');
+const CauseD = document.getElementById('CauseD');
+const LieuD = document.getElementById('LieuD');
+const DateD = document.getElementById('DateD');
+
+
+// Fonction pour afficher ou masquer les inputs en fonction de l'option sélectionnée
+selectOptions.addEventListener('change', function() {
+    const selectedOption = selectOptions.value;
+    if (selectedOption === 'Sortie Normale') {
+        MotifE.style.display = 'none';
+        HopitalD.style.display = 'none';
+        MotifP.style.display = 'none';
+        PeriodeP.style.display = 'none';
+        CauseD.style.display = 'none';
+        LieuD.style.display = 'none';
+        DateD.style.display = 'none';
+    } else if (selectedOption === 'Contre Avis Médical') {
+        MotifE.style.display = 'none';
+        HopitalD.style.display = 'none';
+        MotifP.style.display = 'none';
+        PeriodeP.style.display = 'none';
+        CauseD.style.display = 'none';
+        LieuD.style.display = 'none';
+        DateD.style.display = 'none';
+
+    } else if (selectedOption === 'Evacuation') {
+        MotifE.style.display = 'block';
+        HopitalD.style.display = 'block';
+        MotifP.style.display = 'none';
+        PeriodeP.style.display = 'none';
+        CauseD.style.display = 'none';
+        LieuD.style.display = 'none';
+    }
+    else if (selectedOption === 'Permission') {
+        MotifE.style.display = 'none';
+        HopitalD.style.display = 'none';
+        MotifP.style.display = 'block';
+        PeriodeP.style.display = 'block';
+        CauseD.style.display = 'none';
+        LieuD.style.display = 'none';
+        DateD.style.display = 'none';
+
+    }
+    else if (selectedOption === 'Deces') {
+        MotifE.style.display = 'none';
+        HopitalD.style.display = 'none';
+        MotifP.style.display = 'none';
+        PeriodeP.style.display = 'none';
+        CauseD.style.display = 'block';
+        LieuD.style.display = 'block';
+        DateD.style.display = 'block';
+
+    }
+    else {
+        MotifE.style.display = 'none';
+        HopitalD.style.display = 'none';
+        MotifP.style.display = 'none';
+        PeriodeP.style.display = 'none';
+        CauseD.style.display = 'none';
+        LieuD.style.display = 'none';
+        DateD.style.display = 'none';
+
+    }
+});
+
+
+</script>
 @endsection

@@ -41,6 +41,11 @@ ANALYSE
                                 <!-- Row start -->
                                 <div class="row gx-3">
 
+                                    <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
+                                        <h5 class="card-title"></h5>
+                                        <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#modifAnalyse">Modifier</button>
+                                    </div>
+
 
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
@@ -93,9 +98,11 @@ ANALYSE
 
                                     <div class="col-md-12 col-12">
                                         <div class="card mb-3">
-                                            <div class="card-header">
+                                            <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
                                                 <h5 class="card-title">Fichiers issus de l'analyse</h5>
+                                                <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#addFichierAnalyse">Nouveau</button>
                                             </div>
+
                                             <div class="card-body">
                                                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                                                     <div class="carousel-indicators">
@@ -162,6 +169,140 @@ ANALYSE
 
 <!-- App body ends -->
 
+<!-- Modal Fullscreen -->
+<div class="modal fade" id="modifAnalyse" tabindex="-1" aria-labelledby="modifAnalyseLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title h4" id="modifAnalyseLabel">
+                    Formulaire d'Analyse Effectuée
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <div class="row gx-3">
+                        <div class="col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h5 class="card-title">Modifier Analyse Effectuée</h5>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Row start -->
+                                    <div class="row gx-3">
+                                        <div class="col-xl-3 col-sm-4 col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="name">Type Analyse</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected="">Selectionner le Type Analyse</option>
+                                                    <option value="S">Sortie Normale</option>
+                                                    <option value=" Médical">Contre Aical</option>
+                                                </select>
+                                                <input name="" class="form-control" placeholder="Ou entrez le Type Analyse">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-sm-4 col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="email">Détails</label>
+                                                <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-sm-4 col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="phn">Résultats</label>
+                                                <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Row end -->
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex gap-2 justify-content-end">
+                                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                        <button type="button" class="btn btn-primary">Modifier</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Fullscreen -->
+<div class="modal fade" id="addFichierAnalyse" tabindex="-1" aria-labelledby="addFichierAnalyseLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title h4" id="addFichierAnalyseLabel">
+                Formulaire d'Enregistrement de Fichier
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <div class="row gx-3">
+                        <div class="col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h5 class="card-title">Nouvel Enregistrement</h5>
+                                </div>
+                                <form action="">
+                                    <div class="card-body">
+                                        <!-- Row start -->
+                                        <div class="row gx-3">
+                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="name">Libellé Fichier</label>
+                                                    <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="name"> Fichier</label>
+                                                    <input name="" id="" type="file" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Row end -->
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="d-flex gap-2 justify-content-end">
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                            <button type="button" class="btn btn-primary">Valider</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 @endsection
 
 
@@ -189,62 +330,3 @@ ANALYSE
 
 <!-- User stats ends -->
 <!-- App content start -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

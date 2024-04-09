@@ -169,14 +169,12 @@ INFORMATIONS BASIQUES
                                 <div class="row gx-3">
                                     <div class="col">
 
-
                                         <!-- Allergie -->
                                         <div class="mb-3">
                                             <div class="card mb-3">
                                                 <div class="card-header d-flex justify-content-between align-items-center ">
 
                                                     <h5 class="card-title">Allergies</h5>
-                                                    <button class="btn btn-primary ml-auto ">Nouveau</button>
 
                                                 </div>
                                                 <div class="card-body">
@@ -189,6 +187,7 @@ INFORMATIONS BASIQUES
                                                                     <th>#</th>
                                                                     <th>Allergies</th>
                                                                     <th>Date</th>
+                                                                    <th>Action</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -196,6 +195,79 @@ INFORMATIONS BASIQUES
                                                                     <td>5</td>
                                                                     <td>3600</td>
                                                                     <td>3600</td>
+                                                                    <td>
+                                                                        <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifAllergie"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                                                                        <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supAllergie"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                                                                    </td>
+                                                                    <!-- Modal Modification -->
+                                                                    <div class="modal fade" id="modifAllergie" tabindex="-1" aria-labelledby="modifAllergieLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-fullscreen">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title h4" id="modifAllergieLabel">
+                                                                                        Formulaire de Modification d'Allergie
+                                                                                    </h5>
+                                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    <div class="modal-body">
+                                                                                        <div class="row gx-3">
+                                                                                            <div class="col-sm-12">
+                                                                                                <div class="card mb-3">
+                                                                                                    <div class="card-header">
+                                                                                                        <h5 class="card-title">Modification d'Allergie</h5>
+                                                                                                    </div>
+                                                                                                    <form action="">
+                                                                                                        <div class="card-body">
+                                                                                                            <!-- Row start -->
+                                                                                                            <div class="row gx-3">
+
+                                                                                                                <div class="col-xl-3 col-sm-4 col-12">
+                                                                                                                    <div class="mb-3">
+                                                                                                                        <label class="form-label" for="name">Allergie</label>
+                                                                                                                        <textarea name="" id="" cols="30" class="form-control" rows="5"></textarea>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <!-- Row end -->
+                                                                                                        </div>
+                                                                                                        <div class="card-footer">
+                                                                                                            <div class="d-flex gap-2 justify-content-end">
+                                                                                                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                                                                                <button type="button" class="btn btn-primary">Modifier</button>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </form>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Modal suppression -->
+                                                                    <div class="modal fade" id="supAllergie" tabindex="-1" aria-labelledby="supAllergieLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-sm">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-body p-4 text-center">
+                                                                                    <h5 class="text-primary">Continuez la suppression?</h5>
+                                                                                    <p class="mb-0">
+                                                                                        Voulez-vous vraiment supprimer cette information
+                                                                                        du patient?
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="modal-footer flex-nowrap p-0">
+                                                                                    <button type="button" class="btn text-primary fs-6 col-6 m-0 border-end">
+                                                                                        <strong>Oui, Supprimer</strong>
+                                                                                    </button>
+                                                                                    <button type="button" class="btn text-dark fs-6 col-6 m-0" data-bs-dismiss="modal">
+                                                                                        Non merci
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -210,9 +282,10 @@ INFORMATIONS BASIQUES
                                     <!-- Correspondace -->
                                     <div class="mb-3">
                                         <div class="card mb-3">
-                                            <div class="card-header">
+                                            <div class="card-header d-flex justify-content-between align-items-center ">
                                                 <h5 class="card-title">Correspondance</h5>
                                             </div>
+
                                             <div class="card-body">
 
                                                 <!-- Table start -->
@@ -226,6 +299,7 @@ INFORMATIONS BASIQUES
                                                                 <th>Télephone</th>
                                                                 <th>Relation avec le patient</th>
                                                                 <th>Date</th>
+                                                                <th>Action</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -236,6 +310,99 @@ INFORMATIONS BASIQUES
                                                                 <td>3600</td>
                                                                 <td>2300</td>
                                                                 <td>2300</td>
+                                                                <td>
+                                                                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifCorrespondance"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                                                                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supCorrespondance"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                                                                </td>
+                                                                <!-- Modal Modification -->
+                                                                <div class="modal fade" id="modifCorrespondance" tabindex="-1" aria-labelledby="modifCorrespondanceLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-fullscreen">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title h4" id="modifCorrespondanceLabel">
+                                                                                    Formulaire de Modification de Correspondance
+                                                                                </h5>
+                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <div class="modal-body">
+                                                                                    <div class="row gx-3">
+                                                                                        <div class="col-sm-12">
+                                                                                            <div class="card mb-3">
+                                                                                                <div class="card-header">
+                                                                                                    <h5 class="card-title">Modification de Correspondance</h5>
+                                                                                                </div>
+                                                                                                <form action="">
+                                                                                                    <div class="card-body">
+                                                                                                        <!-- Row start -->
+                                                                                                        <div class="row gx-3">
+
+                                                                                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                                                                                <div class="mb-3">
+                                                                                                                    <label class="form-label" for="name">Nom</label>
+                                                                                                                    <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                                                                                <div class="mb-3">
+                                                                                                                    <label class="form-label" for="name">Prénom</label>
+                                                                                                                    <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                                                                                </div>
+                                                                                                            </div>
+
+                                                                                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                                                                                <div class="mb-3">
+                                                                                                                    <label class="form-label" for="name">Télephone</label>
+                                                                                                                    <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                                                                                </div>
+                                                                                                            </div>
+
+                                                                                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                                                                                <div class="mb-3">
+                                                                                                                    <label class="form-label" for="name">Relation avec le patient</label>
+                                                                                                                    <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <!-- Row end -->
+                                                                                                    </div>
+                                                                                                    <div class="card-footer">
+                                                                                                        <div class="d-flex gap-2 justify-content-end">
+                                                                                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                                                                            <button type="button" class="btn btn-primary">Modifier</button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </form>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Modal suppression -->
+                                                                <div class="modal fade" id="supCorrespondance" tabindex="-1" aria-labelledby="supCorrespondanceLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-sm">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-body p-4 text-center">
+                                                                                <h5 class="text-primary">Continuez la suppression?</h5>
+                                                                                <p class="mb-0">
+                                                                                    Voulez-vous vraiment supprimer cette information
+                                                                                    du patient?
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="modal-footer flex-nowrap p-0">
+                                                                                <button type="button" class="btn text-primary fs-6 col-6 m-0 border-end">
+                                                                                    <strong>Oui, Supprimer</strong>
+                                                                                </button>
+                                                                                <button type="button" class="btn text-dark fs-6 col-6 m-0" data-bs-dismiss="modal">
+                                                                                    Non merci
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -266,4 +433,24 @@ INFORMATIONS BASIQUES
 
 </div>
 <!-- App body ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endsection

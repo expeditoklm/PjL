@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap Gallery - Adminy Bootstrap 5 Dashboard</title>
+    <title>@yield('nomPage') </title>
 
     <!-- Meta -->
     <meta name="description" content="Marketplace for Bootstrap Admin Dashboards" />
@@ -174,8 +174,8 @@
                         <div class="dropdown ms-4">
                             <a id="userSettings" class="dropdown-toggle user-settings" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="me-2 text-truncate d-lg-block d-none">
-                                    <span class="d-flex opacity-50 small">Admin</span>
-                                    <span>Chao Xing</span>
+                                    <span class="d-flex opacity-50 small">Docteur</span>
+                                    <span>Thomas SAGBOHAN</span>
                                 </div>
                                 <div class="position-relative">
                                     <img src="assets/images/user4.png" class="rounded-5 img-3x" alt="Bootstrap Gallery" />
@@ -219,8 +219,8 @@
             <img src="assets/images/user5.png" class="img-5x rounded-circle" alt="Admin Dashboard">
 
             <div class="ms-3 text-white">
-                <h5 class="mb-1">Clarence Wyatt</h5>
-                <h6 class="m-0 fw-light">UX Designer</h6>
+                <h5 class="mb-1">Expédit LACHILO</h5>
+                <h6 class="m-0 fw-light">Devellopeur Web & Mobile</h6>
             </div>
 
 
@@ -228,14 +228,14 @@
                 <i class="ri-phone-line fs-2 lh-1 me-2"></i>
                 <div>
                     <h6 class="mb-1">Contact</h6>
-                    <p class="m-0 fw-light small">000 000 0000</p>
+                    <p class="m-0 fw-light small">229 524 01574</p>
                 </div>
             </div>
             <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
                 <i class="ri-map-pin-line fs-2 lh-1 me-2"></i>
                 <div>
-                    <h6 class="mb-1">Location</h6>
-                    <p class="m-0 fw-light small">United States</p>
+                    <h6 class="mb-1">Adresse</h6>
+                    <p class="m-0 fw-light small">BENIN / Porto-Novo </p>
                 </div>
             </div>
             <div class="ms-auto d-flex gap-2">
@@ -248,19 +248,16 @@
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">8</span>
                 </a>
                 <a href="{{ Route::is('pages.liste-analyse-patient') ? 'javascript:void(0)' : route('pages.liste-analyse-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Analyses</span>
+                    <span>Analyses effectuées</span>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
                 </a>
                 <a href="{{ Route::is('pages.liste-soin-patient') ? 'javascript:void(0)' : route('pages.liste-soin-patient') }}" class="btn bg-primary-subtle position-relative">
 
-                    <span>Soins</span>
+                    <span>Soins Administré</span>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
                 </a>
-                <a href="{{ Route::is('pages.voir-patient') ? 'javascript:void(0)' : route('pages.voir-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Fichiers</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
-                </a>
-                <a href="{{ Route::is('pages.voir-patient') ? 'javascript:void(0)' : route('pages.voir-patient') }}" class="btn bg-primary-subtle position-relative">
+                
+                <a href="{{ Route::is('pages.note-patient') ? 'javascript:void(0)' : route('pages.note-patient') }}" class="btn bg-primary-subtle position-relative">
                     <span>Notes</span>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
                 </a>

@@ -13,79 +13,150 @@ SOINS
 
 <!-- App body starts -->
 
-    <!-- User stats ends -->
-    <!-- App content start -->
-    <div class="app-body">
+<!-- User stats ends -->
+<!-- App content start -->
+<div class="app-body">
 
-        <!-- Row start -->
-        <div class="row gx-3">
-            <div class="col-sm-12">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="custom-tabs-container">
+    <!-- Row start -->
+    <div class="row gx-3">
+        <div class="col-sm-12">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="custom-tabs-container">
 
-                            <div class="tab-content" id="customTabContent3">
-                                <div class="tab-pane fade show active" id="oneAA" role="tabpanel" aria-labelledby="tab-oneAA">
+                        <div class="tab-content" id="customTabContent3">
+                            <div class="tab-pane fade show active" id="oneAA" role="tabpanel" aria-labelledby="tab-oneAA">
 
-                                    <!-- Row start -->
-                                    <div class="tab-content" id="customTabContent3">
-                                        <div class="tab-pane fade show active" id="oneAA" role="tabpanel" aria-labelledby="tab-oneAA">
+                                <!-- Row start -->
+                                <div class="tab-content" id="customTabContent3">
+                                    <div class="tab-pane fade show active" id="oneAA" role="tabpanel" aria-labelledby="tab-oneAA">
 
-                                            <!-- Row start -->
-                                            <div class="row gx-3">
-
-
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="email">Libelle Soin</label>
-                                                        <input name="" id="" class="form-control" value="Enter email address">
-                                                    </div>
-                                                </div>
-                                                
-                                                
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="email">infirmier(e)</label>
-                                                        <input name="" id="" class="form-control" value="Enter email address">
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="email">Hopital</label>
-                                                        <input name="" id="" class="form-control" value="Enter email address">
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="email">Date</label>
-                                                        <input name="" id="" class="form-control" value="Enter email address">
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                    <div class="mb-3">
-                                                        <label class="form-label" for="email">Observations</label>
-                                                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
-                                                    </div>
-                                                </div>
-                                                
+                                        <!-- Row start -->
+                                        <div class="row gx-3">
+                                            <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
+                                                <h5 class="card-title">Soin Administré</h5>
+                                                <button class="btn btn-primary ml-auto " data-bs-toggle="modal" data-bs-target="#modifSoinAdministre">Modifier</button>
                                             </div>
-                                            <!-- Row end -->
+
+                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="email">Libelle Soin</label>
+                                                    <input name="" id="" class="form-control" value="Enter email address">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="email">infirmier(e)</label>
+                                                    <input name="" id="" class="form-control" value="Enter email address">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="email">Hopital</label>
+                                                    <input name="" id="" class="form-control" value="Enter email address">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="email">Date</label>
+                                                    <input name="" id="" class="form-control" value="Enter email address">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="email">Observations</label>
+                                                    <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <!-- Row end -->
                                     </div>
                                     <!-- Row end -->
                                 </div>
+                                <!-- Row end -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Row end -->
     </div>
-    <!-- App content ends -->
+    <!-- Row end -->
+</div>
+<!-- App content ends -->
 </div>
 <!-- App body ends -->
+
+<!-- Modal Fullscreen -->
+<div class="modal fade" id="modifSoinAdministre" tabindex="-1" aria-labelledby="modifSoinAdministreLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title h4" id="modifSoinAdministreLabel">
+                    Formulaire de Modification de Soin
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <div class="row gx-3">
+                        <div class="col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h5 class="card-title">Modifier Soin Administré</h5>
+                                </div>
+                                <form action="">
+                                    <div class="card-body">
+                                        <!-- Row start -->
+                                        <div class="row gx-3">
+                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="name">Libellé Soin</label>
+                                                    <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="name"> Détails</label>
+                                                    <textarea name="" id="" cols="30" class="form-control" rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Row end -->
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="d-flex gap-2 justify-content-end">
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                            <button type="button" class="btn btn-primary">Valider</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 
 @endsection
 

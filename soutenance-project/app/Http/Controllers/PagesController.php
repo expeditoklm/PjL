@@ -46,6 +46,11 @@ class PagesController extends Controller
     {
         return view('pages/listesPatientsRechercher');
     }
+
+    public function notePatient()
+    {
+        return view('pages/notePatient');
+    }
     
     
     

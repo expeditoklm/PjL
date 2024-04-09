@@ -27,4 +27,5 @@ Route::get('/analyse-patient', [PagesController::class, 'analysePatient'])->name
 Route::get('/liste-soin-patient', [PagesController::class, 'listeSoinPatient'])->name('pages.liste-soin-patient');
 Route::get('/soin-patient', [PagesController::class, 'soinPatient'])->name('pages.soin-patient');
 Route::get('/liste-patient-rechercher', [PagesController::class, 'listePatientRechercher'])->name('pages.liste-patient-rechercher');
+Route::get('/note-patient', [PagesController::class, 'notePatient'])->name('pages.note-patient');
 
