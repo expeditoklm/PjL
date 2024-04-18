@@ -51,6 +51,11 @@ class PagesController extends Controller
     {
         return view('pages/notePatient');
     }
+    public function signUp()
+    {
+        return view('pages/signUp');
+    }
+    
     
     
     

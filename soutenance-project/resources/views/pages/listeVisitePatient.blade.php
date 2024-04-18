@@ -270,48 +270,48 @@ LISTE CONSULTATIONS
                     <div class="mb-3">
                       <label class="form-label" for="name">Motif</label>
                       <div class="simpleEditor"></div>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Motif de consultation"></textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Anamnèse</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Anamnèse / Avant et Début de maladie "></textarea>
 
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="phn">Signes Associés</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Signes Associés"></textarea>
 
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="company">Antécedants</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Antécedants"></textarea>
 
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="bAddress">Diagnostique Retenu</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Diagnostique retenu après consultation"></textarea>
 
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="terri">Bilan</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Bilan de consultation"></textarea>
 
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="idType">Allergies</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Allergies après consultation"></textarea>
 
                     </div>
                   </div>

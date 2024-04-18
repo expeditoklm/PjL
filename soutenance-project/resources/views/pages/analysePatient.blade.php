@@ -116,23 +116,89 @@ ANALYSE
                                                             <div class="carousel-caption d-none d-md-block">
                                                                 <h5 class="text-dark" style="color: black;">Libelle Analyse</h5>
                                                                 <p class="text-dark" style="color: black;">Libelle Fichier</p>
+                                                                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modifFichierAnalyse">Modifier</button>
                                                                 <button class="btn btn-primary">Telecharger</button>
+                                                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#suppFichierAnalyse">Supprimer</button>
                                                             </div>
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="assets/images/products/product8.jpg" class="d-block w-100" alt="Admin Templates & Dashboards">
-                                                            <div class="carousel-caption d-none d-md-block">
-                                                                <h5>Libelle Analyse</h5>
-                                                                <p>Libelle Fichier</p>
-                                                                <button class="btn btn-primary">Telecharger</button>
+
+                                                            <!-- Modal Fullscreen -->
+                                                            <div class="modal fade" id="modifFichierAnalyse" tabindex="-1" aria-labelledby="addFichierAnalyseLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-fullscreen">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title h4" id="addFichierAnalyseLabel">
+                                                                                Formulaire de Modification de Fichier
+                                                                            </h5>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div class="row gx-3">
+                                                                                <div class="col-sm-12">
+                                                                                    <div class="card mb-3">
+                                                                                        <div class="card-header">
+                                                                                            <h5 class="card-title">Modifier le Fichier</h5>
+                                                                                        </div>
+                                                                                        <form action="">
+                                                                                            <div class="card-body">
+
+                                                                                                <!-- Row start -->
+                                                                                                <div class="row gx-3">
+                                                                                                    <div class="col-xl-3 col-sm-4 col-12">
+
+                                                                                                        <div class="mb-3">
+                                                                                                            <label class="form-label" for="name">Libellé Fichier</label>
+                                                                                                            <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                                                                        </div>
+
+
+                                                                                                    </div>
+                                                                                                    <div class="col-xl-3 col-sm-4 col-12">
+
+
+                                                                                                        <div class="mb-3">
+                                                                                                            <label class="form-label" for="name"> Fichier</label>
+                                                                                                            <input name="" id="" type="file" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                </div>
+                                                                                                <!-- Row end -->
+                                                                                            </div>
+                                                                                            <div class="card-footer">
+                                                                                                <div class="d-flex gap-2 justify-content-end">
+                                                                                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                                                                    <button type="button" class="btn btn-primary">Modifier</button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="carousel-item">
-                                                            <img src="assets/images/products/product1.jpg" class="d-block w-100" alt="Admin Templates & Dashboards">
-                                                            <div class="carousel-caption d-none d-md-block">
-                                                                <h5>Libelle Analyse</h5>
-                                                                <p>Libelle Fichier</p>
-                                                                <button class="btn btn-primary">Telecharger</button>
+
+                                                            <div class="modal fade" id="suppFichierAnalyse" tabindex="-1" aria-labelledby="suppFichierAnalyseLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-sm">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-body p-4 text-center">
+                                                                            <h5 class="text-primary">Continuez la suppression?</h5>
+                                                                            <p class="mb-0">
+                                                                                Voulez-vous vraiment supprimer cette information
+                                                                                du patient?
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="modal-footer flex-nowrap p-0">
+                                                                            <button type="button" class="btn text-primary fs-6 col-6 m-0 border-end">
+                                                                                <strong>Oui, Supprimer</strong>
+                                                                            </button>
+                                                                            <button type="button" class="btn text-dark fs-6 col-6 m-0" data-bs-dismiss="modal">
+                                                                                Non merci
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -144,6 +210,8 @@ ANALYSE
                                                     </button>
                                                 </div>
                                             </div>
+
+
                                         </div>
                                     </div>
 
@@ -246,7 +314,7 @@ ANALYSE
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title h4" id="addFichierAnalyseLabel">
-                Formulaire d'Enregistrement de Fichier
+                    Formulaire d'Enregistrement de Fichier
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>

@@ -58,6 +58,7 @@ LISTE ANALYSES
                   <div class="justify-content" style="margin-top: 30px;margin-left: 10px; ">
                     <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifVisite"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
                     <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supVisite"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
                   </div>
                 </td>
 
@@ -68,7 +69,7 @@ LISTE ANALYSES
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title h4" id="modifVisiteLabel">
-                          Formulaire de Modification de Visite
+                          Formulaire de Modification d'Analyse Effectuée
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
@@ -78,39 +79,36 @@ LISTE ANALYSES
                             <div class="col-sm-12">
                               <div class="card mb-3">
                                 <div class="card-header">
-                                  <h5 class="card-title">Modification de Visite</h5>
+                                  <h5 class="card-title">Modification de l'analyse Effectuée</h5>
                                 </div>
                                 <form action="">
                                   <div class="card-body">
                                     <!-- Row start -->
                                     <div class="row gx-3">
 
-                                      <div class="col-xl-3 col-sm-4 col-12">
-                                        <div class="mb-3">
-                                          <label class="form-label" for="name">Nom</label>
-                                          <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                    <div class="col-xl-3 col-sm-4 col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="name">Type Analyse</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected="">Selectionner le Type Analyse</option>
+                                                    <option value="S">Sortie Normale</option>
+                                                    <option value=" Médical">Contre Aical</option>
+                                                </select>
+                                                <input name="" class="form-control" placeholder="Ou entrez le Type Analyse">
+                                            </div>
                                         </div>
-                                      </div>
-                                      <div class="col-xl-3 col-sm-4 col-12">
-                                        <div class="mb-3">
-                                          <label class="form-label" for="name">Prénom</label>
-                                          <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                        <div class="col-xl-3 col-sm-4 col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="email">Détails</label>
+                                                <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                            </div>
                                         </div>
-                                      </div>
-
-                                      <div class="col-xl-3 col-sm-4 col-12">
-                                        <div class="mb-3">
-                                          <label class="form-label" for="name">Télephone</label>
-                                          <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                        <div class="col-xl-3 col-sm-4 col-12">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="phn">Résultats</label>
+                                                <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                            </div>
                                         </div>
-                                      </div>
-
-                                      <div class="col-xl-3 col-sm-4 col-12">
-                                        <div class="mb-3">
-                                          <label class="form-label" for="name">Relation avec le patient</label>
-                                          <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
-                                        </div>
-                                      </div>
                                     </div>
                                     <!-- Row end -->
                                   </div>

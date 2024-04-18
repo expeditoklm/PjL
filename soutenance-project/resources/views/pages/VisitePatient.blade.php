@@ -185,10 +185,97 @@ CONSULTATION
                               <td>Customer Support</td>
                               <td>Customer Support</td>
                               <td>
-                                <a href="#" class="m-2"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                                <a href="#" class="m-2"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                                <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#modifSoin"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                                <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#suppSoin"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
                                 <a href="#" class="m-2"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
                               </td>
+
+
+
+                              <!-- Modal Fullscreen -->
+                              <div class="modal fade" id="modifSoin" tabindex="-1" aria-labelledby="modifSoinLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title h4" id="modifSoinLabel">
+                                        Formulaire de Modification de Soin Prescrit
+                                      </h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="row gx-3">
+                                        <div class="col-sm-12">
+                                          <div class="card mb-3">
+                                            <div class="card-header">
+                                              <h5 class="card-title">Modifer Soin Prescrit</h5>
+                                            </div>
+                                            <form action="">
+                                              <div class="card-body">
+
+                                                <!-- Row start -->
+                                                <div class="row gx-3">
+                                                  <div class="col-xl-3 col-sm-4 col-12">
+                                                    <div class="mb-3">
+                                                      <label class="form-label" for="name">Libellé</label>
+                                                      <input name="" id="" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-xl-3 col-sm-4 col-12">
+                                                    <div class="mb-3">
+                                                      <label class="form-label" for="email">Details</label>
+                                                      <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <!-- Row end -->
+                                              </div>
+                                              <div class="card-footer">
+                                                <div class="d-flex gap-2 justify-content-end">
+                                                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                  <button type="button" class="btn btn-primary">Modifier</button>
+                                                </div>
+                                              </div>
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+
+
+
+
+
+
+
+
+
+
+
+                              <div class="modal fade" id="suppSoin" tabindex="-1" aria-labelledby="suppSoinLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+                                    <div class="modal-body p-4 text-center">
+                                      <h5 class="text-primary">Continuez la suppression?</h5>
+                                      <p class="mb-0">
+                                        Voulez-vous vraiment supprimer cette information
+                                        du patient?
+                                      </p>
+                                    </div>
+                                    <div class="modal-footer flex-nowrap p-0">
+                                      <button type="button" class="btn text-primary fs-6 col-6 m-0 border-end">
+                                        <strong>Oui, Supprimer</strong>
+                                      </button>
+                                      <button type="button" class="btn text-dark fs-6 col-6 m-0" data-bs-dismiss="modal">
+                                        Non merci
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </tr>
                           </tbody>
 
@@ -197,6 +284,7 @@ CONSULTATION
                     </div>
                   </div>
                 </div>
+
                 <div class="card mb-3">
                   <div class="card-header mb-4 d-flex justify-content-between align-items-center ">
                     <h5 class="card-title">Analyses</h5>
@@ -220,10 +308,121 @@ CONSULTATION
                             <td>Customer Support</td>
                             <td>Customer Support</td>
                             <td>
-                              <a href="" class="m-2"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                              <a href="" class="m-2"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifAnalyse"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#suppAnalyse"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
                               <a href="" class="m-2"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
                             </td>
+
+
+
+
+
+
+
+
+
+
+                            <!-- Modal Fullscreen -->
+                            <div class="modal fade" id="modifAnalyse" tabindex="-1" aria-labelledby="modifAnalyseLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-fullscreen">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title h4" id="modifAnalyseLabel">
+                                      Formulaire de Modification d'Analyse Prescrite
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class="row gx-3">
+                                      <div class="col-sm-12">
+                                        <div class="card mb-3">
+                                          <div class="card-header">
+                                            <h5 class="card-title">Modifier Analyse Prescrite</h5>
+                                          </div>
+                                          <form action="">
+                                            <div class="card-body">
+
+                                              <!-- Row start -->
+                                              <div class="row gx-3">
+                                                <div class="col-xl-3 col-sm-4 col-12">
+                                                  <div class="mb-3">
+                                                    <label class="form-label" for="name">Type Analyse</label>
+                                                    <select class="form-select" id="abcd" aria-label="Default select example">
+                                                      <option selected="">Selectionner l'Examen</option>
+                                                      <option value="1">One</option>
+                                                      <option value="2">Two</option>
+                                                      <option value="3">Three</option>
+                                                    </select>
+                                                    <input name="" id="" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                  </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-12">
+                                                  <div class="mb-3">
+                                                    <label class="form-label" for="email">Details</label>
+                                                    <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <!-- Row end -->
+                                            </div>
+                                            <div class="card-footer">
+                                              <div class="d-flex gap-2 justify-content-end">
+                                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                <button type="button" class="btn btn-primary">Modifier</button>
+                                              </div>
+                                            </div>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+                            <div class="modal fade" id="suppAnalyse" tabindex="-1" aria-labelledby="suppAnalyseLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-sm">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-body p-4 text-center">
+                                                                            <h5 class="text-primary">Continuez la suppression?</h5>
+                                                                            <p class="mb-0">
+                                                                                Voulez-vous vraiment supprimer cette information
+                                                                                du patient?
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="modal-footer flex-nowrap p-0">
+                                                                            <button type="button" class="btn text-primary fs-6 col-6 m-0 border-end">
+                                                                                <strong>Oui, Supprimer</strong>
+                                                                            </button>
+                                                                            <button type="button" class="btn text-dark fs-6 col-6 m-0" data-bs-dismiss="modal">
+                                                                                Non merci
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                           </tr>
                         </tbody>
                         <tfoot>
@@ -248,7 +447,7 @@ CONSULTATION
 
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table id="apiCallbacks" class="table table-striped">
+                      <table id="highlightRowColumn" class="table table-striped">
                         <thead>
                           <tr>
                             <th>#</th>
@@ -275,10 +474,147 @@ CONSULTATION
                             <td>2021/04/25</td>
                             <td>$320,800</td>
                             <td>
-                              <a href="" class=""><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                              <a href="" class=""><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                              <a href="" class=""><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifOrdonnance"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#suppOrdonnance"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
                             </td>
+
+
+
+                            <!-- Modal Fullscreen -->
+                            <div class="modal fade" id="modifOrdonnance" tabindex="-1" aria-labelledby="modifOrdonnanceLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-fullscreen">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title h4" id="modifOrdonnanceLabel">
+                                      Formulaire de Modification d'Ordonnance
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class="row gx-3">
+                                      <div class="col-sm-12">
+                                        <div class="card mb-3">
+                                          <div class="card-header">
+                                            <h5 class="card-title">Modifier Ordonnance</h5>
+                                          </div>
+                                          <form action="">
+                                            <div class="card-body">
+
+                                              <!-- Row start -->
+                                              <div class="row gx-3">
+                                                <div class="col-xl-3 col-sm-4 col-12">
+                                                  <div class="mb-3">
+                                                    <label class="form-label" for="name">Libellé Médocs</label>
+                                                    <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
+                                                  </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-12">
+                                                  <div class="mb-3">
+                                                    <label class="form-label" for="name">Forme Médocs</label>
+                                                    <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
+                                                  </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-12">
+                                                  <div class="mb-3">
+                                                    <label class="form-label" for="name">Qte à Acheter</label>
+                                                    <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
+                                                  </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-12">
+                                                  <div class="mb-3">
+                                                    <label class="form-label" for="name">Nombre de fois</label>
+                                                    <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
+                                                  </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-12">
+                                                  <div class="mb-3">
+                                                    <label class="form-label" for="name">Intervalle de prise</label>
+                                                    <select class="form-select" id="abcd" aria-label="Default select example">
+                                                      <option selected="">Selectionner l'Examen</option>
+                                                      <option value="1">One</option>
+                                                      <option value="2">Two</option>
+                                                      <option value="3">Three</option>
+                                                    </select>
+                                                  </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-12">
+                                                  <div class="mb-3">
+                                                    <label class="form-label" for="email">Date de premiere prise</label>
+                                                    <input name="" id="" type="date" class="form-control" placeholder="entrez le type d'examen">
+                                                  </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-12">
+                                                  <div class="mb-3">
+                                                    <label class="form-label" for="email">Autres Instructions</label>
+                                                    <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <!-- Row end -->
+                                            </div>
+                                            <div class="card-footer">
+                                              <div class="d-flex gap-2 justify-content-end">
+                                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                <button type="button" class="btn btn-primary">Modifer</button>
+                                              </div>
+                                            </div>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="modal fade" id="suppOrdonnance" tabindex="-1" aria-labelledby="suppOrdonnanceLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-sm">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-body p-4 text-center">
+                                                                            <h5 class="text-primary">Continuez la suppression?</h5>
+                                                                            <p class="mb-0">
+                                                                                Voulez-vous vraiment supprimer cette information
+                                                                                du patient?
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="modal-footer flex-nowrap p-0">
+                                                                            <button type="button" class="btn text-primary fs-6 col-6 m-0 border-end">
+                                                                                <strong>Oui, Supprimer</strong>
+                                                                            </button>
+                                                                            <button type="button" class="btn text-dark fs-6 col-6 m-0" data-bs-dismiss="modal">
+                                                                                Non merci
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                           </tr>
 
                         </tbody>
@@ -316,23 +652,89 @@ CONSULTATION
                               <div class="carousel-caption d-none d-md-block">
                                 <h5 class="text-dark" style="color: black;">Libelle Analyse</h5>
                                 <p class="text-dark" style="color: black;">Libelle Fichier</p>
+                                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modifFichierAnalyse">Modifier</button>
                                 <button class="btn btn-primary">Telecharger</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#suppFichierAnalyse">Supprimer</button>
                               </div>
-                            </div>
-                            <div class="carousel-item">
-                              <img src="assets/images/products/product8.jpg" class="d-block w-100" alt="Admin Templates & Dashboards">
-                              <div class="carousel-caption d-none d-md-block">
-                                <h5>Libelle Analyse</h5>
-                                <p>Libelle Fichier</p>
-                                <button class="btn btn-primary">Telecharger</button>
+
+                              <!-- Modal Fullscreen -->
+                              <div class="modal fade" id="modifFichierAnalyse" tabindex="-1" aria-labelledby="addFichierAnalyseLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title h4" id="addFichierAnalyseLabel">
+                                        Formulaire de Modification de Fichier
+                                      </h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="row gx-3">
+                                        <div class="col-sm-12">
+                                          <div class="card mb-3">
+                                            <div class="card-header">
+                                              <h5 class="card-title">Modifier le Fichier</h5>
+                                            </div>
+                                            <form action="">
+                                              <div class="card-body">
+
+                                                <!-- Row start -->
+                                                <div class="row gx-3">
+                                                  <div class="col-xl-3 col-sm-4 col-12">
+
+                                                    <div class="mb-3">
+                                                      <label class="form-label" for="name">Libellé Fichier</label>
+                                                      <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                    </div>
+
+
+                                                  </div>
+                                                  <div class="col-xl-3 col-sm-4 col-12">
+
+
+                                                    <div class="mb-3">
+                                                      <label class="form-label" for="name"> Fichier</label>
+                                                      <input name="" id="" type="file" class="form-control" placeholder="Ou entrez le type d'examen">
+                                                    </div>
+                                                  </div>
+
+                                                </div>
+                                                <!-- Row end -->
+                                              </div>
+                                              <div class="card-footer">
+                                                <div class="d-flex gap-2 justify-content-end">
+                                                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                  <button type="button" class="btn btn-primary">Modifier</button>
+                                                </div>
+                                              </div>
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
-                            </div>
-                            <div class="carousel-item">
-                              <img src="assets/images/products/product1.jpg" class="d-block w-100" alt="Admin Templates & Dashboards">
-                              <div class="carousel-caption d-none d-md-block">
-                                <h5>Libelle Analyse</h5>
-                                <p>Libelle Fichier</p>
-                                <button class="btn btn-primary">Telecharger</button>
+
+                              <div class="modal fade" id="suppFichierAnalyse" tabindex="-1" aria-labelledby="suppFichierAnalyseLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+                                    <div class="modal-body p-4 text-center">
+                                      <h5 class="text-primary">Continuez la suppression?</h5>
+                                      <p class="mb-0">
+                                        Voulez-vous vraiment supprimer cette information
+                                        du patient?
+                                      </p>
+                                    </div>
+                                    <div class="modal-footer flex-nowrap p-0">
+                                      <button type="button" class="btn text-primary fs-6 col-6 m-0 border-end">
+                                        <strong>Oui, Supprimer</strong>
+                                      </button>
+                                      <button type="button" class="btn text-dark fs-6 col-6 m-0" data-bs-dismiss="modal">
+                                        Non merci
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -425,7 +827,7 @@ CONSULTATION
                       <div class="mb-3">
                         <label class="form-label" for="name">Type Examen</label>
                         <select class="form-select" id="abcd" aria-label="Default select example">
-                          <option selected="">Selectionner l'Examen</option>
+                          <option selected="">Selectionner le type d'examen</option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
                           <option value="3">Three</option>
@@ -436,14 +838,14 @@ CONSULTATION
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="email">Description</label>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Description des resultats"></textarea>
 
                       </div>
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="phn">Observation</label>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Observation après examen"></textarea>
 
                       </div>
                     </div>
@@ -501,13 +903,13 @@ CONSULTATION
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Libellé</label>
-                        <input name="" id="" class="form-control" placeholder="Ou entrez le type d'examen">
+                        <input name="" id="" class="form-control" placeholder="Entrez le libellé du soin">
                       </div>
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="email">Details</label>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Entrez les détails du soin"></textarea>
                       </div>
                     </div>
                   </div>
@@ -528,6 +930,21 @@ CONSULTATION
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -563,18 +980,18 @@ CONSULTATION
                       <div class="mb-3">
                         <label class="form-label" for="name">Type Analyse</label>
                         <select class="form-select" id="abcd" aria-label="Default select example">
-                          <option selected="">Selectionner l'Examen</option>
+                          <option selected="">Selectionner le type d'analyse</option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
                           <option value="3">Three</option>
                         </select>
-                        <input name="" id="" class="form-control" placeholder="Ou entrez le type d'examen">
+                        <input name="" id="" class="form-control" placeholder="Ou entrez le type d'analyse">
                       </div>
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
-                        <label class="form-label" for="email">Details</label>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                        <label class="form-label" for="email">Détails</label>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Entrez les détails de l'analyse"></textarea>
                       </div>
                     </div>
                   </div>
@@ -594,6 +1011,26 @@ CONSULTATION
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -622,32 +1059,14 @@ CONSULTATION
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Libellé Médocs</label>
-                        <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
+                        <input name="" id="" class="form-control" placeholder="Entrez le libellé du médicament">
                       </div>
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
-                        <label class="form-label" for="name">Forme Médocs</label>
-                        <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Qte à Acheter</label>
-                        <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Nombre de fois</label>
-                        <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Intervalle de prise</label>
+                        <label class="form-label" for="name">Forme du Médicament</label>
                         <select class="form-select" id="abcd" aria-label="Default select example">
-                          <option selected="">Selectionner l'Examen</option>
+                          <option selected="">Selectionner la forme du médicament</option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
                           <option value="3">Three</option>
@@ -656,14 +1075,38 @@ CONSULTATION
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
+                        <label class="form-label" for="name">Qte à Prendre</label>
+                        <input type="number" id="" class="form-control" placeholder="Entrez la quantité à prendre">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Nombre de fois</label>
+                        <input name="" id="" class="form-control" placeholder="Entrez la date depremière prise"">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Intervalle de prise</label>
+                        <select class="form-select" id="abcd" aria-label="Default select example">
+                          <option selected="">Selectionner l'intervalle de prise</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <input name="" id="" type="text" class="form-control" placeholder="Ou entrez l'intervalle de prise">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
                         <label class="form-label" for="email">Date de premiere prise</label>
-                        <input name="" id="" type="date" class="form-control" placeholder="entrez le type d'examen">
+                        <input name="" id="" type="date" class="form-control" placeholder="Entrez le libellé du médicament">
                       </div>
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="email">Autres Instructions</label>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Entrez d'autre informations"></textarea>
                       </div>
                     </div>
                   </div>
@@ -683,13 +1126,47 @@ CONSULTATION
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Modal Fullscreen -->
 <div class="modal fade" id="addFichierAnalyse" tabindex="-1" aria-labelledby="addFichierAnalyseLabel" aria-hidden="true">
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title h4" id="addFichierAnalyseLabel">
-        Formulaire d'Enregistrement de Fichier
+          Formulaire d'Enregistrement de Fichier
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -740,6 +1217,21 @@ CONSULTATION
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -867,95 +1359,95 @@ CONSULTATION
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <div class="modal-body">
-        <div class="row gx-3">
-          <div class="col-sm-12">
-            <div class="card mb-3">
-              <div class="card-header">
-                <h5 class="card-title">Nouvel Enregistrement</h5>
+        <div class="modal-body">
+          <div class="row gx-3">
+            <div class="col-sm-12">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h5 class="card-title">Nouvel Enregistrement</h5>
+                </div>
+                <form action="">
+                  <div class="card-body">
+
+                    <!-- Row start -->
+                    <div class="row gx-3">
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Mode de Sortie Médicale</label>
+                          <select class="form-select" id="selectOptions" aria-label="Default select example">
+                            <option selected="">Selectionner le Mode de Sortie</option>
+                            <option value="Sortie Normale">Sortie Normale</option>
+                            <option value="Contre Avis Médical">Contre Avis Médical</option>
+                            <option value="Evacuation">Evacuation</option>
+                            <option value="Permission">Permission</option>
+                            <option value="Deces">Decès </option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12" id="MotifE" style="display: none;">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Motif Evacuation</label>
+                          <textarea name="" cols="30" rows="5" class="form-control"></textarea>
+
+
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12" id="HopitalD" style="display: none;">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Hopital Destination</label>
+                          <input name="" class="form-control" placeholder="entrez le type d'examen">
+                        </div>
+                      </div>
+
+                      <div class="col-xl-3 col-sm-4 col-12" id="MotifP" style="display: none;">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Motif Permission</label>
+                          <textarea name="" cols="30" rows="5" class="form-control"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12" id="PeriodeP" style="display: none;">
+                        <div class="mb-3">
+                          <label class="form-label" for="email">Période Permission</label>
+                          <input name="" type="date" class="form-control" placeholder="entrez le type d'examen">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12" id="CauseD" style="display: none;">
+                        <div class="mb-3">
+                          <label class="form-label" for="email">Cause Déces</label>
+                          <textarea name="" cols="30" rows="5" class="form-control"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12" id="LieuD" style="display: none;">
+                        <div class="mb-3">
+                          <label class="form-label" for="email">Lieu Déces</label>
+                          <input name="" type="text" class="form-control" placeholder="entrez le type d'examen">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12" id="DateD" style="display: none;">
+                        <div class="mb-3">
+                          <label class="form-label" for="email">Date Déces</label>
+                          <input name="" type="date" class="form-control" placeholder="entrez le type d'examen">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Row end -->
+                  </div>
+                  <div class="card-footer">
+                    <div class="d-flex gap-2 justify-content-end">
+                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                      <button type="button" class="btn btn-primary">Valider</button>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <form action="">
-                <div class="card-body">
-
-                  <!-- Row start -->
-                  <div class="row gx-3">
-                    <div class="col-xl-3 col-sm-4 col-12">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Mode de Sortie Médicale</label>
-                        <select class="form-select" id="selectOptions" aria-label="Default select example">
-                          <option selected="">Selectionner le Mode de Sortie</option>
-                          <option value="Sortie Normale">Sortie Normale</option>
-                          <option value="Contre Avis Médical">Contre Avis Médical</option>
-                          <option value="Evacuation">Evacuation</option>
-                          <option value="Permission">Permission</option>
-                          <option value="Deces">Decès </option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12" id="MotifE" style="display: none;">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Motif Evacuation</label>
-                        <textarea name="" cols="30" rows="5" class="form-control"></textarea>
-
-                        
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12"  id="HopitalD" style="display: none;">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Hopital Destination</label>
-                        <input name="" class="form-control" placeholder="entrez le type d'examen">
-                      </div>
-                    </div>
-                    
-                    <div class="col-xl-3 col-sm-4 col-12" id="MotifP" style="display: none;">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Motif Permission</label>
-                        <textarea name=""  cols="30" rows="5" class="form-control"></textarea>
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12" id="PeriodeP" style="display: none;">
-                      <div class="mb-3">
-                        <label class="form-label" for="email">Période Permission</label>
-                        <input name="" type="date" class="form-control" placeholder="entrez le type d'examen">
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12" id="CauseD" style="display: none;">
-                      <div class="mb-3">
-                        <label class="form-label" for="email">Cause Déces</label>
-                        <textarea name="" cols="30" rows="5" class="form-control"></textarea>
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12" id="LieuD" style="display: none;">
-                      <div class="mb-3">
-                        <label class="form-label" for="email">Lieu Déces</label>
-                        <input name="" type="text" class="form-control" placeholder="entrez le type d'examen">
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12" id="DateD" style="display: none;">
-                      <div class="mb-3">
-                        <label class="form-label" for="email">Date Déces</label>
-                        <input name="" type="date" class="form-control" placeholder="entrez le type d'examen">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Row end -->
-                </div>
-                <div class="card-footer">
-                  <div class="d-flex gap-2 justify-content-end">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Valider</button>
-                  </div>
-                </div>
-              </form>
             </div>
           </div>
-        </div>
-      
-      </div>
 
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
 
 
 
@@ -963,41 +1455,41 @@ CONSULTATION
 
 
 
-@endsection
+  @endsection
 
 
-@section('script')
-<!-- Data Tables -->
-<script src="assets/vendor/datatables/dataTables.min.js"></script>
-<script src="assets/vendor/datatables/dataTables.bootstrap.min.js"></script>
-<script src="assets/vendor/datatables/custom/custom-datatables.js"></script>
-<!-- DataTable Buttons -->
-<script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
-<script src="assets/vendor/datatables/buttons/jszip.min.js"></script>
-<script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
-<script src="assets/vendor/datatables/buttons/pdfmake.min.js"></script>
-<script src="assets/vendor/datatables/buttons/vfs_fonts.js"></script>
-<script src="assets/vendor/datatables/buttons/buttons.html5.min.js"></script>
-<script src="assets/vendor/datatables/buttons/buttons.print.min.js"></script>
-<script src="assets/vendor/datatables/buttons/buttons.colVis.min.js"></script>
+  @section('script')
+  <!-- Data Tables -->
+  <script src="assets/vendor/datatables/dataTables.min.js"></script>
+  <script src="assets/vendor/datatables/dataTables.bootstrap.min.js"></script>
+  <script src="assets/vendor/datatables/custom/custom-datatables.js"></script>
+  <!-- DataTable Buttons -->
+  <script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/jszip.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/pdfmake.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/vfs_fonts.js"></script>
+  <script src="assets/vendor/datatables/buttons/buttons.html5.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/buttons.print.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/buttons.colVis.min.js"></script>
 
 
-<script>
-  // Récupération de l'élément select et des inputs
-const selectOptions = document.getElementById('selectOptions');
-const MotifE = document.getElementById('MotifE');
-const HopitalD = document.getElementById('HopitalD');
-const MotifP = document.getElementById('MotifP');
-const PeriodeP = document.getElementById('PeriodeP');
-const CauseD = document.getElementById('CauseD');
-const LieuD = document.getElementById('LieuD');
-const DateD = document.getElementById('DateD');
+  <script>
+    // Récupération de l'élément select et des inputs
+    const selectOptions = document.getElementById('selectOptions');
+    const MotifE = document.getElementById('MotifE');
+    const HopitalD = document.getElementById('HopitalD');
+    const MotifP = document.getElementById('MotifP');
+    const PeriodeP = document.getElementById('PeriodeP');
+    const CauseD = document.getElementById('CauseD');
+    const LieuD = document.getElementById('LieuD');
+    const DateD = document.getElementById('DateD');
 
 
-// Fonction pour afficher ou masquer les inputs en fonction de l'option sélectionnée
-selectOptions.addEventListener('change', function() {
-    const selectedOption = selectOptions.value;
-    if (selectedOption === 'Sortie Normale') {
+    // Fonction pour afficher ou masquer les inputs en fonction de l'option sélectionnée
+    selectOptions.addEventListener('change', function() {
+      const selectedOption = selectOptions.value;
+      if (selectedOption === 'Sortie Normale') {
         MotifE.style.display = 'none';
         HopitalD.style.display = 'none';
         MotifP.style.display = 'none';
@@ -1005,7 +1497,7 @@ selectOptions.addEventListener('change', function() {
         CauseD.style.display = 'none';
         LieuD.style.display = 'none';
         DateD.style.display = 'none';
-    } else if (selectedOption === 'Contre Avis Médical') {
+      } else if (selectedOption === 'Contre Avis Médical') {
         MotifE.style.display = 'none';
         HopitalD.style.display = 'none';
         MotifP.style.display = 'none';
@@ -1014,15 +1506,14 @@ selectOptions.addEventListener('change', function() {
         LieuD.style.display = 'none';
         DateD.style.display = 'none';
 
-    } else if (selectedOption === 'Evacuation') {
+      } else if (selectedOption === 'Evacuation') {
         MotifE.style.display = 'block';
         HopitalD.style.display = 'block';
         MotifP.style.display = 'none';
         PeriodeP.style.display = 'none';
         CauseD.style.display = 'none';
         LieuD.style.display = 'none';
-    }
-    else if (selectedOption === 'Permission') {
+      } else if (selectedOption === 'Permission') {
         MotifE.style.display = 'none';
         HopitalD.style.display = 'none';
         MotifP.style.display = 'block';
@@ -1031,8 +1522,7 @@ selectOptions.addEventListener('change', function() {
         LieuD.style.display = 'none';
         DateD.style.display = 'none';
 
-    }
-    else if (selectedOption === 'Deces') {
+      } else if (selectedOption === 'Deces') {
         MotifE.style.display = 'none';
         HopitalD.style.display = 'none';
         MotifP.style.display = 'none';
@@ -1041,8 +1531,7 @@ selectOptions.addEventListener('change', function() {
         LieuD.style.display = 'block';
         DateD.style.display = 'block';
 
-    }
-    else {
+      } else {
         MotifE.style.display = 'none';
         HopitalD.style.display = 'none';
         MotifP.style.display = 'none';
@@ -1051,9 +1540,7 @@ selectOptions.addEventListener('change', function() {
         LieuD.style.display = 'none';
         DateD.style.display = 'none';
 
-    }
-});
-
-
-</script>
-@endsection
+      }
+    });
+  </script>
+  @endsection

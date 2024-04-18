@@ -238,6 +238,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            
                                             <tr>
                                                 <td>Sakura Yamamoto</td>
                                                 <td>Support Engineer</td>
@@ -245,16 +246,243 @@
                                                 <td>37</td>
                                                 <td>2020/08/19</td>
                                                 <td>$139,575</td>
-                                                <td><a href="{{route('pages.voir-patient')}}"><i class="ri-bar-chart-line"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sakura Yamamoto</td>
-                                                <td>Support Engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>37</td>
-                                                <td>2020/08/19</td>
-                                                <td>$139,575</td>
-                                                <td><a href="{{route('pages.voir-patient')}}"><i class="ri-bar-chart-line"></i></a></td>
+                                                <td>
+                                                    <a href="{{route('pages.voir-patient')}}"><i class="ri-bar-chart-line m-3"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modifPatientInfo"><i class="ri-bar-chart-line"></i></a>
+                                                </td>
+
+
+
+
+
+
+                                                <!-- Modal Fullscreen -->
+                                                <div class="modal fade" id="modifPatientInfo" tabindex="-1" aria-labelledby="modifPatientInfoLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-fullscreen">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title h4" id="modifPatientInfoLabel">
+                                                                    Formulaire de Modification du Patient
+                                                                </h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="row gx-3">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="card mb-3">
+                                                                            <div class="card-header">
+                                                                                <h5 class="card-title">Modifier Patient</h5>
+                                                                            </div>
+                                                                            <form action="">
+                                                                                <div class="card-body">
+
+                                                                                    <!-- Row start -->
+                                                                                    <div class="row gx-3">
+                                                                                    <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Nom</label>
+                                                                                                <input name="" id="" type="text" class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Prénoms</label>
+                                                                                                <input name="" id="" type="text" class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Sexe</label>
+                                                                                                <input name="" id="" type="text" class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Date de Naissance</label>
+                                                                                                <input name="" id="" type="date" class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Télephone</label>
+                                                                                                <input name="" id="" type="number" class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">E-mail</label>
+                                                                                                <input name="" id="" type="email" class="form-control">
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Adresse</label>
+                                                                                                <input name="" id="" type="text" class="form-control">
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Profession</label>
+                                                                                                <input name="" type="text" id="" class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Pays</label>
+                                                                                                <select class="form-select" id="abcd" aria-label="Default select example">
+                                                                                                    <option selected="">Selectionner le pays</option>
+                                                                                                    <option value="1">One</option>
+                                                                                                    <option value="2">Two</option>
+                                                                                                    <option value="3">Three</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Ville</label>
+                                                                                                <select class="form-select" id="abcd" aria-label="Default select example">
+                                                                                                    <option selected="">Selectionner la ville</option>
+                                                                                                    <option value="1">One</option>
+                                                                                                    <option value="2">Two</option>
+                                                                                                    <option value="3">Three</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Nom du père</label>
+                                                                                                <input name=""   type="text" id="" class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+
+
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Prénom du père</label>
+                                                                                                <input name="" id="" type="text" class="form-control">
+                                                                                            </div>
+                                                                                        </div>
+
+
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Pathologie du père</label>
+                                                                                                <input name="" id="" type="text"  class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Nom de la mère</label>
+                                                                                                <input name=""   type="text"  id="" class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Prénom de la mère</label>
+                                                                                                <input name=""  type="text" id="" class="form-control">
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Pathologie de la mère</label>
+                                                                                                <input name="" type="text" id="" class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        
+                                                                                        
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Groupe Sanguin</label>
+                                                                                                <select class="form-select" id="abcd" aria-label="Default select example">
+                                                                                                    <option selected="">Selectionner le groupe sanguin</option>
+                                                                                                    <option value="1">One</option>
+                                                                                                    <option value="2">Two</option>
+                                                                                                    <option value="3">Three</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Type de pièce</label>
+                                                                                                <select class="form-select" id="abcd" aria-label="Default select example">
+                                                                                                    <option selected="">Selectionner le type de pièce</option>
+                                                                                                    <option value="1">One</option>
+                                                                                                    <option value="2">Two</option>
+                                                                                                    <option value="3">Three</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Numero de pièce</label>
+                                                                                                <input name="" type="number" id="" class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+
+
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
+                                                                                            <div class="mb-3">
+                                                                                                <label class="form-label" for="name">Pièce</label>
+                                                                                                <input name="" id="" type="file"   class="form-control" >
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        
+                                                                                       
+                                                                                    </div>
+                                                                                    <!-- Row end -->
+                                                                                </div>
+                                                                                <div class="card-footer">
+                                                                                    <div class="d-flex gap-2 justify-content-end">
+                                                                                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                                                        <button type="button" class="btn btn-primary">Modifer</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                             </tr>
                                         </tbody>
                                     </table>
@@ -310,7 +538,7 @@
     <script src="assets/vendor/datatables/buttons/buttons.html5.min.js"></script>
     <script src="assets/vendor/datatables/buttons/buttons.print.min.js"></script>
     <script src="assets/vendor/datatables/buttons/buttons.colVis.min.js"></script>
-  
+
 </body>
 
 

@@ -187,8 +187,11 @@
               </a>
               <div class="dropdown-menu dropdown-menu-end">
                 <div class="mx-3 my-2 d-grid">
-                  <p class="mb-2">In a meeting</p>
-                  <a href="login.html" class="btn btn-danger">Logout</a>
+                  <p class="mb-2">Thérapeute (ergothérapeute, physiothérapeute, orthophoniste, etc.) </p>
+                  <p class="mb-2">Chirurgien</p>
+                  <p class="mb-2">Technicien de laboratoire médical</p>
+                  <p class="mb-2">Médecin généraliste, Spécialiste</p>
+                  <a href="login.html" class="btn btn-danger">Se déconnecter</a>
                 </div>
               </div>
             </div>
@@ -204,151 +207,370 @@
         <div class="app-hero-header d-flex align-items-center">
 
           <!-- Page title starts -->
-          
+          <div class="col-md-12 col-12">
+            <div class="">
+              <div class="card-body">
+                <div class="">
+                  <a href="" class=" btn btn-primary col-md-12 col-12" data-bs-toggle="modal" data-bs-target="#addPatientInfo" style="color:white" id="abc">NOUVEAU</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- Page title ends -->
         </div>
         <!-- App Hero header ends -->
-        
-          <!-- App body starts -->
-          <div class="app-body">
 
-            <!-- Row start -->
-            <div class="row gx-3">
-              <div class="col-sm-4 col-12">
-                <div class="card mb-3">
-                  <div class="card-body">
-                    <div class="m-0">
-                      <label class="form-label" for="abcd">Pays</label>
-                      <select class="form-select" id="abcd" aria-label="Default select example">
-                        <option selected="">Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4 col-12">
-                <div class="card mb-3">
-                  <div class="card-body">
-                    <div class="m-0">
-                      <label class="form-label" for="abcd">Type de Pièce</label>
-                      <select class="form-select" id="abcd" aria-label="Default select example">
-                        <option selected="">Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4 col-12">
-                <div class="card mb-3">
-                  <div class="card-body">
-                    <div class="m-0">
-                      <label class="form-label" for="abc">CIN</label>
-                      <input type="text" class="form-control" id="abc" placeholder="Entrez le numero nationnal">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4 col-12">
-                <div class="card mb-3">
-                  <div class="card-body">
-                    <div class="m-0">
-                      <label class="form-label" for="abc">NOM</label>
-                      <input type="text" class="form-control" id="abc" placeholder="Entrez le nom">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4 col-12">
-                <div class="card mb-3">
-                  <div class="card-body">
-                    <div class="m-0">
-                      <label class="form-label" for="abc">PRENOM</label>
-                      <input type="text" class="form-control" id="abc" placeholder="Entrez le prenom">
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <!-- App body starts -->
+        <div class="app-body">
 
-              <div class="col-sm-4 col-12">
-                <div class="card mb-3">
-                  <div class="card-body">
-                    <div class="m-0">
-                      <label class="form-label" for="abc">Nom de la mère</label>
-                      <input type="text" class="form-control" id="abc" placeholder="Entrez le prenom">
-                    </div>
+          <!-- Row start -->
+          <div class="row gx-3">
+            <div class="col-sm-4 col-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="m-0">
+                    <label class="form-label" for="abcd">Pays</label>
+                    <select class="form-select" id="abcd" aria-label="Default select example">
+                      <option selected="">Selectionner le pays</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
                   </div>
                 </div>
               </div>
-
-              <div class="col-md-12 col-12">
-                <div class=" mb-3">
-                  <div class="card-body">
-                    <div class="m-4">
-                      <a href="{{route('pages.liste-patient-rechercher')}}" class=" btn btn-primary col-md-12 col-12 mb-4" style="color:white" id="abc">RECHERCHER</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
             </div>
-          </div>
-          <!-- App footer starts -->
-          <div class="app-footer text-end">
-            <span>© Bootstrap Gallery 2024</span>
-          </div>
-          <!-- App footer ends -->
+            <div class="col-sm-4 col-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="m-0">
+                    <label class="form-label" for="abcd">Type de Pièce</label>
+                    <select class="form-select" id="abcd" aria-label="Default select example">
+                      <option selected="">Selectionner le type de pièce</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="m-0">
+                    <label class="form-label" for="abc">CIN</label>
+                    <input type="text" class="form-control" id="abc" placeholder="Entrez le numero nationnal">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="m-0">
+                    <label class="form-label" for="abc">Nom</label>
+                    <input type="text" class="form-control" id="abc" placeholder="Entrez le nom">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="m-0">
+                    <label class="form-label" for="abc">Prénom</label>
+                    <input type="text" class="form-control" id="abc" placeholder="Entrez le prénom">
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-sm-4 col-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="m-0">
+                    <label class="form-label" for="abc">Nom de la mère</label>
+                    <input type="text" class="form-control" id="abc" placeholder="Entrez le nom de la mère">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-12">
+              <div class=" mb-3">
+                <div class="card-body">
+                  <div class="m-4">
+                    <a href="{{route('pages.liste-patient-rechercher')}}" class=" btn btn-primary col-md-12 col-12 mb-4" style="color:white" id="abc">RECHERCHER</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
         </div>
-        <!-- App container ends -->
+        <!-- App footer starts -->
+        <div class="app-footer text-end">
+          <span>© Bootstrap Gallery 2024</span>
+        </div>
+        <!-- App footer ends -->
 
       </div>
-      <!-- Main container ends -->
+      <!-- App container ends -->
 
     </div>
-    <!-- Page wrapper ends -->
+    <!-- Main container ends -->
 
-    <!-- *************
+  </div>
+  <!-- Page wrapper ends -->
+
+  <!-- Modal Fullscreen -->
+  <div class="modal fade" id="addPatientInfo" tabindex="-1" aria-labelledby="addPatientInfoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title h4" id="addPatientInfoLabel">
+            Formulaire d'Enregistrement du Patient
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row gx-3">
+            <div class="col-sm-12">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h5 class="card-title">Enregistrer Patient</h5>
+                </div>
+                <form action="">
+                  <div class="card-body">
+
+                    <!-- Row start -->
+                    <div class="row gx-3">
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Nom</label>
+                          <input name="" id="" type="text" class="form-control" placeholder="Entrez le nom du patient">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Prénoms</label>
+                          <input name="" id="" type="text" class="form-control" placeholder="Entrez les prénoms du patient">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Sexe</label>
+                          <input name="" id="" type="text" class="form-control" placeholder="Entrez le sexe du patient">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Date de Naissance</label>
+                          <input name="" id="" type="date" class="form-control" placeholder="Entrez la date de naissance du patient">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Télephone</label>
+                          <input name="" id="" type="number" class="form-control" placeholder="Entrez le télephone du patient">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">E-mail</label>
+                          <input name="" id="" type="email" class="form-control" placeholder="Entrez l'e-mail du patient">
+                        </div>
+                      </div>
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Adresse</label>
+                          <input name="" id="" type="text" class="form-control" placeholder="Entrez l'adresse du patient">
+                        </div>
+                      </div>
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Profession</label>
+                          <input name="" type="text" id="" class="form-control" placeholder="Entrez la profession du patient">
+                        </div>
+                      </div>
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Pays</label>
+                          <select class="form-select" id="abcd" aria-label="Default select example">
+                            <option selected="">Selectionner le pays</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Ville</label>
+                          <select class="form-select" id="abcd" aria-label="Default select example">
+                            <option selected="">Selectionner la ville</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Nom du père</label>
+                          <input name="" type="text" id="" class="form-control" placeholder="Entrez le nom du père">
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Prénom du père</label>
+                          <input name="" id="" type="text" class="form-control" placeholder="Entrez le prénom du père">
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Pathologie du père</label>
+                          <input name="" id="" type="text" class="form-control" placeholder="Entrez l'antécédant du père">
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Nom de la mère</label>
+                          <input name="" type="text" id="" class="form-control" placeholder="Entrez le nom de la mère">
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Prénom de la mère</label>
+                          <input name="" type="text" id="" class="form-control" placeholder="Entrez le prénom de la mère">
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Pathologie de la mère</label>
+                          <input name="" type="text" id="" class="form-control" placeholder="Entrez l'antécédant de la mère">
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Groupe Sanguin</label>
+                          <select class="form-select" id="abcd" aria-label="Default select example">
+                            <option selected="">Selectionner le groupe sanguin</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Type de pièce</label>
+                          <select class="form-select" id="abcd" aria-label="Default select example">
+                            <option selected="">Selectionner le type de pièce</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Numero de pièce</label>
+                          <input name="" type="number" id="" class="form-control" placeholder="Entrez le numero de pièce du patient">
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Pièce</label>
+                          <input name="" id="" type="file" class="form-control" placeholder="Entrez la pièce du patient">
+                        </div>
+                      </div>
+
+
+                    </div>
+                    <!-- Row end -->
+                  </div>
+                  <div class="card-footer">
+                    <div class="d-flex gap-2 justify-content-end">
+                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                      <button type="button" class="btn btn-primary">Modifer</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- *************
 			************ JavaScript Files *************
 		************* -->
-    <!-- Required jQuery first, then Bootstrap Bundle JS -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/modernizr.js"></script>
+  <!-- Required jQuery first, then Bootstrap Bundle JS -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/modernizr.js"></script>
 
-    <!-- Megamenu JS -->
-    <script src="assets/vendor/megamenu/js/megamenu.js"></script>
-    <script src="assets/vendor/megamenu/js/custom.js"></script>
+  <!-- Megamenu JS -->
+  <script src="assets/vendor/megamenu/js/megamenu.js"></script>
+  <script src="assets/vendor/megamenu/js/custom.js"></script>
 
-    <!-- *************
+  <!-- *************
 			************ Vendor Js Files *************
 		************* -->
 
-    <!-- Apex Graphs -->
-    <script src="assets/vendor/apex/apexcharts.min.js"></script>
-    <script src="assets/vendor/apex/custom/graphs/sparkline.js"></script>
+  <!-- Apex Graphs -->
+  <script src="assets/vendor/apex/apexcharts.min.js"></script>
+  <script src="assets/vendor/apex/custom/graphs/sparkline.js"></script>
 
-    <!-- Custom JS files -->
-    <script src="assets/js/custom.js"></script>
-    <!-- Data Tables -->
-    <script src="assets/vendor/datatables/dataTables.min.js"></script>
-    <script src="assets/vendor/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="assets/vendor/datatables/custom/custom-datatables.js"></script>
-    <!-- DataTable Buttons -->
-    <script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
-    <script src="assets/vendor/datatables/buttons/jszip.min.js"></script>
-    <script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
-    <script src="assets/vendor/datatables/buttons/pdfmake.min.js"></script>
-    <script src="assets/vendor/datatables/buttons/vfs_fonts.js"></script>
-    <script src="assets/vendor/datatables/buttons/buttons.html5.min.js"></script>
-    <script src="assets/vendor/datatables/buttons/buttons.print.min.js"></script>
-    <script src="assets/vendor/datatables/buttons/buttons.colVis.min.js"></script>
+  <!-- Custom JS files -->
+  <script src="assets/js/custom.js"></script>
+  <!-- Data Tables -->
+  <script src="assets/vendor/datatables/dataTables.min.js"></script>
+  <script src="assets/vendor/datatables/dataTables.bootstrap.min.js"></script>
+  <script src="assets/vendor/datatables/custom/custom-datatables.js"></script>
+  <!-- DataTable Buttons -->
+  <script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/jszip.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/pdfmake.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/vfs_fonts.js"></script>
+  <script src="assets/vendor/datatables/buttons/buttons.html5.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/buttons.print.min.js"></script>
+  <script src="assets/vendor/datatables/buttons/buttons.colVis.min.js"></script>
 </body>
 
 
