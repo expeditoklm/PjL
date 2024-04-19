@@ -15,9 +15,10 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PagesController::class, 'login'])->name('pages.login');
+Route::get('/welcome', [PagesController::class, 'welcome'])->name('pages.welcome');
+
+
 Route::get('/recherche-patient', [PagesController::class, 'recherchePatient'])->name('pages.recherche-patient');
 Route::get('/voir-patient', [PagesController::class, 'voirPatient'])->name('pages.voir-patient');
 Route::get('/liste-visite-patient', [PagesController::class, 'listeVisitePatient'])->name('pages.liste-viste-patient');
@@ -29,4 +30,7 @@ Route::get('/soin-patient', [PagesController::class, 'soinPatient'])->name('page
 Route::get('/liste-patient-rechercher', [PagesController::class, 'listePatientRechercher'])->name('pages.liste-patient-rechercher');
 Route::get('/note-patient', [PagesController::class, 'notePatient'])->name('pages.note-patient');
 Route::get('/sign-up', [PagesController::class, 'signUp'])->name('pages.sign-up');
+Route::get('/login', [PagesController::class, 'login'])->name('pages.login');
+Route::get('/forgot-password', [PagesController::class, 'forgotPassword'])->name('pages.forgot-password');
+Route::get('/error-404', [PagesController::class, 'error404'])->name('pages.error-404');
 

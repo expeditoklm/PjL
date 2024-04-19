@@ -9,10 +9,17 @@ use Auth;
 
 class PagesController extends Controller
 {
+    
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
     public function voirPatient()
     {
         return view('pages/voirPatient');
     }
+
     public function recherchePatient()
     {
         return view('pages/recherchePatient');
@@ -55,7 +62,20 @@ class PagesController extends Controller
     {
         return view('pages/signUp');
     }
+
+    public function login()
+    {
+        return view('pages/login');
+    }
+    public function forgotPassword()
+    {
+        return view('pages/forgotPassword');
+    }
     
+    public function error404()
+    {
+        return view('pages/error404');
+    }
     
     
     

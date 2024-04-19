@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +26,7 @@
     <link rel="stylesheet" href="assets/fonts/remix/remixicon.css" />
     <link rel="stylesheet" href="assets/css/main.min.css" />
 
-    @yield('css') 
+    @yield('css')
 
 
     <!-- Mega Menu -->
@@ -206,106 +205,113 @@
                             <i class="ri-arrow-left-s-line fs-3 lh-1 me-1 ms-n2"></i>Retour à l'acceuil
                         </a>
                         <h4 class="mb-1 text-primary fw-semibold">@yield('titre')</h4>
+
                     </div>
+
                     <!-- Page title ends -->
+                </div>
+                <div class="alert alert-success alert-dismissible fade show m-2" role="alert">
+                    A simple success alert.
+                    <a href="#" class="text-decoration-underline alert-link">Check it out!</a>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <!-- App Hero header ends -->
                 <div class="app-body">
 
-    <!-- User stats starts -->
-    <div class="mx-n4 p-4 bg-primary mb-4">
+                    <!-- User stats starts -->
+                    <div class="mx-n4 p-4 bg-primary mb-4">
 
-        <div class="d-flex align-items-center flex-row flex-wrap">
-            <img src="assets/images/user5.png" class="img-5x rounded-circle" alt="Admin Dashboard">
+                        <div class="d-flex align-items-center flex-row flex-wrap">
+                            <img src="assets/images/user5.png" class="img-5x rounded-circle" alt="Admin Dashboard">
 
-            <div class="ms-3 text-white">
-                <h5 class="mb-1">Expédit LACHILO</h5>
-                <h6 class="m-0 fw-light">Devellopeur Web & Mobile</h6>
-            </div>
+                            <div class="ms-3 text-white">
+                                <h5 class="mb-1">Expédit LACHILO</h5>
+                                <h6 class="m-0 fw-light">Devellopeur Web & Mobile</h6>
+                            </div>
 
 
-            <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
-                <i class="ri-phone-line fs-2 lh-1 me-2"></i>
-                <div>
-                    <h6 class="mb-1">Contact</h6>
-                    <p class="m-0 fw-light small">229 524 01574</p>
+                            <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
+                                <i class="ri-phone-line fs-2 lh-1 me-2"></i>
+                                <div>
+                                    <h6 class="mb-1">Contact</h6>
+                                    <p class="m-0 fw-light small">229 524 01574</p>
+                                </div>
+                            </div>
+                            <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
+                                <i class="ri-map-pin-line fs-2 lh-1 me-2"></i>
+                                <div>
+                                    <h6 class="mb-1">Adresse</h6>
+                                    <p class="m-0 fw-light small">BENIN / Porto-Novo </p>
+                                </div>
+                            </div>
+                            <div class="ms-auto d-flex gap-2">
+                                <a href="{{ Route::is('pages.voir-patient') ? 'javascript:void(0)' : route('pages.voir-patient') }}" class="btn bg-primary-subtle position-relative">
+                                    <span>Infos Basic</span>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">9+</span>
+                                </a>
+                                <a href="{{ Route::is('pages.liste-viste-patient') ? 'javascript:void(0)' : route('pages.liste-viste-patient') }}" class="btn bg-primary-subtle position-relative">
+                                    <span>Visites</span>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">8</span>
+                                </a>
+                                <a href="{{ Route::is('pages.liste-analyse-patient') ? 'javascript:void(0)' : route('pages.liste-analyse-patient') }}" class="btn bg-primary-subtle position-relative">
+                                    <span>Analyses effectuées</span>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                                </a>
+                                <a href="{{ Route::is('pages.liste-soin-patient') ? 'javascript:void(0)' : route('pages.liste-soin-patient') }}" class="btn bg-primary-subtle position-relative">
+
+                                    <span>Soins Administré</span>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
+                                </a>
+
+                                <a href="{{ Route::is('pages.note-patient') ? 'javascript:void(0)' : route('pages.note-patient') }}" class="btn bg-primary-subtle position-relative">
+                                    <span>Notes</span>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- App body starts -->
+                    @yield('content')
+                    <!-- App footer starts -->
+                    <div class="app-footer text-end">
+                        <span>© Bootstrap Gallery 2024</span>
+                    </div>
+                    <!-- App footer ends -->
+
                 </div>
-            </div>
-            <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
-                <i class="ri-map-pin-line fs-2 lh-1 me-2"></i>
-                <div>
-                    <h6 class="mb-1">Adresse</h6>
-                    <p class="m-0 fw-light small">BENIN / Porto-Novo </p>
-                </div>
-            </div>
-            <div class="ms-auto d-flex gap-2">
-                <a href="{{ Route::is('pages.voir-patient') ? 'javascript:void(0)' : route('pages.voir-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Infos Basic</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">9+</span>
-                </a>
-                <a href="{{ Route::is('pages.liste-viste-patient') ? 'javascript:void(0)' : route('pages.liste-viste-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Visites</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">8</span>
-                </a>
-                <a href="{{ Route::is('pages.liste-analyse-patient') ? 'javascript:void(0)' : route('pages.liste-analyse-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Analyses effectuées</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-                </a>
-                <a href="{{ Route::is('pages.liste-soin-patient') ? 'javascript:void(0)' : route('pages.liste-soin-patient') }}" class="btn bg-primary-subtle position-relative">
+                <!-- App container ends -->
 
-                    <span>Soins Administré</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
-                </a>
-                
-                <a href="{{ Route::is('pages.note-patient') ? 'javascript:void(0)' : route('pages.note-patient') }}" class="btn bg-primary-subtle position-relative">
-                    <span>Notes</span>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
-                </a>
             </div>
+            <!-- Main container ends -->
+
         </div>
+        <!-- Page wrapper ends -->
 
-    </div>
-
-                <!-- App body starts -->
-                @yield('content') 
-                <!-- App footer starts -->
-                <div class="app-footer text-end">
-                    <span>© Bootstrap Gallery 2024</span>
-                </div>
-                <!-- App footer ends -->
-
-            </div>
-            <!-- App container ends -->
-
-        </div>
-        <!-- Main container ends -->
-
-    </div>
-    <!-- Page wrapper ends -->
-
-    <!-- *************
+        <!-- *************
 			************ JavaScript Files *************
 		************* -->
-    <!-- Required jQuery first, then Bootstrap Bundle JS -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/modernizr.js"></script>
+        <!-- Required jQuery first, then Bootstrap Bundle JS -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/modernizr.js"></script>
 
-    <!-- Megamenu JS -->
-    <script src="assets/vendor/megamenu/js/megamenu.js"></script>
-    <script src="assets/vendor/megamenu/js/custom.js"></script>
+        <!-- Megamenu JS -->
+        <script src="assets/vendor/megamenu/js/megamenu.js"></script>
+        <script src="assets/vendor/megamenu/js/custom.js"></script>
 
-    <!-- *************
+        <!-- *************
 			************ Vendor Js Files *************
 		************* -->
 
-    <!-- Apex Graphs -->
-    <script src="assets/vendor/apex/apexcharts.min.js"></script>
-    <script src="assets/vendor/apex/custom/graphs/sparkline.js"></script>
+        <!-- Apex Graphs -->
+        <script src="assets/vendor/apex/apexcharts.min.js"></script>
+        <script src="assets/vendor/apex/custom/graphs/sparkline.js"></script>
 
-    <!-- Custom JS files -->
-    <script src="assets/js/custom.js"></script>
-    @yield('script') 
+        <!-- Custom JS files -->
+        <script src="assets/js/custom.js"></script>
+        @yield('script')
 </body>
 
 

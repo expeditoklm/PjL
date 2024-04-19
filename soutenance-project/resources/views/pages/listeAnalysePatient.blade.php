@@ -86,29 +86,29 @@ LISTE ANALYSES
                                     <!-- Row start -->
                                     <div class="row gx-3">
 
-                                    <div class="col-xl-3 col-sm-4 col-12">
-                                            <div class="mb-3">
-                                                <label class="form-label" for="name">Type Analyse</label>
-                                                <select class="form-select" aria-label="Default select example">
-                                                    <option selected="">Selectionner le Type Analyse</option>
-                                                    <option value="S">Sortie Normale</option>
-                                                    <option value=" Médical">Contre Aical</option>
-                                                </select>
-                                                <input name="" class="form-control" placeholder="Ou entrez le Type Analyse">
-                                            </div>
+                                      <div class="col-xl-3 col-sm-4 col-12">
+                                        <div class="mb-3">
+                                          <label class="form-label" for="name">Type Analyse</label>
+                                          <select class="form-select" aria-label="Default select example">
+                                            <option selected="">Selectionner le Type Analyse</option>
+                                            <option value="S">Sortie Normale</option>
+                                            <option value=" Médical">Contre Aical</option>
+                                          </select>
+                                          <input name="" class="form-control" placeholder="Ou entrez le Type Analyse">
                                         </div>
-                                        <div class="col-xl-3 col-sm-4 col-12">
-                                            <div class="mb-3">
-                                                <label class="form-label" for="email">Détails</label>
-                                                <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
-                                            </div>
+                                      </div>
+                                      <div class="col-xl-3 col-sm-4 col-12">
+                                        <div class="mb-3">
+                                          <label class="form-label" for="email">Détails</label>
+                                          <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
                                         </div>
-                                        <div class="col-xl-3 col-sm-4 col-12">
-                                            <div class="mb-3">
-                                                <label class="form-label" for="phn">Résultats</label>
-                                                <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
-                                            </div>
+                                      </div>
+                                      <div class="col-xl-3 col-sm-4 col-12">
+                                        <div class="mb-3">
+                                          <label class="form-label" for="phn">Résultats</label>
+                                          <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
                                         </div>
+                                      </div>
                                     </div>
                                     <!-- Row end -->
                                   </div>
@@ -214,9 +214,6 @@ LISTE ANALYSES
 
 
 
-
-
-<!-- Modal Fullscreen -->
 <div class="modal fade" id="addAnalyse" tabindex="-1" aria-labelledby="addAnalyseLabel" aria-hidden="true">
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
@@ -227,73 +224,68 @@ LISTE ANALYSES
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <div class="modal-body">
-        <div class="row gx-3">
-          <div class="col-sm-12">
-            <div class="card mb-3">
-              <div class="card-header">
-                <h5 class="card-title">Nouvel Enregistrement</h5>
+        <div class="modal-body">
+          <div class="row gx-3">
+            <div class="col-sm-12">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h5 class="card-title">Enregistrer Analyse Effectuée</h5>
+                </div>
+                <form action="">
+                  <div class="card-body">
+
+                    <!-- Row start -->
+                    <div class="row gx-3">
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Type Analyse</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected="">Selectionner le Mode de Sortie</option>
+                            <option value="S">Sortie Normale</option>
+                            <option value=" Médical">Contre Aical</option>
+                          </select>
+                          <input name="" class="form-control" placeholder="Ou entrez le type d'examen">
+
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Détails</label>
+                          <textarea name="" cols="30" rows="5" class="form-control"></textarea>
+
+
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Résultats</label>
+                          <textarea name="" cols="30" rows="5" class="form-control"></textarea>
+                        </div>
+                      </div>
+
+                    </div>
+                    <!-- Row end -->
+                  </div>
+                  <div class="card-footer">
+                    <div class="d-flex gap-2 justify-content-end">
+                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                      <button type="button" class="btn btn-primary">Valider</button>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <form action="">
-                <div class="card-body">
-
-                  <!-- Row start -->
-                  <div class="row gx-3">
-                    <div class="col-xl-3 col-sm-4 col-12">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Type Analyse</label>
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected="">Selectionner le Mode de Sortie</option>
-                          <option value="S">Sortie Normale</option>
-                          <option value=" Médical">Contre Aical</option>
-                        </select>
-                        <input name="" class="form-control" placeholder="Ou entrez le type d'examen">
-
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12" >
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Détails</label>
-                        <textarea name="" cols="30" rows="5" class="form-control"></textarea>
-
-                        
-                      </div>
-                    </div>
-                    
-                    
-                    <div class="col-xl-3 col-sm-4 col-12">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Résultats</label>
-                        <textarea name=""  cols="30" rows="5" class="form-control"></textarea>
-                      </div>
-                    </div>
-                   
-                  </div>
-                  <!-- Row end -->
-                </div>
-                <div class="card-footer">
-                  <div class="d-flex gap-2 justify-content-end">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Valider</button>
-                  </div>
-                </div>
-              </form>
             </div>
           </div>
         </div>
-      
-      </div>
 
+
+
+      </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 
 
 

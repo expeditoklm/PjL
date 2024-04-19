@@ -213,9 +213,17 @@
                 <div class="">
                   <a href="" class=" btn btn-primary col-md-12 col-12" data-bs-toggle="modal" data-bs-target="#addPatientInfo" style="color:white" id="abc">NOUVEAU</a>
                 </div>
+
+                <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                  A simple success alert.
+                  <a href="#" class="text-decoration-underline alert-link">Check it out!</a>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
               </div>
             </div>
           </div>
+
           <!-- Page title ends -->
         </div>
         <!-- App Hero header ends -->
@@ -332,9 +340,12 @@
         <div class="modal-header">
           <h5 class="modal-title h4" id="addPatientInfoLabel">
             Formulaire d'Enregistrement du Patient
+
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
         </div>
+
         <div class="modal-body">
           <div class="row gx-3">
             <div class="col-sm-12">
@@ -533,6 +544,42 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
