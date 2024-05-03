@@ -57,8 +57,8 @@ LISTE CONSULTATIONS
 
                 <td>
                   <div class="justify-content" style="margin-top: 30px;margin-left: 10px; ">
-                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifVisite"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supVisite"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifVisite"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supVisite"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
                   </div>
                 </td>
 

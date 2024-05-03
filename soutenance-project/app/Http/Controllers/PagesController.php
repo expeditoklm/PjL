@@ -76,6 +76,10 @@ class PagesController extends Controller
     {
         return view('pages/error404');
     }
+    public function voireNotification()
+    {
+        return view('pages/voireNotification');
+    }
     
     
     

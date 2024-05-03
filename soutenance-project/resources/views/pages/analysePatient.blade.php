@@ -28,11 +28,11 @@ ANALYSE
                     <div class="custom-tabs-container">
                         <ul class="nav nav-tabs" id="customTab3" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="tab-oneAA" data-bs-toggle="tab" href="#oneAA" role="tab" aria-controls="oneAA" aria-selected="true"><i class="ri-user-smile-line"></i>Analyse</a>
+                                <a class="nav-link active" id="tab-oneAA" data-bs-toggle="tab" href="#oneAA" role="tab" aria-controls="oneAA" aria-selected="true"><i class="ri-survey-line "></i>Analyse</a>
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="tab-fourAA" data-bs-toggle="tab" href="#fourAA" role="tab" aria-controls="threeAA" aria-selected="false" tabindex="-1"><i class="ri-at-fill"></i>Fichiers</a>
+                                <a class="nav-link" id="tab-fourAA" data-bs-toggle="tab" href="#fourAA" role="tab" aria-controls="threeAA" aria-selected="false" tabindex="-1"><i class="ri-attachment-line"></i>Fichiers</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="customTabContent3">
@@ -50,26 +50,26 @@ ANALYSE
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Type Analyse</label>
-                                            <input name="" id="" class="form-control" value="Enter email address">
+                                            <input name="typeAnalyse" id="" class="form-control" value="Enter email address">
                                         </div>
                                     </div>
 
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Technicien Labo</label>
-                                            <input name="" id="" class="form-control" value="Enter email address">
+                                            <input name="technicien" id="" class="form-control" value="Enter email address">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Hopital</label>
-                                            <input name="" id="" class="form-control" value="Enter email address">
+                                            <input name="hopital" id="" class="form-control" value="Enter email address">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Date</label>
-                                            <input name="" id="" class="form-control" value="Enter email address">
+                                            <input name="date" id="" class="form-control" value="Enter email address">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">

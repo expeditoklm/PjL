@@ -48,8 +48,8 @@ CONSULTATION
                                         <td>02 Novembre 2002</td>
 
                                         <td>
-                                            <a href="#" class="m-2"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                                            <a href="#" class="m-2"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                                            <a href="#" class="m-2"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                                            <a href="#" class="m-2"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
                                         </td>
                                     </tr>
                                 </tbody>

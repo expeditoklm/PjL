@@ -22,10 +22,10 @@ INFORMATIONS BASIQUES
                                     Personnelles</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="tab-twoAA" data-bs-toggle="tab" href="#twoAA" role="tab" aria-controls="twoAA" aria-selected="false" tabindex="-1"><i class="ri-money-dollar-circle-line"></i>Informations Biologiques</a>
+                                <a class="nav-link" id="tab-twoAA" data-bs-toggle="tab" href="#twoAA" role="tab" aria-controls="twoAA" aria-selected="false" tabindex="-1"><i class="ri-fingerprint-line "></i>Informations Biologiques</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="tab-threeAA" data-bs-toggle="tab" href="#threeAA" role="tab" aria-controls="threeAA" aria-selected="false" tabindex="-1"><i class="ri-at-fill"></i>Informations Complementaires</a>
+                                <a class="nav-link" id="tab-threeAA" data-bs-toggle="tab" href="#threeAA" role="tab" aria-controls="threeAA" aria-selected="false" tabindex="-1"><i class="ri-p2p-line "></i>Informations Complementaires</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="customTabContent3">
@@ -196,8 +196,8 @@ INFORMATIONS BASIQUES
                                                                     <td>3600</td>
                                                                     <td>3600</td>
                                                                     <td>
-                                                                        <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifAllergie"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                                                                        <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supAllergie"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                                                                        <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifAllergie"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                                                                        <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supAllergie"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
                                                                     </td>
                                                                     <!-- Modal Modification -->
                                                                     <div class="modal fade" id="modifAllergie" tabindex="-1" aria-labelledby="modifAllergieLabel" aria-hidden="true">
@@ -311,8 +311,8 @@ INFORMATIONS BASIQUES
                                                                 <td>2300</td>
                                                                 <td>2300</td>
                                                                 <td>
-                                                                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifCorrespondance"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                                                                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supCorrespondance"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                                                                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifCorrespondance"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                                                                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supCorrespondance"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
                                                                 </td>
                                                                 <!-- Modal Modification -->
                                                                 <div class="modal fade" id="modifCorrespondance" tabindex="-1" aria-labelledby="modifCorrespondanceLabel" aria-hidden="true">

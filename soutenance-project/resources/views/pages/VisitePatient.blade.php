@@ -28,19 +28,19 @@ CONSULTATION
           <div class="custom-tabs-container">
             <ul class="nav nav-tabs" id="customTab3" role="tablist">
               <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="tab-oneAA" data-bs-toggle="tab" href="#oneAA" role="tab" aria-controls="oneAA" aria-selected="true"><i class="ri-user-smile-line"></i>Consultation</a>
+                <a class="nav-link active" id="tab-oneAA" data-bs-toggle="tab" href="#oneAA" role="tab" aria-controls="oneAA" aria-selected="true"><i class="ri-seo-line"></i>Consultation</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab-twoAA" data-bs-toggle="tab" href="#twoAA" role="tab" aria-controls="twoAA" aria-selected="false" tabindex="-1"><i class="ri-money-dollar-circle-line"></i>Examens Cliniques</a>
+                <a class="nav-link" id="tab-twoAA" data-bs-toggle="tab" href="#twoAA" role="tab" aria-controls="twoAA" aria-selected="false" tabindex="-1"><i class="ri-slideshow-line"></i>Examens Cliniques</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab-threeAA" data-bs-toggle="tab" href="#threeAA" role="tab" aria-controls="threeAA" aria-selected="false" tabindex="-1"><i class="ri-at-fill"></i>Prescriptions</a>
+                <a class="nav-link" id="tab-threeAA" data-bs-toggle="tab" href="#threeAA" role="tab" aria-controls="threeAA" aria-selected="false" tabindex="-1"><i class="ri-file-list-3-line "></i>Prescriptions</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab-fourAA" data-bs-toggle="tab" href="#fourAA" role="tab" aria-controls="threeAA" aria-selected="false" tabindex="-1"><i class="ri-at-fill"></i>Fichiers</a>
+                <a class="nav-link" id="tab-fourAA" data-bs-toggle="tab" href="#fourAA" role="tab" aria-controls="threeAA" aria-selected="false" tabindex="-1"><i class="ri-attachment-line"></i>Fichiers</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab-fiveAA" data-bs-toggle="tab" href="#fiveAA" role="tab" aria-controls="fiveAA" aria-selected="false" tabindex="-1"><i class="ri-at-fill"></i>Sortie Medicale</a>
+                <a class="nav-link" id="tab-fiveAA" data-bs-toggle="tab" href="#fiveAA" role="tab" aria-controls="fiveAA" aria-selected="false" tabindex="-1"><i class="ri-door-open-line "></i>Sortie Medicale</a>
               </li>
             </ul>
             <div class="tab-content" id="customTabContent3">
@@ -144,8 +144,8 @@ CONSULTATION
                               <td>61</td>
 
                               <td>
-                                <a href="#" class="m-2"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                                <a href="#" class="m-2"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
+                                <a href="#" class="m-2"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                                <a href="#" class="m-2"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
                               </td>
                             </tr>
 
@@ -185,9 +185,9 @@ CONSULTATION
                               <td>Customer Support</td>
                               <td>Customer Support</td>
                               <td>
-                                <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#modifSoin"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                                <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#suppSoin"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                                <a href="#" class="m-2"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                                <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#modifSoin"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                                <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#suppSoin"><i class="ri-delete-bin-6-line   fs-4 lh-1 text-primary "></i></a>
+                                <a href="#" class="m-2"><i class="ri-printer-line fs-4 lh-1 text-primary "></i></a>
                               </td>
 
 
@@ -308,9 +308,9 @@ CONSULTATION
                             <td>Customer Support</td>
                             <td>Customer Support</td>
                             <td>
-                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifAnalyse"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#suppAnalyse"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                              <a href="" class="m-2"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifAnalyse"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#suppAnalyse"><i class="ri-delete-bin-6-line   fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2"><i class="ri-printer-line fs-4 lh-1 text-primary "></i></a>
                             </td>
 
 
@@ -474,9 +474,9 @@ CONSULTATION
                             <td>2021/04/25</td>
                             <td>$320,800</td>
                             <td>
-                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifOrdonnance"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#suppOrdonnance"><i class="ri-message-3-line fs-4 lh-1 text-primary "></i></a>
-                              <a href="" class="m-2"><i class="ri-settings-2-line fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifOrdonnance"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#suppOrdonnance"><i class="ri-delete-bin-6-line   fs-4 lh-1 text-primary "></i></a>
+                              <a href="" class="m-2"><i class="ri-printer-line fs-4 lh-1 text-primary "></i></a>
                             </td>
 
 

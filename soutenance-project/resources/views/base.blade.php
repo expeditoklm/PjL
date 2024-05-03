@@ -207,6 +207,8 @@
                         <h4 class="mb-1 text-primary fw-semibold">@yield('titre')</h4>
 
                     </div>
+                    @yield('datePeaker')
+
 
                     <!-- Page title ends -->
                 </div>
