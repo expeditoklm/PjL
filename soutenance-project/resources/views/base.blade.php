@@ -126,36 +126,28 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <h5 class="fw-semibold px-3 py-2 text-primary">Messages</h5>
-                                    <div class="dropdown-item">
-                                        <div class="d-flex py-2">
-                                            <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
-                                            <div class="m-0">
-                                                <h6 class="mb-1 fw-semibold">Lilly Hardin</h6>
-                                                <p class="mb-1">Membership has been ended.</p>
-                                                <p class="small m-0 text-light">2 mins ago</p>
+                                    @php
+                                        $lesLogs = \App\Helpers\Base::recupLogs();
+                                    @endphp
+
+                                    @if($lesLogs->isEmpty())
+                                        <p>Aucun log disponible.</p>
+                                    @else
+                                        @foreach($lesLogs as $log)
+                                            <div class="dropdown-item">
+                                                <div class="d-flex py-2">
+                                                    <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                                                    <div class="m-0">
+                                                        {{-- Assurez-vous d'adapter les clés en fonction de votre structure de log --}}
+                                                        <h6 class="mb-1 fw-semibold">{{ $log->personnel_sante_nom }}</h6>
+                                                        <p class="mb-1">{{ $log->objet }}</p>
+                                                        <p class="small m-0 text-light">{{ $log->created_at }}</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-item">
-                                        <div class="d-flex py-2">
-                                            <img src="assets/images/user1.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
-                                            <div class="m-0">
-                                                <h6 class="mb-1 fw-semibold">Lara Mosley</h6>
-                                                <p class="mb-1">New customer registered.</p>
-                                                <p class="small m-0 text-light">3 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-item">
-                                        <div class="d-flex py-2">
-                                            <img src="assets/images/user4.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
-                                            <div class="m-0">
-                                                <h6 class="mb-1 fw-semibold">Ethel Valdez</h6>
-                                                <p class="mb-1">Check out every table in detail.</p>
-                                                <p class="small m-0 text-light">5 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        @endforeach
+                                    @endif
+
                                     <div class="d-grid mx-3 my-1">
                                         <a href="javascript:void(0)" class="btn btn-primary">View all</a>
                                     </div>
@@ -166,15 +158,18 @@
 
 
                         </div>
-
+                        {{-- Importez le fichier du helper --}}
+                        @php
+                            use App\Helpers\base;
+                        @endphp
 
 
                         <!-- Account settings starts -->
                         <div class="dropdown ms-4">
                             <a id="userSettings" class="dropdown-toggle user-settings" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="me-2 text-truncate d-lg-block d-none">
-                                    <span class="d-flex opacity-50 small">Docteur</span>
-                                    <span>Thomas SAGBOHAN</span>
+                                    <span class="d-flex opacity-50 small">{{ base::getUserInfo()->professionPers }}</span>
+                                    <span>{{ base::getUserInfo()->nomPers }}</span>
                                 </div>
                                 <div class="position-relative">
                                     <img src="assets/images/user4.png" class="rounded-5 img-3x" alt="Bootstrap Gallery" />
@@ -184,7 +179,11 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <div class="mx-3 my-2 d-grid">
                                     <p class="mb-2">In a meeting</p>
-                                    <a href="login.html" class="btn btn-danger">Logout</a>
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger col-md-8 ">Logout</button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -201,9 +200,14 @@
 
                     <!-- Page title starts -->
                     <div>
-                        <a href="{{route('pages.recherche-patient')}}" class="mb-1 text-primary d-flex align-items-center">
-                            <i class="ri-arrow-left-s-line fs-3 lh-1 me-1 ms-n2"></i>Retour à l'acceuil
-                        </a>
+                    @auth 
+                        @if (auth()->user()->typePersonne !== 'Patient') 
+                            <a href="{{ route('pages.recherche-patient') }}" class="mb-1 text-primary d-flex align-items-center">
+                                <i class="ri-arrow-left-s-line fs-3 lh-1 me-1 ms-n2"></i>Retour à l'acceuil
+                            </a>
+                        @endif
+                    @endauth
+
                         <h4 class="mb-1 text-primary fw-semibold">@yield('titre')</h4>
 
                     </div>

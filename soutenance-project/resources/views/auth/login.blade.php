@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Connexion | DME  </title>
+    <title>Connexion | DME </title>
 
     <!-- Meta -->
     <meta name="description" content="Marketplace for Bootstrap Admin Dashboards" />
     <meta name="author" content="Bootstrap Gallery" />
     <link rel="canonical" href="https://www.bootstrap.gallery/">
- 
+
     <link rel="shortcut icon" href="assets/images/favicon.svg" />
 
     <!-- CSS Files -->
@@ -25,7 +25,7 @@
     <div class="auth-wrapper">
 
         <!-- Form starts -->
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('login') }}">
             @csrf
             <!-- Authbox starts -->
             <div class="auth-box">
@@ -37,20 +37,37 @@
                 <!-- Logo ends -->
 
                 <h4 class="mb-4">Connexion</h4>
+                @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
+                    <div class="text-center"> <!-- Ajoutez une classe text-center à la div parente -->
+                        <span class="fw-bold d-block mx-auto">{{ session('error') }}</span> <!-- Utilisez mx-auto pour centrer le span -->
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+
+                @if(session('success'))
+                <div class="alert alert-primary alert-dismissible fade show m-2" role="alert">
+                    <div class="text-center"> <!-- Ajoutez une classe text-center à la div parente -->
+                        <span class="fw-bold d-block mx-auto">{{ session('success') }}</span> <!-- Utilisez mx-auto pour centrer le span -->
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
 
 
                 <div class="mb-3">
                     <label class="form-label" for="email">E-mail<span class="text-danger">*</span></label>
-                    <input type="text" id="email" name="email" class="form-control" placeholder="Entrez votre e-mail">
-                   
+                    <input type="text" id="email" name="email" class="form-control" placeholder="Entrez votre e-mail" required>
+
                 </div>
 
 
 
                 <div class="mb-2">
                     <label class="form-label" for="pwd">Mot de passe<span class="text-danger">*</span></label>
-                    <input type="password" id="pwd" name="mdp" class="form-control" placeholder="Entrez votre mot de passe" >
-                   
+                    <input type="password" id="pwd" name="password" class="form-control" placeholder="Entrez votre mot de passe" required>
+
                 </div>
 
                 <div class="row gx-3">
@@ -60,11 +77,11 @@
                             <label class="form-label" for="inlineRadio1">Type de Personne<span class="text-danger">*</span></label>
                             <div class="m-0">
                                 <div class="form-check form-check-inline" onclick="showOptions()">
-                                    <input class="form-check-input" type="radio" name="typePersonne" id="typePersonne1" value="option1" >
+                                    <input class="form-check-input" type="radio" name="typePersonne" id="typePersonne1" value="Patient" checked>
                                     <label class="form-check-label" for="typePersonne1">Patient</label>
                                 </div>
                                 <div class="form-check form-check-inline" onclick="showOptions()">
-                                    <input class="form-check-input" type="radio" name="typePersonne" id="typePersonne2" value="option2" >
+                                    <input class="form-check-input" type="radio" name="typePersonne" id="typePersonne2" value="Personnel de santé">
                                     <label class="form-check-label" for="typePersonne2">Pers.Santé</label>
                                 </div>
                             </div>
@@ -76,16 +93,16 @@
                             <label class="form-label" for="inlineRadio1">Type de Personnel de Santé <span class="text-danger">*</span> </label>
                             <div class="m-0">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="personnelSante" id="inlineRadio1" value="option1" >
+                                    <input class="form-check-input" type="radio" name="personnelSante" id="inlineRadio1" value="Médecin" checked>
                                     <label class="form-check-label" for="inlineRadio1">Médecin</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="personnelSante" id="inlineRadio2" value="option2" >
+                                    <input class="form-check-input" type="radio" name="personnelSante" id="inlineRadio2" value="Infirmié">
                                     <label class="form-check-label" for="inlineRadio2">Infirmié</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="personnelSante" id="inlineRadio3" value="option3">
-                                    <label class="form-check-label" for="inlineRadio3">Technicien Labo</label>
+                                    <input class="form-check-input" type="radio" name="personnelSante" id="inlineRadio3" value="Technicien Labo">
+                                    <label class="form-check-label" for="inlineRadio3">Techn.Labo</label>
                                 </div>
                             </div>
                         </div>
@@ -95,12 +112,12 @@
                 <div class="div" id="infoPersonnelSante" style="display: none;">
                     <div class="mb-3">
                         <label class="form-label" for="email">Identifiant Personnel Santé<span class="text-danger">*</span></label>
-                        <input type="text" id="text" name="idPersonnelSante" class="form-control" placeholder="Entrez identifiant personnel" >
-                        
+                        <input type="text" id="text" name="idPersonnelSante" class="form-control" placeholder="Entrez identifiant personnel">
+
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="name">Pays</label>
-                        <select class="form-select" name="pays" id="abcd" aria-label="Default select example" >
+                        <select class="form-select" name="pays" id="abcd" aria-label="Default select example">
                             <option selected="">Selectionner votre Pays</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -109,23 +126,23 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="name">Ville</label>
-                        <select class="form-select" name="ville" id="abcd" aria-label="Default select example" >
+                        <select class="form-select" name="ville" id="abcd" aria-label="Default select example">
                             <option selected="">Selectionner votre ville</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
-                        
+
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="name">Hopital d'Intervention</label>
-                        <select class="form-select" name="hopital" id="abcd" aria-label="Default select example" >
+                        <select class="form-select" name="idHopital" id="abcd" aria-label="Default select example">
                             <option selected="">Selectionner l'hopital d'intervention</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
-                        
+
                     </div>
                 </div>
                 <div class="d-flex justify-content-end mb-4">
@@ -140,6 +157,10 @@
         </form>
         <!-- Form ends -->
     </div>
+
+    <!-- Required jQuery first, then Bootstrap Bundle JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
     <!-- Auth wrapper ends -->
     <script>
         function showOptions() {

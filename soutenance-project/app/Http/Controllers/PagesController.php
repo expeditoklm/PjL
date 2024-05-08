@@ -14,7 +14,12 @@ class PagesController extends Controller
     {
         return view('welcome');
     }
+    
 
+    public function pageAttente()
+    {
+        return view('pages/pageAttente');
+    }
     public function voirPatient()
     {
         return view('pages/voirPatient');

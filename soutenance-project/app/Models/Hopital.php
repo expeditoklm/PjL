@@ -8,21 +8,22 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $id
  * @property string $logo
  * @property string $libHopital
- * @property string $adresseHopital
+ * @property string $paysHopital
+ * @property string $villeHopital
  * @property boolean $deleted
  * @property string $created_at
  * @property string $updated_at
  * @property AdministreSoin[] $administreSoins
  * @property Consultation[] $consultations
  * @property FaireAnalysis[] $faireAnalyses
- * @property PersonnelSanteHopital[] $personnelSanteHopitals
+ * @property PersonnelSante_Hopital[] $personnelSanteHopitals
  */
 class Hopital extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['logo', 'libHopital', 'adresseHopital', 'deleted', 'created_at', 'updated_at'];
+    protected $fillable = ['logo', 'libHopital', 'paysHopital', 'ville','Hopital', 'deleted', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -53,6 +54,6 @@ class Hopital extends Model
      */
     public function personnelSanteHopitals()
     {
-        return $this->hasMany('App\Models\PersonnelSanteHopital');
+        return $this->hasMany('App\Models\PersonnelSante_Hopital');
     }
 }

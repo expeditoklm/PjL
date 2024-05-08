@@ -44,18 +44,18 @@ class Personne extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne 
      */
     public function patients()
     {
-        return $this->hasMany('App\Models\Patient');
+        return $this->hasOne('App\Models\Patient');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne 
      */
     public function personnelSantes()
     {
-        return $this->hasMany('App\Models\PersonnelSante');
+        return $this->hasOne('App\Models\PersonnelSante');
     }
 }

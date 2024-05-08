@@ -88,6 +88,8 @@ class RegisterController extends Controller
         $rules['prenomMere'] = ['nullable', 'string', 'max:255'];
         $rules['pathologieMere'] = ['nullable', 'string', 'max:255'];
         $rules['groupS'] = ['nullable', 'string', 'max:255'];
+        $rules['numService'] = ['required', 'string', 'max:255'];
+        
     } else {
         // Règles de validation pour un patient
         $rules['nomPere'] = ['required', 'string', 'max:255'];
@@ -212,9 +214,11 @@ class RegisterController extends Controller
             if ($var['typePersonne'] === 'Patient') {
                 $var['personne_id'] = $personne->id;
                 $patient = $this->createPatient($var);
+                return redirect()->route('login')->with('success', 'Votre compte a été créé avec succès. Veuillez vous connecter pour continuer.');
             } elseif ($var['typePersonne'] === 'Personnel de santé') {
                 $var['personne_id'] = $personne->id;
                 $personnelSante = $this->createPersonnelSante($var);
+                return redirect()->intended('/page-attente');
             }
 
         } catch (\Exception $e) {
@@ -238,14 +242,13 @@ class RegisterController extends Controller
            
             
         }
-        $this->guard()->login($user);
+        //$this->guard()->login($user);
 
-        if ($response = $this->registered($request, $user)) {
-            return $response;
-        }
+        //if ($response = $this->registered($request, $user)) {
+        //    return $response;
+        }//
 
-        return $request->wantsJson()
-            ? new JsonResponse([], 201)
-            : redirect($this->redirectPath());
-    }
+        //return redirect()->route('login')->with('success', 'Votre compte a été créé avec succès. Veuillez vous connecter pour continuer.');
+
+   // }
 }

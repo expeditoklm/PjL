@@ -1,49 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Mirrored from www.bootstrapget.com/demos/templatemonster/adminy-admin-template/form-accordion.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 25 Mar 2024 00:13:04 GMT -->
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap Gallery - Adminy Bootstrap 5 Dashboard</title>
+    <title>Inscription | DME </title>
 
-    <!-- Meta -->
     <meta name="description" content="Marketplace for Bootstrap Admin Dashboards" />
     <meta name="author" content="Bootstrap Gallery" />
-
     <link rel="shortcut icon" href="assets/images/favicon.svg" />
-
-    <!-- *************
-			************ CSS Files *************
-		************* -->
     <link rel="stylesheet" href="assets/fonts/remix/remixicon.css" />
     <link rel="stylesheet" href="assets/css/main.min.css" />
-
-
     <!-- Mega Menu -->
     <link rel="stylesheet" href="assets/vendor/megamenu/css/megamenu.css">
-
-    <!-- *************
-			************ Vendor Css Files *************
-		************ -->
 </head>
-
 <body class="login-bg">
     <!-- Page wrapper starts -->
     <div class="page-wrapper">
-
         <!-- Main container starts -->
         <div class="main-container">
-
-
             <!-- App container starts -->
             <div class="app-container">
-
-
                 <!-- App Hero header ends -->
-
                 <!-- App body starts -->
                 <div class="app-body">
 
@@ -58,7 +35,6 @@
                                 @if(session('error'))
                                 <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
                                     <div class="text-center"> <!-- Ajoutez une classe text-center à la div parente -->
-                                        Une erreur s'est produite lors de l'enregistrement !
                                         <span class="fw-bold d-block mx-auto">{{ session('error') }}</span> <!-- Utilisez mx-auto pour centrer le span -->
                                     </div>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -192,7 +168,7 @@
                                                             <div class="col-xl-3 col-sm-4 col-12">
                                                                 <div class="mb-3">
                                                                     <label class="form-label" for="name">Mot de Passe</label>
-                                                                    <input name="password" required id="" type="password" class="form-control" placeholder="Entrez votre mot de passe">
+                                                                    <input name="password"  id="" type="password" class="form-control" placeholder="Entrez votre mot de passe">
                                                                    
                                                                 </div>
                                                             </div>
@@ -200,7 +176,7 @@
                                                             <div class="col-xl-3 col-sm-4 col-12">
                                                                 <div class="mb-3">
                                                                     <label class="form-label" for="name">Confirmer le mot de passe</label>
-                                                                    <input name="password_confirmation" required id="" type="password" class="form-control" placeholder="Confirmer votre mot de passe">
+                                                                    <input name="password_confirmation"  id="" type="password" class="form-control" placeholder="Confirmer votre mot de passe">
                                                                
                                                                 </div>
                                                             </div>
@@ -442,26 +418,15 @@
     </div>
     <!-- Page wrapper ends -->
 
-    <!-- *************
+    <!-- ***************
 			************ JavaScript Files *************
 		************* -->
     <!-- Required jQuery first, then Bootstrap Bundle JS -->
-    <script src="assets/js/jquery.min.js"></script>
+  
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/modernizr.js"></script>
+    
 
-    <!-- Megamenu JS -->
-    <script src="assets/vendor/megamenu/js/megamenu.js"></script>
-    <script src="assets/vendor/megamenu/js/custom.js"></script>
-
-    <!-- *************
-			************ Vendor Js Files *************
-		************* -->
-
-    <!-- Apex Graphs -->
-
-    <!-- Custom JS files -->
-    <script src="assets/js/custom.js"></script>
+    
     <script>
         function showOptions() {
             var option1 = document.getElementById('typePersonne1');
@@ -478,6 +443,5 @@
 </body>
 
 
-<!-- Mirrored from www.bootstrapget.com/demos/templatemonster/adminy-admin-template/form-accordion.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 25 Mar 2024 00:13:04 GMT -->
 
 </html>

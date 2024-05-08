@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\PersonnelSante_Hopital; 
 /**
  * @property integer $id
  * @property integer $personne_id
@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Consultation[] $consultations
  * @property DomaineIntervention[] $domaineInterventions
  * @property FaireAnalysis[] $faireAnalyses
- * @property PersonnelSanteHopital[] $personnelSanteHopitals
+ * @property PersonnelSante_Hopital[] $personnelSanteHopitals
  * @property Personne $personne
  */
 class PersonnelSante extends Model
@@ -63,7 +63,7 @@ class PersonnelSante extends Model
      */
     public function personnelSanteHopitals()
     {
-        return $this->hasMany('App\Models\PersonnelSanteHopital', 'personnelSante_id');
+        return $this->hasMany('App\Models\PersonnelSante_Hopital', 'personnelSante_id');
     }
 
     /**

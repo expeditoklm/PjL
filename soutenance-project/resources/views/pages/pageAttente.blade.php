@@ -45,21 +45,16 @@
                 </a>
                 <!-- Logo ends -->
 
-                <h4 class="mb-4">Mot de Passe Oublié?</h4>
+                <!-- <h4 class="mb-4">Mot de Passe Oublié?</h4> -->
 
-                <h6 class="fw-light mb-4">Si vous souhaitez réinitialiser votre mot de passe,
-                    veuillez suivre les instructions suivantes pour réinitialiser votre mot de passe en toute sécurité."
-                </h6>
-
-                <div class="mb-3">
-                    <label class="form-label" for="email">Votre E-mail<span class="text-danger">*</span></label>
-                    <input type="text" id="email" class="form-control" placeholder="Entrez votre E-mail">
-                </div>
+                <h6 class=" mb-4">Votre inscription en tant que personnel de santé a bien été enregistrée. <br>
+                    Votre compte est en attente de validation.Vous recevrez bientôt un e-mail de confirmation dès que votre compte sera activé. <br>
+                    Merci pour votre inscription.</h6>
 
                 <div class="mb-3 d-grid">
-                    <button type="submit" class="btn btn-dark">
-                        Soumettre
-                    </button>
+                    <a href="{{route('login')}}" class="btn btn-dark">
+                        Retour
+                    </a>
                 </div>
             </div>
             <!-- Authbox ends -->
