@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property boolean $sexe
  * @property string $dateNaiss
  * @property string $adressePers
- * @property string $user_id
+
 
  * @property string $telPers
  * @property string $professionPers
@@ -33,7 +33,7 @@ class Personne extends Model
     /**
      * @var array
      */
-    protected $fillable = ['cin','user_id' ,'nomPers', 'prenomPers', 'sexe', 'dateNaiss', 'adressePers',  'telPers', 'professionPers', 'paysPers', 'villePers', 'imgProfil','typeCin','cheminCin', 'deleted', 'created_at', 'updated_at'];
+    protected $fillable = ['cin','nomPers', 'prenomPers', 'sexe', 'dateNaiss', 'adressePers',  'telPers', 'professionPers', 'paysPers', 'villePers', 'imgProfil','typeCin','cheminCin', 'deleted', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

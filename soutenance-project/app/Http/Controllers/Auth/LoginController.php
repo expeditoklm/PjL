@@ -35,7 +35,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/base';
+    protected $redirectTo = '/recherche-patient';
 
     /**
      * Create a new controller instance.
@@ -56,17 +56,18 @@ class LoginController extends Controller
 
         if ($user) {
             if ($user->typePersonne === $type) {
-                $personne = Personne::where('user_id', $user->id)->first();
+                //$personne = Personne::where('user_id', $user->id)->first();
                 
                 //$personne = $user->personne;
                 
-                if ($personne->personnelSantes) {
+                if ($type === "Personnel de santé") {
                     
-                    $personnelSante = PersonnelSante::where('personne_id', $personne->id)->first();
+                    $personnelSante = PersonnelSante::where('user_id', $user->id)->first();
+                    $personne = Personne::where('id', $personnelSante->id)->first();
                     
                     $typePersonnelSante = $request->input('personnelSante');
                     //dd($typePersonnelSante);
-                    if ($personnelSante->typePersonnel === $typePersonnelSante) {
+                    if ($personnelSante && $personnelSante->typePersonnel === $typePersonnelSante) {
                         // Vérifier le numéro identifiant du personnel de santé
                         $numIdentifiant = $request->input('idPersonnelSante');
                         if ($personnelSante->numServicePersonnel === $numIdentifiant) {
@@ -76,8 +77,12 @@ class LoginController extends Controller
                             if (in_array($idHopital, $hopitalIntervention)) {
                                 // Vérification de l'authentification pour le personnel de santé
                                 if (Auth::attempt($credentials)) {
+                                    $personne = Personne::where('id', $personnelSante->personne_id)->first();
                                     $user = Auth::user();
-                                    return redirect()->intended('base');
+                                    session()->put('patientOuPersSanteConnecteId',$personnelSante->id);
+                                    session()->put('persConnecteId',$personne->id);
+                                    
+                                    return redirect()->intended('/recherche-patient');
                                 }
                             } else {
                                 return redirect('login')->with(
@@ -91,11 +96,13 @@ class LoginController extends Controller
                     } else {
                         return redirect('login')->with('error', 'Type de pers.santé incorrect');
                     }
-                }elseif ($personne->patients) {
-                    $patient = $personne->patients->first();
-                    // Vérification de l'authentification pour le personnel de santé
-                    if (Auth::attempt($credentials)) {
+                }elseif ($type === "Patient") {
+                    $patient = Patient::where('user_id', $user->id)->first();
+                    $personne = Personne::where('id', $patient->personne_id)->first();
+                    if ($patient && Auth::attempt($credentials)) {
                         $user = Auth::user();
+                        session()->put('patientOuPersSanteConnecteId',$patient->id);
+                        session()->put('persConnecteId',$personne->id);
                         return redirect()->route('pages.voir-patient');
                     }
                 }

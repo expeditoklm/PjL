@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property integer $personne_id
+ * @property string $user_id
  * @property string $groupeSanguinPers
  * @property string $nomPere
  * @property string $prenomPere
@@ -22,13 +23,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property FaireAnalysis[] $faireAnalyses
  * @property NotePatient[] $notePatients
  * @property Personne $personne
+ * @property User $user
  */
 class Patient extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['personne_id', 'groupeSanguinPers', 'nomPere', 'prenomPere', 'pathologiePere', 'nomMere', 'prenomMere', 'pathologieMere', 'deleted', 'created_at', 'updated_at'];
+    protected $fillable = ['personne_id','user_id', 'groupeSanguinPers', 'nomPere', 'prenomPere', 'pathologiePere', 'nomMere', 'prenomMere', 'pathologieMere', 'deleted', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

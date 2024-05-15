@@ -59,8 +59,10 @@ class RegisterController extends Controller
      */
     //fonction validation
     protected function validator(array $data)
-{
+    {
     $rules = [
+        
+        'personne_id' => ['nullable', 'number', 'max:255'],
         'numPiece' => ['required', 'string', 'max:255'],
         'nom' => ['required', 'string', 'max:255'],
         'prenom' => ['required', 'string', 'max:255'],
@@ -76,6 +78,8 @@ class RegisterController extends Controller
         'ville' => ['required', 'string', 'max:255'],
         'typePiece' => ['required', 'string', 'max:255'],
         'typePersonne' => ['required', 'string', 'max:255'],
+        'user_id' => ['nullable', 'number', 'max:255'],
+
         'piece' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
     ];
 
@@ -89,6 +93,8 @@ class RegisterController extends Controller
         $rules['pathologieMere'] = ['nullable', 'string', 'max:255'];
         $rules['groupS'] = ['nullable', 'string', 'max:255'];
         $rules['numService'] = ['required', 'string', 'max:255'];
+        $rules['personnelSante'] = ['required', 'string', 'max:255'];
+        
         
     } else {
         // Règles de validation pour un patient
@@ -102,7 +108,7 @@ class RegisterController extends Controller
     }
 
     return Validator::make($data, $rules);
-}
+    }
 
     
     /**
@@ -132,9 +138,9 @@ class RegisterController extends Controller
     //fonction create personne
     protected function createPersonne(array $data)
     {
+        
         return Personne::create([
             'cin' => $data['numPiece'],
-            'user_id' => $data['user_id'],
             'nomPers' => $data['nom'],
             'prenomPers' => $data['prenom'],
             'sexe' => $data['sexe'],
@@ -151,21 +157,26 @@ class RegisterController extends Controller
         ]);
     }
     //fonction create patient
-    protected function createPatient(array $data)
+   /* protected function createPatient(array $data)
     {
-
-        return Patient::create([
-            'groupeSanguinPers' => $data['groupS'],
-            'nomPere' => $data['nomPere'],
-            'prenomPere' => $data['prenomPere'],
-            'pathologiePere' => $data['pathologiePere'],
-            'nomMere' => $data['nomMere'],
-            'prenomMere' => $data['prenomMere'],
-            'pathologieMere' => $data['pathologieMere'],
-            'personne_id' => $data['personne_id'],
-            'deleted' => 0,
-        ]);
+        if(isset($data['personne_id'])){
+            return Patient::create([
+                'personne_id' => $data['personne_id'],
+                'user_id' => $data['numPiece'],
+                'groupeSanguinPers' => $data['groupS'],
+                'nomPere' => $data['nomPere'],
+                'prenomPere' => $data['prenomPere'],
+                'pathologiePere' => $data['pathologiePere'],
+                'nomMere' => $data['nomMere'],
+                'prenomMere' => $data['prenomMere'],
+                'pathologieMere' => $data['pathologieMere'],
+                'deleted' => 0,
+            ]);
+            
+        }
+        
     }
+    
 
     //fonction create personnel de sante
     protected function createPersonnelSante(array $data)
@@ -173,21 +184,22 @@ class RegisterController extends Controller
         return PersonnelSante::create([
             'typePersonnel' => $data['personnelSante'],
             'numServicePersonnel' => $data['numService'],
+            'user_id' => $data['user_id'],
             'personne_id' => $data['personne_id'],
             'validated' => 0,
             'deleted' => 0,
         ]);
     }
-
+    */
 
 
     public function register(Request $request)
     {
         try {
-
+            
             $this->validator($request->all())->validate();
             $var = $request->all();
-            //je cree la personne
+            //je cree le user
             event(new Registered($user = $this->create($var)));
             //je recupere lid de user dans la table user
             $var['user_id'] = $user->id;
@@ -195,33 +207,63 @@ class RegisterController extends Controller
 
             //je cree la personne
             $personne = $this->createPersonne($var);
-
+            $var['personne_id'] = $personne->id;
+            //dd($var);
             //recuperer fichier piece
             if ($request->hasFile('piece') && $request->file('piece')->isValid()) {
+                
                 // Récupérer le fichier téléversé
                 $piece = $request->file('piece');
-    
+                
                 // Déplacer le fichier vers le dossier "uploads"
                 $imageName = $request->nom . '.' . $piece->getClientOriginalExtension();
                 $piece->storeAs('uploads', $imageName);
-    
+                
                 // Ajouter le nom du fichier à l'array des données
-                $var = $request->all();
                 $var['piece'] = $imageName;
+                
             }
-
+            
             //creer soit un patient soit un personnel de sante
             if ($var['typePersonne'] === 'Patient') {
                 $var['personne_id'] = $personne->id;
-                $patient = $this->createPatient($var);
+                
+                //$patient = $this->createPatient($var);
+               // dd($request);
+                Patient::create([
+                    'personne_id' => $personne->id,
+                    'user_id' => $user->id,
+                    'groupeSanguinPers' =>$request->groupS,
+                    'nomPere' => $request->nomPere,
+                    'prenomPere' => $request->prenomPere,
+                    'pathologiePere' => $request->pathologiePere,
+                    'nomMere' => $request->nomMere,
+                    'prenomMere' =>$request->prenomMere,
+                    'pathologieMere' => $request->pathologieMere,
+                    'deleted' => 0,
+                ]);
                 return redirect()->route('login')->with('success', 'Votre compte a été créé avec succès. Veuillez vous connecter pour continuer.');
-            } elseif ($var['typePersonne'] === 'Personnel de santé') {
-                $var['personne_id'] = $personne->id;
-                $personnelSante = $this->createPersonnelSante($var);
-                return redirect()->intended('/page-attente');
             }
+            elseif($var['typePersonne'] === 'Personnel de santé')
+            {
+                    PersonnelSante::create([
+                    'typePersonnel' => $request->personnelSante,
+                    'numServicePersonnel' => $request->numService,
+                    'user_id' => $user->id,
+                    'personne_id' => $personne->id,
+                    'validated' => 0,
+                    'deleted' => 0,
+                ]);
+                return redirect()->route('pages.page-attente');
+            }
+            
+            return redirect()->route('pages.page-attente');
 
-        } catch (\Exception $e) {
+
+        }
+        catch (\Exception $e)
+        {
+
             // En cas d'exception, supprimer l'utilisateur et la personne créés
             if (isset($user)) {
                 $user->delete();
@@ -229,26 +271,19 @@ class RegisterController extends Controller
             if (isset($personne)) {
                 $personne->delete();
             }
+            dd('Une exception a été attrapée : ',  $e->getMessage(), "\n");
             // Gérer les erreurs spécifiques
             if ($request->password != $request->password_confirmation) {
                 return redirect()->back()->with('error', 'Mots de passe non conformes.');
-            } elseif (User::where('email', $request->email)->exists()) {
+            }
+            elseif (User::where('email', $request->email)->exists()) {
                 return redirect()->back()->with('error', 'E-mail existant.');
-            } else {
+            }
+            else{
                 return redirect()->back()->with('error', 'Champs incomplets! Veuillez remplir tous les champs...');
             }
-           // dd('Une exception a été attrapée : ',  $e->getMessage(), "\n");
-            // Affichage du message d'erreur
-           
-            
         }
-        //$this->guard()->login($user);
+    }
+        
 
-        //if ($response = $this->registered($request, $user)) {
-        //    return $response;
-        }//
-
-        //return redirect()->route('login')->with('success', 'Votre compte a été créé avec succès. Veuillez vous connecter pour continuer.');
-
-   // }
 }

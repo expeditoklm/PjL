@@ -17,6 +17,7 @@ use App\Http\Controllers\PagesController;
 */
 Route::middleware(['auth'])->group(function () {
     Route::get('/recherche-patient', [PagesController::class, 'recherchePatient'])->name('pages.recherche-patient');
+    Route::post('/recherche-patient', [PagesController::class, 'recherchePatientPost'])->name('pages.recherche-patient');
     Route::get('/voir-patient', [PagesController::class, 'voirPatient'])->name('pages.voir-patient');
     Route::get('/liste-visite-patient', [PagesController::class, 'listeVisitePatient'])->name('pages.liste-viste-patient');
     Route::get('/visite-patient', [PagesController::class, 'VisitePatient'])->name('pages.viste-patient');

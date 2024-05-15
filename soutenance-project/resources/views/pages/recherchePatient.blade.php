@@ -129,39 +129,71 @@
                   <span class="count-label"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
+                  @if (Auth::check() && Auth::user()->typePersonne=== 'Patient' )
                   <h5 class="fw-semibold px-3 py-2 text-primary">Messages</h5>
+                 
+
+                  @if($lesLogs->isEmpty())
+                  <div class="dropdown-item">
+                    <div class="d-flex py-2">
+                      <div class="m-0">
+
+                        <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
+
+                      </div>
+                    </div>
+                  </div>
+                  @else
+                  @foreach($lesLogs as $log)
                   <div class="dropdown-item">
                     <div class="d-flex py-2">
                       <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
                       <div class="m-0">
-                        <h6 class="mb-1 fw-semibold">Lilly Hardin</h6>
-                        <p class="mb-1">Membership has been ended.</p>
-                        <p class="small m-0 text-light">2 mins ago</p>
+                        <h6 class="mb-1 fw-semibold">{{ $log->personnel_sante_nom }}</h6>
+                        <p class="mb-1">{{ $log->objet }}</p>
+                        <p class="small m-0 text-light">{{ $log->created_at }}</p>
                       </div>
                     </div>
                   </div>
+                  @endforeach
+                @endif
+
+
+                @else
+                  <h5 class="fw-semibold px-3 py-2 text-primary">Patients recemment consulter</h5>
+                
+
+                  @if($lesLogs->isEmpty())
                   <div class="dropdown-item">
                     <div class="d-flex py-2">
-                      <img src="assets/images/user1.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
                       <div class="m-0">
-                        <h6 class="mb-1 fw-semibold">Lara Mosley</h6>
-                        <p class="mb-1">New customer registered.</p>
-                        <p class="small m-0 text-light">3 mins ago</p>
+
+                        <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
+
                       </div>
                     </div>
                   </div>
+                  @else
+                  @foreach($lesLogs as $log)
                   <div class="dropdown-item">
                     <div class="d-flex py-2">
-                      <img src="assets/images/user4.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                      <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
                       <div class="m-0">
-                        <h6 class="mb-1 fw-semibold">Ethel Valdez</h6>
-                        <p class="mb-1">Check out every table in detail.</p>
-                        <p class="small m-0 text-light">5 mins ago</p>
+
+                        <h6 class="mb-1 fw-semibold">{{ $log->patient_nom }}</h6>
+
+                        <p class="small m-0 text-light">{{ $log->created_at }}</p>
                       </div>
                     </div>
                   </div>
+                  @endforeach
+                  @endif
+                  @endif
+
+
+
                   <div class="d-grid mx-3 my-1">
-                    <a href="javascript:void(0)" class="btn btn-primary">View all</a>
+                    <a href="{{ route('pages.voire-notification') }}" class="btn btn-primary">View all</a>
                   </div>
                 </div>
               </div>
@@ -177,8 +209,8 @@
             <div class="dropdown ms-4">
               <a id="userSettings" class="dropdown-toggle user-settings" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="me-2 text-truncate d-lg-block d-none">
-                  <span class="d-flex opacity-50 small">Admin</span>
-                  <span>Chao Xing</span>
+                  <span class="d-flex opacity-50 small">{{$personne->professionPers }}</span>
+                  <span>{{$personne->nomPers }} {{$personne->prenomPers }}</span>
                 </div>
                 <div class="position-relative">
                   <img src="assets/images/user4.png" class="rounded-5 img-3x" alt="Bootstrap Gallery" />
@@ -191,7 +223,10 @@
                   <p class="mb-2">Chirurgien</p>
                   <p class="mb-2">Technicien de laboratoire médical</p>
                   <p class="mb-2">Médecin généraliste, Spécialiste</p>
-                  <a href="login.html" class="btn btn-danger">Se déconnecter</a>
+                  <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger col-md-8 ">Logout</button>
+                                    </form>
                 </div>
               </div>
             </div>
@@ -227,97 +262,100 @@
           <!-- Page title ends -->
         </div>
         <!-- App Hero header ends -->
+        <form action="{{ route('pages.recherche-patient') }}" method="post">
+          @csrf
+          <!-- App body starts -->
+          <div class="app-body">
 
-        <!-- App body starts -->
-        <div class="app-body">
+            <!-- Row start -->
+            <div class="row gx-3">
+              <div class="col-sm-4 col-12">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <label class="form-label" for="abcd">Pays</label>
+                      <select class="form-select" name="pays" id="abcd" aria-label="Default select example">
+                        <option selected="">Selectionner le pays</option>
+                        <option value="Benin">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-12">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <label class="form-label" for="abcd">Type de Pièce</label>
+                      <select class="form-select" name="typePiece" id="abcd" aria-label="Default select example">
+                        <option selected="">Selectionner le type de pièce</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-12">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <label class="form-label" for="abc">CIN</label>
+                      <input type="text" name="cin" class="form-control" id="abc" placeholder="Entrez le numero nationnal">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-12">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <label class="form-label" for="abc">Nom</label>
+                      <input type="text" name="nomPers" class="form-control" id="abc" placeholder="Entrez le nom">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-12">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <label class="form-label" for="abc">Prénom</label>
+                      <input type="text" name="prenomPers" class="form-control" id="abc" placeholder="Entrez un prénom">
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-          <!-- Row start -->
-          <div class="row gx-3">
-            <div class="col-sm-4 col-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="m-0">
-                    <label class="form-label" for="abcd">Pays</label>
-                    <select class="form-select" id="abcd" aria-label="Default select example">
-                      <option selected="">Selectionner le pays</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
+              <div class="col-sm-4 col-12">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <label class="form-label" for="abc">Nom de la mère</label>
+                      <input type="text" name="nomMere" class="form-control" id="abc" placeholder="Entrez le nom de la mère">
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4 col-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="m-0">
-                    <label class="form-label" for="abcd">Type de Pièce</label>
-                    <select class="form-select" id="abcd" aria-label="Default select example">
-                      <option selected="">Selectionner le type de pièce</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="m-0">
-                    <label class="form-label" for="abc">CIN</label>
-                    <input type="text" class="form-control" id="abc" placeholder="Entrez le numero nationnal">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="m-0">
-                    <label class="form-label" for="abc">Nom</label>
-                    <input type="text" class="form-control" id="abc" placeholder="Entrez le nom">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="m-0">
-                    <label class="form-label" for="abc">Prénom</label>
-                    <input type="text" class="form-control" id="abc" placeholder="Entrez le prénom">
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="col-sm-4 col-12">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="m-0">
-                    <label class="form-label" for="abc">Nom de la mère</label>
-                    <input type="text" class="form-control" id="abc" placeholder="Entrez le nom de la mère">
+              <div class="col-md-12 col-12">
+                <div class=" mb-3">
+                  <div class="card-body">
+                    <div class="m-4">
+                      <button type="submit" class=" btn btn-primary col-md-12 col-12 mb-4" style="color:white" id="abc">RECHERCHER</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="col-md-12 col-12">
-              <div class=" mb-3">
-                <div class="card-body">
-                  <div class="m-4">
-                    <a href="{{route('pages.liste-patient-rechercher')}}" class=" btn btn-primary col-md-12 col-12 mb-4" style="color:white" id="abc">RECHERCHER</a>
-                  </div>
-                </div>
-              </div>
-            </div>
 
 
+            </div>
           </div>
-        </div>
+        </form>
+
         <!-- App footer starts -->
         <div class="app-footer text-end">
           <span>© Bootstrap Gallery 2024</span>

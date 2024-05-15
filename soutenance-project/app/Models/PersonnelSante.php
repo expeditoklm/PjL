@@ -7,6 +7,7 @@ use App\Models\PersonnelSante_Hopital;
 /**
  * @property integer $id
  * @property integer $personne_id
+ * @property string $user_id
  * @property string $typePersonnel
  * @property string $numServicePersonnel
  * @property boolean $deleted
@@ -24,7 +25,7 @@ class PersonnelSante extends Model
     /**
      * @var array
      */
-    protected $fillable = ['personne_id', 'typePersonnel', 'numServicePersonnel', 'deleted', 'created_at', 'updated_at'];
+    protected $fillable = ['personne_id','user_id', 'typePersonnel', 'numServicePersonnel', 'deleted', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

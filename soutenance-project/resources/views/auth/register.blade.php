@@ -374,7 +374,6 @@
                                                                         <div class="mb-3">
                                                                             <label class="form-label mb-3" for="name">Numero Service</label>
                                                                             <input name="numService" type="number" id="" class="form-control" placeholder="Entrez le numero d'ordre du personnel de santé">
-                                                                            
                                                                         </div>
                                                                     </div>
                                                                 </div>

@@ -159,14 +159,4 @@ class AuthController extends Controller
 
 
 
-
-
-        elseif ($user->typePersonne === 'Patient') {
-            // Vérification de l'authentification pour les patients
-            if (Auth::attempt($credentials)) {
-                $patient = $user->personne->patients->first();
-                if ($patient) {
-                    return redirect()->intended('home');
-                }
-            }
-        }
+href="{{route('pages.liste-patient-rechercher')}}" 

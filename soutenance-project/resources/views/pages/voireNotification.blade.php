@@ -24,7 +24,13 @@
 </div>
 @endsection
 @section('titre')
-CONSULTATION
+@auth 
+    @if (auth()->user()->typePersonne !== 'Patient') 
+        Listes des patients recemment consulter
+    @else
+        Histoirique des modifications du DME
+    @endif
+@endauth
 @endsection
 
 <!-- App body starts -->
@@ -35,45 +41,43 @@ CONSULTATION
 
     <!-- Row start -->
     <div class="row gx-3">
+    @auth 
+        @if (auth()->user()->typePersonne === 'Patient') 
+            @foreach ($lesLogs as $item)
+                <div class="col-6">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <h5 class="card-title">{{ $item->personnel_sante_nom }}</h5>
+                        </div>
+                        <div class="card-body">{{ $item->objet}}</div>
+                        <div class="card-footer small m-0 text-light">
+                        {{ $item->created_at}}
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        @else
+        @foreach ($lesLogs as $item)
         <div class="col-6">
             <div class="card mb-3">
-                <div class="card-header">
-                    <h5 class="card-title">Card Title</h5>
-                </div>
-                <div class="card-body">
-
-                </div>
+                <a href="#">
+                    <div class="card-header">
+                        <h5 class="card-title">{{ $item->patient_nom}}</h5>
+                    </div>
+                    <div class="card-footer small m-0 text-light">
+                        {{ $item->created_at}}
+                    </div>
+                </a>
             </div>
         </div>
-        <div class="col-6">
-            <div class="card mb-3">
-                <div class="card-header">
-                    <h5 class="card-title">Card Title</h5>
-                </div>
-                <div class="card-body">
-
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
+    @endif
+    @endauth
     <!-- Row end -->
 
 </div>
-<!-- App body ends -->
-
-<!-- App footer starts -->
-<div class="app-footer text-end">
-    <span>© Bootstrap Gallery 2024</span>
-</div>
-<!-- App footer ends -->
-
-</div>
-<!-- App container ends -->
-
-</div>
-<!-- Main container ends -->
-
-</div>
+<!-- App body ends --
 
 
 <!-- Row end -->

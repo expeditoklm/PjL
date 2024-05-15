@@ -125,20 +125,28 @@
                                     <span class="count-label"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
+                                @if (Auth::check() && Auth::user()->typePersonne=== 'Patient' )
                                     <h5 class="fw-semibold px-3 py-2 text-primary">Messages</h5>
                                     @php
                                         $lesLogs = \App\Helpers\Base::recupLogs();
                                     @endphp
 
                                     @if($lesLogs->isEmpty())
-                                        <p>Aucun log disponible.</p>
+                                            <div class="dropdown-item">
+                                                <div class="d-flex py-2">
+                                                    <div class="m-0">
+                                                        
+                                                        <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
                                     @else
                                         @foreach($lesLogs as $log)
                                             <div class="dropdown-item">
                                                 <div class="d-flex py-2">
                                                     <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
                                                     <div class="m-0">
-                                                        {{-- Assurez-vous d'adapter les clés en fonction de votre structure de log --}}
                                                         <h6 class="mb-1 fw-semibold">{{ $log->personnel_sante_nom }}</h6>
                                                         <p class="mb-1">{{ $log->objet }}</p>
                                                         <p class="small m-0 text-light">{{ $log->created_at }}</p>
@@ -148,8 +156,44 @@
                                         @endforeach
                                     @endif
 
+                                
+                                @else
+                                    <h5 class="fw-semibold px-3 py-2 text-primary">Patients recemment consulter</h5>
+                                    @php
+                                        $lesLogs = \App\Helpers\Base::recupLogs();
+                                    @endphp
+
+                                    @if($lesLogs->isEmpty())
+                                            <div class="dropdown-item">
+                                                <div class="d-flex py-2">
+                                                    <div class="m-0">
+                                                        
+                                                        <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    @else
+                                        @foreach($lesLogs as $log)
+                                            <div class="dropdown-item">
+                                                <div class="d-flex py-2">
+                                                    <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                                                    <div class="m-0">
+                                                        
+                                                        <h6 class="mb-1 fw-semibold">{{ $log->patient_nom }}</h6>
+                                                        
+                                                        <p class="small m-0 text-light">{{ $log->created_at }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                @endif
+                                   
+                                    
+
                                     <div class="d-grid mx-3 my-1">
-                                        <a href="javascript:void(0)" class="btn btn-primary">View all</a>
+                                        <a href="{{ route('pages.voire-notification') }}" class="btn btn-primary">View all</a>
                                     </div>
                                 </div>
                             </div>
@@ -162,8 +206,6 @@
                         @php
                             use App\Helpers\base;
                         @endphp
-
-
                         <!-- Account settings starts -->
                         <div class="dropdown ms-4">
                             <a id="userSettings" class="dropdown-toggle user-settings" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">

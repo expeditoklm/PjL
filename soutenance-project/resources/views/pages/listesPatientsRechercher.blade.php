@@ -121,47 +121,79 @@
 
                             <!-- Messages starts -->
                             <div class="dropdown">
-                                <a class="dropdown-toggle d-flex position-relative" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="ri-message-3-line fs-4 lh-1 text-primary"></i>
-                                    <span class="count-label"></span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <h5 class="fw-semibold px-3 py-2 text-primary">Messages</h5>
-                                    <div class="dropdown-item">
-                                        <div class="d-flex py-2">
-                                            <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
-                                            <div class="m-0">
-                                                <h6 class="mb-1 fw-semibold">Lilly Hardin</h6>
-                                                <p class="mb-1">Membership has been ended.</p>
-                                                <p class="small m-0 text-light">2 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-item">
-                                        <div class="d-flex py-2">
-                                            <img src="assets/images/user1.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
-                                            <div class="m-0">
-                                                <h6 class="mb-1 fw-semibold">Lara Mosley</h6>
-                                                <p class="mb-1">New customer registered.</p>
-                                                <p class="small m-0 text-light">3 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-item">
-                                        <div class="d-flex py-2">
-                                            <img src="assets/images/user4.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
-                                            <div class="m-0">
-                                                <h6 class="mb-1 fw-semibold">Ethel Valdez</h6>
-                                                <p class="mb-1">Check out every table in detail.</p>
-                                                <p class="small m-0 text-light">5 mins ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d-grid mx-3 my-1">
-                                        <a href="javascript:void(0)" class="btn btn-primary">View all</a>
-                                    </div>
-                                </div>
-                            </div>
+                <a class="dropdown-toggle d-flex position-relative" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="ri-message-3-line fs-4 lh-1 text-primary"></i>
+                  <span class="count-label"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                  @if (Auth::check() && Auth::user()->typePersonne=== 'Patient' )
+                  <h5 class="fw-semibold px-3 py-2 text-primary">Messages</h5>
+                 
+
+                  @if($lesLogs->isEmpty())
+                  <div class="dropdown-item">
+                    <div class="d-flex py-2">
+                      <div class="m-0">
+
+                        <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
+
+                      </div>
+                    </div>
+                  </div>
+                  @else
+                  @foreach($lesLogs as $log)
+                  <div class="dropdown-item">
+                    <div class="d-flex py-2">
+                      <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                      <div class="m-0">
+                        <h6 class="mb-1 fw-semibold">{{ $log->personnel_sante_nom }}</h6>
+                        <p class="mb-1">{{ $log->objet }}</p>
+                        <p class="small m-0 text-light">{{ $log->created_at }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                @endif
+
+
+                @else
+                  <h5 class="fw-semibold px-3 py-2 text-primary">Patients recemment consulter</h5>
+                
+
+                  @if($lesLogs->isEmpty())
+                  <div class="dropdown-item">
+                    <div class="d-flex py-2">
+                      <div class="m-0">
+
+                        <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
+
+                      </div>
+                    </div>
+                  </div>
+                  @else
+                  @foreach($lesLogs as $log)
+                  <div class="dropdown-item">
+                    <div class="d-flex py-2">
+                      <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                      <div class="m-0">
+
+                        <h6 class="mb-1 fw-semibold">{{ $log->patient_nom }}</h6>
+
+                        <p class="small m-0 text-light">{{ $log->created_at }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                  @endif
+                  @endif
+
+
+
+                  <div class="d-grid mx-3 my-1">
+                    <a href="{{ route('pages.voire-notification') }}" class="btn btn-primary">View all</a>
+                  </div>
+                </div>
+              </div>
                             <!-- Messages ends -->
 
 
@@ -174,8 +206,8 @@
                         <div class="dropdown ms-4">
                             <a id="userSettings" class="dropdown-toggle user-settings" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="me-2 text-truncate d-lg-block d-none">
-                                    <span class="d-flex opacity-50 small">Docteur</span>
-                                    <span>Thomas SAGBOHAN</span>
+                                    <span class="d-flex opacity-50 small">{{$personne->professionPers }}</span>
+                                    <span>{{$personne->nomPers }} {{$personne->prenomPers }}</span>
                                 </div>
                                 <div class="position-relative">
                                     <img src="assets/images/user4.png" class="rounded-5 img-3x" alt="Bootstrap Gallery" />
@@ -185,7 +217,10 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <div class="mx-3 my-2 d-grid">
                                     <p class="mb-2">In a meeting</p>
-                                    <a href="login.html" class="btn btn-danger">Logout</a>
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger col-md-8 ">Logout</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -238,14 +273,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
+                                        
+                                        @foreach ($personnes as $item)
                                             <tr>
-                                                <td>Sakura Yamamoto</td>
-                                                <td>Support Engineer</td>
-                                                <td>Tokyo</td>
-                                                <td>37</td>
-                                                <td>2020/08/19</td>
-                                                <td>$139,575</td>
+                                                <td>{{ $item->cin}}</td>
+                                                <td>{{ $item->nomPers}} {{ $item->prenomPers}}</td>
+                                                <td>{{ $item->dateNaiss}}</td>
+                                                <td>{{ $item->telPers}}</td>
+                                                <td>{{ $item->paysPers}}</td>
+                                                <td>{{ $item->villePers}}</td>
                                                 <td>
                                                     <a href="{{route('pages.voir-patient')}}"><i class="ri-bar-chart-line m-3"></i></a>
                                                     <a href="#" data-bs-toggle="modal" data-bs-target="#modifPatientInfo"><i class="ri-bar-chart-line"></i></a>
@@ -484,6 +520,7 @@
 
 
                                             </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
