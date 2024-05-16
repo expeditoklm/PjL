@@ -6,6 +6,7 @@ use App\Models\Log;
 use App\Models\Patient;
 use App\Models\Personne;
 use App\Models\PersonnelSante;
+use App\Models\Consultation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
@@ -46,9 +47,10 @@ class base
 
         }else{
             $personneId=session('persConnecteId'); 
+            $personnel_sante_id = session('patientOuPersSanteConnecteId');
 
         $lesLogs = Log::select('logs.*', 'personnes.nomPers AS patient_nom')
-        ->where('logs.personnel_sante_id', $personneId)
+        ->where('logs.personnel_sante_id', $personnel_sante_id)
         ->latest()
         ->take(3)
         ->join('patients', function($join) {
@@ -64,5 +66,14 @@ class base
 
         return $lesLogs ;
     }
+    public static function getUserOrPatientInfo() {
+        $personnePatient_id = session('patient_init');
+        $personne = Personne::where('id', $personnePatient_id)->first();
+        $patient = Patient::where('personne_id', $personne->id)->first();
+        $consultation = Consultation::where('patient_id', $patient->id)->first();
+    
+        return ['personne' => $personne, 'consultation' => $consultation];
+    }
+    
 
 }

@@ -18,9 +18,9 @@ use App\Http\Controllers\PagesController;
 Route::middleware(['auth'])->group(function () {
     Route::get('/recherche-patient', [PagesController::class, 'recherchePatient'])->name('pages.recherche-patient');
     Route::post('/recherche-patient', [PagesController::class, 'recherchePatientPost'])->name('pages.recherche-patient');
-    Route::get('/voir-patient', [PagesController::class, 'voirPatient'])->name('pages.voir-patient');
+    Route::get('/voir-patient/{id}', [PagesController::class, 'voirPatient'])->name('pages.voir-patient');
     Route::get('/liste-visite-patient', [PagesController::class, 'listeVisitePatient'])->name('pages.liste-viste-patient');
-    Route::get('/visite-patient', [PagesController::class, 'VisitePatient'])->name('pages.viste-patient');
+    Route::get('/visite-patient/{id}', [PagesController::class, 'VisitePatient'])->name('pages.viste-patient');
     Route::get('/liste-analyse-patient', [PagesController::class, 'listeAnalysePatient'])->name('pages.liste-analyse-patient');
     Route::get('/analyse-patient', [PagesController::class, 'analysePatient'])->name('pages.analyse-patient');
     Route::get('/liste-soin-patient', [PagesController::class, 'listeSoinPatient'])->name('pages.liste-soin-patient');
@@ -29,6 +29,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/note-patient', [PagesController::class, 'notePatient'])->name('pages.note-patient');
     Route::get('/voire-notification', [PagesController::class, 'voireNotification'])->name('pages.voire-notification');
 });
+
+
 
 // Toutes les autres routes nécessitent une authentification
 Route::middleware(['auth'])->group(function () {

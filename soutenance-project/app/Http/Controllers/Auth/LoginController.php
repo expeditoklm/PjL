@@ -81,6 +81,8 @@ class LoginController extends Controller
                                     $user = Auth::user();
                                     session()->put('patientOuPersSanteConnecteId',$personnelSante->id);
                                     session()->put('persConnecteId',$personne->id);
+                                    session()->put('patient_init',0);
+
                                     
                                     return redirect()->intended('/recherche-patient');
                                 }
@@ -103,7 +105,9 @@ class LoginController extends Controller
                         $user = Auth::user();
                         session()->put('patientOuPersSanteConnecteId',$patient->id);
                         session()->put('persConnecteId',$personne->id);
-                        return redirect()->route('pages.voir-patient');
+                        session()->put('patient_init',$personne->id);
+                        $patient_init=session('patient_init');
+                        return redirect()->route('pages.voir-patient', ['id' => $patient_init]);
                     }
                 }
             } else {

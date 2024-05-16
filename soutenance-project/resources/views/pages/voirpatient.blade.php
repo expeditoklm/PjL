@@ -36,73 +36,73 @@ INFORMATIONS BASIQUES
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="">Type de Pièce</label>
-                                            <input type="text" class="form-control" id="" value="Carte Nationnale d'Identité">
+                                            <input type="text" class="form-control" id="" value="{{ $personne->typeCin }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="name">CIN</label>
-                                            <input type="number" class="form-control" id="name" value="022589966354">
+                                            <input type="number" class="form-control" id="name" value="{{ $personne->cin }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Nom</label>
-                                            <input type="email" class="form-control" id="email" value="LACHILO">
+                                            <input type="text" class="form-control" id="email" value="{{ $personne->nomPers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="phn">Prenom</label>
-                                            <input type="number" class="form-control" id="phn" value="Expédit">
+                                            <input type="text" class="form-control" id="phn" value="{{ $personne->prenomPers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="company">Sexe</label>
-                                            <input type="text" class="form-control" id="company" value="Masculin">
+                                            <input type="text" class="form-control" id="company" value="{{ $personne->sexe }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="bAddress">Date de Naissance</label>
-                                            <input type="date" class="form-control" id="bAddress" value="18/12/2000">
+                                            <input type="text" class="form-control" id="bAddress" value="{{ $personne->dateNaiss }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="terri">Adresse</label>
-                                            <input type="text" class="form-control" id="terri" value="Tokpota-vèdo">
+                                            <input type="text" class="form-control" id="terri" value="{{ $personne->adressePers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="terri">E-mail</label>
-                                            <input type="text" class="form-control" id="terri" value="expeditlachilo796@gmail.com">
+                                            <input type="text" class="form-control" id="terri" value="{{ $user->email }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="">Téléphone</label>
-                                            <input type="number" class="form-control" id="" value="52401574">
+                                            <input type="number" class="form-control" id="" value="{{ $personne->telPers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="value">Profession</label>
-                                            <input type="text" class="form-control" id="" value="Informaticien de Gestion">
+                                            <input type="text" class="form-control" id="" value="{{ $personne->professionPers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="">Pays</label>
-                                            <input type="text" class="form-control" id="" value="Bénin">
+                                            <input type="text" class="form-control" id="" value="{{ $personne->paysPers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="">Ville</label>
-                                            <input type="text" class="form-control" id="" value="Porto-Novo">
+                                            <input type="text" class="form-control" id="" value="{{ $personne->villePers }}">
                                         </div>
                                     </div>
 
@@ -117,43 +117,43 @@ INFORMATIONS BASIQUES
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Nom du père</label>
-                                            <input type="text" class="form-control" id="companyName" value="LACHILO">
+                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->nomPere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Prénom du père</label>
-                                            <input type="text" class="form-control" id="companyName" value="Josué">
+                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->prenomPere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Pathologie du père</label>
-                                            <input type="text" class="form-control" id="companyName" value="Toux">
+                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->pathologiePere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Nom de la mère</label>
-                                            <input type="text" class="form-control" id="companyName" value="OLOTIN">
+                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->nomMere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Prenom de la mère</label>
-                                            <input type="text" class="form-control" id="companyName" value="Bernadette">
+                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->prenomMere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Pathologie de la mère</label>
-                                            <input type="text" class="form-control" id="companyName" value="Sainte">
+                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->pathologieMere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Groupe sanguin</label>
-                                            <input type="text" class="form-control" id="companyName" value="O+">
+                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->groupeSanguinPers }}">
                                         </div>
                                     </div>
 
@@ -191,16 +191,17 @@ INFORMATIONS BASIQUES
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                            @foreach ($consultations as $item)
                                                                 <tr>
-                                                                    <td>5</td>
-                                                                    <td>3600</td>
-                                                                    <td>3600</td>
+                                                                    <td>{{ $item->id }}</td>
+                                                                    <td>{{ $item->allergies }}</td>
+                                                                    <td>{{ $item->created_at }}</td>
                                                                     <td>
-                                                                        <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifAllergie"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
-                                                                        <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supAllergie"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
+                                                                        <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifAllergie{{ $item->id }}"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                                                                        <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supAllergie{{ $item->id }}"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
                                                                     </td>
                                                                     <!-- Modal Modification -->
-                                                                    <div class="modal fade" id="modifAllergie" tabindex="-1" aria-labelledby="modifAllergieLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="modifAllergie{{ $item->id }}" tabindex="-1" aria-labelledby="modifAllergieLabel" aria-hidden="true">
                                                                         <div class="modal-dialog modal-fullscreen">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
@@ -247,7 +248,7 @@ INFORMATIONS BASIQUES
                                                                         </div>
                                                                     </div>
                                                                     <!-- Modal suppression -->
-                                                                    <div class="modal fade" id="supAllergie" tabindex="-1" aria-labelledby="supAllergieLabel" aria-hidden="true">
+                                                                    <div class="modal fade" id="supAllergie{{ $item->id }}" tabindex="-1" aria-labelledby="supAllergieLabel" aria-hidden="true">
                                                                         <div class="modal-dialog modal-sm">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-body p-4 text-center">
@@ -269,6 +270,7 @@ INFORMATIONS BASIQUES
                                                                         </div>
                                                                     </div>
                                                                 </tr>
+                                                            @endforeach
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -303,23 +305,24 @@ INFORMATIONS BASIQUES
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                        @foreach ($correspondants as $correspondant)
                                                             <tr>
-                                                                <td>5</td>
-                                                                <td>3600</td>
-                                                                <td>2300</td>
-                                                                <td>3600</td>
-                                                                <td>2300</td>
-                                                                <td>2300</td>
+                                                                <td>{{ $correspondant['id'] }}</td>
+                                                                <td>{{ $correspondant['nomCorresp'] }}</td>
+                                                                <td>{{ $correspondant['prenomCorresp'] }}</td>
+                                                                <td>{{ $correspondant['telephone'] }}</td>
+                                                                <td>{{ $correspondant['relation'] }}</td>
+                                                                <td>{{ $correspondant['created_at'] }}</td>
                                                                 <td>
-                                                                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifCorrespondance"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
-                                                                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supCorrespondance"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
+                                                                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifCorrespondance{{ $item->id }}"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                                                                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supCorrespondance{{ $item->id }}"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
                                                                 </td>
                                                                 <!-- Modal Modification -->
-                                                                <div class="modal fade" id="modifCorrespondance" tabindex="-1" aria-labelledby="modifCorrespondanceLabel" aria-hidden="true">
+                                                                <div class="modal fade" id="modifCorrespondance{{ $item->id }}" tabindex="-1" aria-labelledby="modifCorrespondanceLabel" aria-hidden="true">
                                                                     <div class="modal-dialog modal-fullscreen">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
-                                                                                <h5 class="modal-title h4" id="modifCorrespondanceLabel">
+                                                                                <h5 class="modal-title h4" id="modifCorrespondanceLabel{{ $item->id }}">
                                                                                     Formulaire de Modification de Correspondance
                                                                                 </h5>
                                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -382,7 +385,7 @@ INFORMATIONS BASIQUES
                                                                     </div>
                                                                 </div>
                                                                 <!-- Modal suppression -->
-                                                                <div class="modal fade" id="supCorrespondance" tabindex="-1" aria-labelledby="supCorrespondanceLabel" aria-hidden="true">
+                                                                <div class="modal fade" id="supCorrespondance{{ $item->id }}" tabindex="-1" aria-labelledby="supCorrespondanceLabel" aria-hidden="true">
                                                                     <div class="modal-dialog modal-sm">
                                                                         <div class="modal-content">
                                                                             <div class="modal-body p-4 text-center">
@@ -404,6 +407,7 @@ INFORMATIONS BASIQUES
                                                                     </div>
                                                                 </div>
                                                             </tr>
+                                                        @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>

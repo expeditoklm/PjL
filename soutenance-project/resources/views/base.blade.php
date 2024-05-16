@@ -23,14 +23,14 @@
     <!-- *************
 			************ CSS Files *************
 		************* -->
-    <link rel="stylesheet" href="assets/fonts/remix/remixicon.css" />
-    <link rel="stylesheet" href="assets/css/main.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/fonts/remix/remixicon.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/main.min.css') }}" />
 
     @yield('css')
 
 
     <!-- Mega Menu -->
-    <link rel="stylesheet" href="assets/vendor/megamenu/css/megamenu.css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/megamenu/css/megamenu.css') }}">
 
     <!-- *************
 			************ Vendor Css Files *************
@@ -94,10 +94,10 @@
                         <!-- App brand starts -->
                         <div class="app-brand me-3 d-flex align-items-center">
                             <a href="index.html" class="d-lg-block d-none">
-                                <img src="assets/images/logo.svg" class="logo" alt="Bootstrap Gallery">
+                                <img src="{{ asset('assets/images/logo.svg') }}" class="logo" alt="Bootstrap Gallery">
                             </a>
                             <a href="index.html" class="d-lg-none d-md-block">
-                                <img src="assets/images/logo-sm.svg" class="logo" alt="Bootstrap Gallery">
+                                <img src="{{ asset('assets/images/logo-sm.svg') }}" class="logo" alt="Bootstrap Gallery">
                             </a>
                         </div>
                         <!-- App brand ends -->
@@ -125,72 +125,72 @@
                                     <span class="count-label"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                @if (Auth::check() && Auth::user()->typePersonne=== 'Patient' )
+                                    @if (Auth::check() && Auth::user()->typePersonne=== 'Patient' )
                                     <h5 class="fw-semibold px-3 py-2 text-primary">Messages</h5>
                                     @php
-                                        $lesLogs = \App\Helpers\Base::recupLogs();
+                                    $lesLogs = \App\Helpers\Base::recupLogs();
                                     @endphp
 
                                     @if($lesLogs->isEmpty())
-                                            <div class="dropdown-item">
-                                                <div class="d-flex py-2">
-                                                    <div class="m-0">
-                                                        
-                                                        <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
-                                                        
-                                                    </div>
-                                                </div>
+                                    <div class="dropdown-item">
+                                        <div class="d-flex py-2">
+                                            <div class="m-0">
+
+                                                <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
+
                                             </div>
+                                        </div>
+                                    </div>
                                     @else
-                                        @foreach($lesLogs as $log)
-                                            <div class="dropdown-item">
-                                                <div class="d-flex py-2">
-                                                    <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
-                                                    <div class="m-0">
-                                                        <h6 class="mb-1 fw-semibold">{{ $log->personnel_sante_nom }}</h6>
-                                                        <p class="mb-1">{{ $log->objet }}</p>
-                                                        <p class="small m-0 text-light">{{ $log->created_at }}</p>
-                                                    </div>
-                                                </div>
+                                    @foreach($lesLogs as $log)
+                                    <div class="dropdown-item">
+                                        <div class="d-flex py-2">
+                                            <img src="{{ asset('assets/images/user3.png') }}" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                                            <div class="m-0">
+                                                <h6 class="mb-1 fw-semibold">{{ $log->personnel_sante_nom }}</h6>
+                                                <p class="mb-1">{{ $log->objet }}</p>
+                                                <p class="small m-0 text-light">{{ $log->created_at }}</p>
                                             </div>
-                                        @endforeach
+                                        </div>
+                                    </div>
+                                    @endforeach
                                     @endif
 
-                                
-                                @else
+
+                                    @else
                                     <h5 class="fw-semibold px-3 py-2 text-primary">Patients recemment consulter</h5>
                                     @php
-                                        $lesLogs = \App\Helpers\Base::recupLogs();
+                                    $lesLogs = \App\Helpers\Base::recupLogs();
                                     @endphp
 
                                     @if($lesLogs->isEmpty())
-                                            <div class="dropdown-item">
-                                                <div class="d-flex py-2">
-                                                    <div class="m-0">
-                                                        
-                                                        <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
-                                                        
-                                                    </div>
-                                                </div>
+                                    <div class="dropdown-item">
+                                        <div class="d-flex py-2">
+                                            <div class="m-0">
+
+                                                <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
+
                                             </div>
+                                        </div>
+                                    </div>
                                     @else
-                                        @foreach($lesLogs as $log)
-                                            <div class="dropdown-item">
-                                                <div class="d-flex py-2">
-                                                    <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
-                                                    <div class="m-0">
-                                                        
-                                                        <h6 class="mb-1 fw-semibold">{{ $log->patient_nom }}</h6>
-                                                        
-                                                        <p class="small m-0 text-light">{{ $log->created_at }}</p>
-                                                    </div>
-                                                </div>
+                                    @foreach($lesLogs as $log)
+                                    <div class="dropdown-item">
+                                        <div class="d-flex py-2">
+                                            <img src="{{ asset('assets/images/user3.png') }}" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                                            <div class="m-0">
+
+                                                <h6 class="mb-1 fw-semibold">{{ $log->patient_nom }}</h6>
+
+                                                <p class="small m-0 text-light">{{ $log->created_at }}</p>
                                             </div>
-                                        @endforeach
+                                        </div>
+                                    </div>
+                                    @endforeach
                                     @endif
-                                @endif
-                                   
-                                    
+                                    @endif
+
+
 
                                     <div class="d-grid mx-3 my-1">
                                         <a href="{{ route('pages.voire-notification') }}" class="btn btn-primary">View all</a>
@@ -204,7 +204,7 @@
                         </div>
                         {{-- Importez le fichier du helper --}}
                         @php
-                            use App\Helpers\base;
+                        use App\Helpers\base;
                         @endphp
                         <!-- Account settings starts -->
                         <div class="dropdown ms-4">
@@ -214,7 +214,7 @@
                                     <span>{{ base::getUserInfo()->nomPers }}</span>
                                 </div>
                                 <div class="position-relative">
-                                    <img src="assets/images/user4.png" class="rounded-5 img-3x" alt="Bootstrap Gallery" />
+                                    <img src="{{ asset('assets/images/user4.png') }}" class="rounded-5 img-3x" alt="Bootstrap Gallery" />
                                     <span class="user-status busy"></span>
                                 </div>
                             </a>
@@ -242,13 +242,13 @@
 
                     <!-- Page title starts -->
                     <div>
-                    @auth 
-                        @if (auth()->user()->typePersonne !== 'Patient') 
-                            <a href="{{ route('pages.recherche-patient') }}" class="mb-1 text-primary d-flex align-items-center">
-                                <i class="ri-arrow-left-s-line fs-3 lh-1 me-1 ms-n2"></i>Retour à l'acceuil
-                            </a>
+                        @auth
+                        @if (auth()->user()->typePersonne !== 'Patient')
+                        <a href="{{ route('pages.recherche-patient') }}" class="mb-1 text-primary d-flex align-items-center">
+                            <i class="ri-arrow-left-s-line fs-3 lh-1 me-1 ms-n2"></i>Retour à l'acceuil
+                        </a>
                         @endif
-                    @endauth
+                        @endauth
 
                         <h4 class="mb-1 text-primary fw-semibold">@yield('titre')</h4>
 
@@ -263,6 +263,11 @@
                     <a href="#" class="text-decoration-underline alert-link">Check it out!</a>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
+                @php
+                    $info = App\Helpers\base::getUserOrPatientInfo();
+                    $personne = $info['personne'];
+                    $consultation = $info['consultation'];
+                @endphp
                 <!-- App Hero header ends -->
                 <div class="app-body">
 
@@ -270,11 +275,11 @@
                     <div class="mx-n4 p-4 bg-primary mb-4">
 
                         <div class="d-flex align-items-center flex-row flex-wrap">
-                            <img src="assets/images/user5.png" class="img-5x rounded-circle" alt="Admin Dashboard">
+                            <img src="{{ asset('assets/images/user5.png ') }}" class="img-5x rounded-circle" alt="Admin Dashboard">
 
                             <div class="ms-3 text-white">
-                                <h5 class="mb-1">Expédit LACHILO</h5>
-                                <h6 class="m-0 fw-light">Devellopeur Web & Mobile</h6>
+                                <h5 class="mb-1">{{ $personne->nomPers }} {{ $personne->prenomPers }}</h5>
+                                <h6 class="m-0 fw-light">{{ $personne->professionPers }}</h6>
                             </div>
 
 
@@ -282,40 +287,40 @@
                                 <i class="ri-phone-line fs-2 lh-1 me-2"></i>
                                 <div>
                                     <h6 class="mb-1">Contact</h6>
-                                    <p class="m-0 fw-light small">229 524 01574</p>
+                                    <p class="m-0 fw-light small">{{ $personne->telPers }}</p>
                                 </div>
                             </div>
                             <div class="ms-4 text-white d-flex align-items-center ps-4 border-start">
                                 <i class="ri-map-pin-line fs-2 lh-1 me-2"></i>
                                 <div>
                                     <h6 class="mb-1">Adresse</h6>
-                                    <p class="m-0 fw-light small">BENIN / Porto-Novo </p>
+                                    <p class="m-0 fw-light small">{{ $personne->adressePers }}</p>
                                 </div>
                             </div>
+
                             <div class="ms-auto d-flex gap-2">
-                                <a href="{{ Route::is('pages.voir-patient') ? 'javascript:void(0)' : route('pages.voir-patient') }}" class="btn bg-primary-subtle position-relative">
+                                <a href="{{ request()->route()->getName() == 'pages.voir-patient' ? 'javascript:void(0)' : route('pages.voir-patient', ['id' => session('patient_init')]) }}" class="btn bg-primary-subtle position-relative">
                                     <span>Infos Basic</span>
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">9+</span>
                                 </a>
-                                <a href="{{ Route::is('pages.liste-viste-patient') ? 'javascript:void(0)' : route('pages.liste-viste-patient') }}" class="btn bg-primary-subtle position-relative">
+                                <a href="{{ request()->route()->getName() == 'pages.liste-viste-patient' ? 'javascript:void(0)' : route('pages.liste-viste-patient') }}" class="btn bg-primary-subtle position-relative">
                                     <span>Visites</span>
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">8</span>
                                 </a>
-                                <a href="{{ Route::is('pages.liste-analyse-patient') ? 'javascript:void(0)' : route('pages.liste-analyse-patient') }}" class="btn bg-primary-subtle position-relative">
+                                <a href="{{ request()->route()->getName() == 'pages.liste-analyse-patient' ? 'javascript:void(0)' : route('pages.liste-analyse-patient') }}" class="btn bg-primary-subtle position-relative">
                                     <span>Analyses effectuées</span>
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
                                 </a>
-                                <a href="{{ Route::is('pages.liste-soin-patient') ? 'javascript:void(0)' : route('pages.liste-soin-patient') }}" class="btn bg-primary-subtle position-relative">
-
+                                <a href="{{ request()->route()->getName() == 'pages.liste-soin-patient' ? 'javascript:void(0)' : route('pages.liste-soin-patient') }}" class="btn bg-primary-subtle position-relative">
                                     <span>Soins Administré</span>
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">5</span>
                                 </a>
-
-                                <a href="{{ Route::is('pages.note-patient') ? 'javascript:void(0)' : route('pages.note-patient') }}" class="btn bg-primary-subtle position-relative">
+                                <a href="{{ request()->route()->getName() == 'pages.note-patient' ? 'javascript:void(0)' : route('pages.note-patient') }}" class="btn bg-primary-subtle position-relative">
                                     <span>Notes</span>
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
                                 </a>
                             </div>
+
                         </div>
 
                     </div>
@@ -341,24 +346,24 @@
 			************ JavaScript Files *************
 		************* -->
         <!-- Required jQuery first, then Bootstrap Bundle JS -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/modernizr.js"></script>
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/js/modernizr.js') }}"></script>
 
         <!-- Megamenu JS -->
-        <script src="assets/vendor/megamenu/js/megamenu.js"></script>
-        <script src="assets/vendor/megamenu/js/custom.js"></script>
+        <script src="{{ asset('assets/vendor/megamenu/js/megamenu.js') }}"></script>
+        <script src="{{ asset('assets/vendor/megamenu/js/custom.js') }}"></script>
 
         <!-- *************
 			************ Vendor Js Files *************
 		************* -->
 
         <!-- Apex Graphs -->
-        <script src="assets/vendor/apex/apexcharts.min.js"></script>
-        <script src="assets/vendor/apex/custom/graphs/sparkline.js"></script>
+        <script src="{{ asset('assets/vendor/apex/apexcharts.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/apex/custom/graphs/sparkline.js') }}"></script>
 
         <!-- Custom JS files -->
-        <script src="assets/js/custom.js"></script>
+        <script src="{{ asset('assets/js/custom.js') }}"></script>
         @yield('script')
 </body>
 

@@ -283,8 +283,8 @@
                                                 <td>{{ $item->paysPers}}</td>
                                                 <td>{{ $item->villePers}}</td>
                                                 <td>
-                                                    <a href="{{route('pages.voir-patient')}}"><i class="ri-bar-chart-line m-3"></i></a>
-                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modifPatientInfo"><i class="ri-bar-chart-line"></i></a>
+                                                    <a href="{{route('pages.voir-patient', ['id' =>$item->id ])}}"><i class="ri-eye-line m-3"></i></a>
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modifPatientInfo{{$item->id }}"><i class="ri-draft-line"></i></a>
                                                 </td>
 
 
@@ -293,7 +293,7 @@
 
 
                                                 <!-- Modal Fullscreen -->
-                                                <div class="modal fade" id="modifPatientInfo" tabindex="-1" aria-labelledby="modifPatientInfoLabel" aria-hidden="true">
+                                                <div class="modal fade" id="modifPatientInfo{{$item->id }}" tabindex="-1" aria-labelledby="modifPatientInfoLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-fullscreen">
                                                         <div class="modal-content">
                                                             <div class="modal-header">

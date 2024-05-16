@@ -275,7 +275,22 @@
                     <div class="m-0">
                       <label class="form-label" for="abcd">Pays</label>
                       <select class="form-select" name="pays" id="abcd" aria-label="Default select example">
-                        <option selected="">Selectionner le pays</option>
+                        <option value="">Selectionner le pays</option>
+                        <option value="Benin">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 col-12">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="m-0">
+                      <label class="form-label" for="abcd">Ville</label>
+                      <select class="form-select" name="ville" id="abcd" aria-label="Default select example">
+                        <option value="">Selectionner la ville</option>
                         <option value="Benin">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -290,7 +305,7 @@
                     <div class="m-0">
                       <label class="form-label" for="abcd">Type de Pièce</label>
                       <select class="form-select" name="typePiece" id="abcd" aria-label="Default select example">
-                        <option selected="">Selectionner le type de pièce</option>
+                        <option value="">Selectionner le type de pièce</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
@@ -330,16 +345,6 @@
                 </div>
               </div>
 
-              <div class="col-sm-4 col-12">
-                <div class="card mb-3">
-                  <div class="card-body">
-                    <div class="m-0">
-                      <label class="form-label" for="abc">Nom de la mère</label>
-                      <input type="text" name="nomMere" class="form-control" id="abc" placeholder="Entrez le nom de la mère">
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <div class="col-md-12 col-12">
                 <div class=" mb-3">
@@ -451,7 +456,7 @@
                         <div class="mb-3">
                           <label class="form-label" for="name">Pays</label>
                           <select class="form-select" id="abcd" aria-label="Default select example">
-                            <option selected="">Selectionner le pays</option>
+                            <option value="">Selectionner le pays</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -464,7 +469,7 @@
                         <div class="mb-3">
                           <label class="form-label" for="name">Ville</label>
                           <select class="form-select" id="abcd" aria-label="Default select example">
-                            <option selected="">Selectionner la ville</option>
+                            <option value="">Selectionner la ville</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -527,7 +532,7 @@
                         <div class="mb-3">
                           <label class="form-label" for="name">Groupe Sanguin</label>
                           <select class="form-select" id="abcd" aria-label="Default select example">
-                            <option selected="">Selectionner le groupe sanguin</option>
+                            <option value="">Selectionner le groupe sanguin</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -540,7 +545,7 @@
                         <div class="mb-3">
                           <label class="form-label" for="name">Type de pièce</label>
                           <select class="form-select" id="abcd" aria-label="Default select example">
-                            <option selected="">Selectionner le type de pièce</option>
+                            <option value="">Selectionner le type de pièce</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>

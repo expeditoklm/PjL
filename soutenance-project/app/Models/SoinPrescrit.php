@@ -28,4 +28,5 @@ class SoinPrescrit extends Model
     {
         return $this->belongsTo('App\Models\Consultation');
     }
+    
 }

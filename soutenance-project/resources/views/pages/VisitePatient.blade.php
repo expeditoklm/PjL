@@ -55,56 +55,56 @@ CONSULTATION
                   <div class="col-xl-3 col-sm-4 col-12 ">
                     <div class="mb-3">
                       <label class="form-label" for="email">Motif</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" value="Enter email address"></textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->motif}}</textarea>
                     </div>
 
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Antécedants</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" value="Enter email address"></textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->antecedant}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Anamnèse</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" value="Enter email address"></textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->anamnèse}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Signes Associé</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" value="Enter email address"></textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->signeAssocie}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Allergies</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" value="Enter email address"></textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->allergies}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Diagnostique Retenu</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" value="Enter email address"></textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->diagnostiqueRetenu}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Bilan</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" value="Enter email address"></textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->bilan}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Médecin</label>
-                      <input name="" id="" class="form-control" value="Enter email address">
+                      <input name="" id="" class="form-control" value="{{$medecin->nomPers}} {{$medecin->prenomPers}}">
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Hopital</label>
-                      <input name="" id="" class="form-control" value="Enter email address">
+                      <input name="" id="" class="form-control" value="{{$hopital->libHopital}}">
                     </div>
                   </div>
 
@@ -137,18 +137,19 @@ CONSULTATION
                             </tr>
                           </thead>
                           <tbody>
+                          @foreach ($examen_clinique as $item)
                             <tr>
-                              <td>Tiger Nixon</td>
-                              <td>System Architect</td>
-                              <td>Edinburgh</td>
-                              <td>61</td>
+                            <td>{{ $item->id}}</td>
+                              <td>{{ $item->typeExamen->libTypeExamen}}</td>
+                              <td>{{ $item->description}}</td>
+                              <td>{{ $item->observation}}</td>
 
                               <td>
                                 <a href="#" class="m-2"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
                                 <a href="#" class="m-2"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
                               </td>
                             </tr>
-
+                          @endforeach
                           </tbody>
                         </table>
                       </div>
@@ -180,20 +181,21 @@ CONSULTATION
                             </tr>
                           </thead>
                           <tbody>
+                          @foreach ($soins_prescrit as $item)
                             <tr>
-                              <td>Donna Snider</td>
-                              <td>Customer Support</td>
-                              <td>Customer Support</td>
+                              <td>{{ $item->id}}</td>
+                              <td>{{ $item->id}}</td>
+                              <td>{{ $item->detailsSoinPrescrit}}</td>
                               <td>
-                                <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#modifSoin"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
-                                <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#suppSoin"><i class="ri-delete-bin-6-line   fs-4 lh-1 text-primary "></i></a>
+                                <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#modifSoin{{ $item->id}}"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                                <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#suppSoin{{ $item->id}}"><i class="ri-delete-bin-6-line   fs-4 lh-1 text-primary "></i></a>
                                 <a href="#" class="m-2"><i class="ri-printer-line fs-4 lh-1 text-primary "></i></a>
                               </td>
 
 
 
                               <!-- Modal Fullscreen -->
-                              <div class="modal fade" id="modifSoin" tabindex="-1" aria-labelledby="modifSoinLabel" aria-hidden="true">
+                              <div class="modal fade" id="modifSoin{{ $item->id}}" tabindex="-1" aria-labelledby="modifSoinLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-fullscreen">
                                   <div class="modal-content">
                                     <div class="modal-header">
@@ -255,7 +257,7 @@ CONSULTATION
 
 
 
-                              <div class="modal fade" id="suppSoin" tabindex="-1" aria-labelledby="suppSoinLabel" aria-hidden="true">
+                              <div class="modal fade" id="suppSoin{{ $item->id}}" tabindex="-1" aria-labelledby="suppSoinLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-sm">
                                   <div class="modal-content">
                                     <div class="modal-body p-4 text-center">
@@ -277,6 +279,7 @@ CONSULTATION
                                 </div>
                               </div>
                             </tr>
+                          @endforeach
                           </tbody>
 
                         </table>
