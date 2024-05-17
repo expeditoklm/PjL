@@ -16,6 +16,14 @@ use App\Models\SoinPrescrit;
 use App\Models\ExamenClinique;
 
 use App\Models\Consultation_Correspondance;
+use App\Models\Deces;
+use App\Models\Evacuation;
+use App\Models\FaireAnalyse;
+use App\Models\Ordonnance;
+use App\Models\PrescrireAnalyse;
+use App\Models\SortieMedicale;
+use App\Models\Permission;
+
 use App\Models\User;
 use Illuminate\Support\Carbon;
 
@@ -192,24 +200,43 @@ class PagesController extends Controller
     }
     public function VisitePatient($id)
     {
-        $personne_id =session('patient_init');
-        $patient = Patient::where('personne_id', $personne_id)->first();
+        
         $consultations = Consultation::where('id', $id)->first();
         $personnel_sante = PersonnelSante::where('id', $consultations->personnelSante_id)->first();
         $medecin = Personne::where('id', $personnel_sante->personne_id)->first();
         $hopital = Hopital::where('id', $consultations->hopital_id)->first();
         $examen_clinique = ExamenClinique::where('consultation_id', $consultations->id)->get();
         $soins_prescrit = SoinPrescrit::where('consultation_id', $consultations->id)->get();
-        //dd($examen_clinique);
-        return view('pages/VisitePatient',compact('consultations','medecin','hopital','examen_clinique','soins_prescrit'));
+        $analyses_prescrit = PrescrireAnalyse::where('consultation_id', $consultations->id)->get();
+        $consultation = Consultation::with('ordonnances.prescrireMedicaments.medicament')->find($consultations->id);
+        $sortie_medicale = SortieMedicale::where('consultation_id', $consultations->id)->first();
+        $sortie_medicale_info=[];
+        if($sortie_medicale->modeSortie == "Evacuation"){
+            $sortie_medicale_info = Evacuation::where('sortieMedicale_id', $sortie_medicale->id)->first();
+        }elseif($sortie_medicale->modeSortie == "Permission"){
+            $sortie_medicale_info = Permission::where('sortieMedicale_id', $sortie_medicale->id)->first();
+        }elseif($sortie_medicale->modeSortie == "Deces"){
+            $sortie_medicale_info = Deces::where('sortieMedicale_id', $sortie_medicale->id)->first();
+        }
+
+
+
+
+       // dd( $consultations->id);
+        return view('pages/VisitePatient',compact('consultations','medecin','hopital','examen_clinique','soins_prescrit','analyses_prescrit','consultation','sortie_medicale','sortie_medicale_info'));
     }
     public function listeAnalysePatient()
     {
-        return view('pages/listeAnalysePatient');
+        $personne_id =session('patient_init');
+        $patient = Patient::where('personne_id', $personne_id)->first();
+        
+        $analyses = FaireAnalyse::where('patient_id', $patient->id)->get();
+        return view('pages/listeAnalysePatient',compact('analyses'));
     }
-    public function AnalysePatient()
+    public function AnalysePatient($id)
     {
-        return view('pages/analysePatient');
+        $analyse = FaireAnalyse::where('id', $id)->first();
+        return view('pages/analysePatient',compact('analyse'));
     }
 
     public function listeSoinPatient()

@@ -55,9 +55,9 @@ class FaireAnalyse extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function typeAnalysis()
+    public function typeAnalyse()
     {
-        return $this->belongsTo('App\Models\TypeAnalysis', 'typeAnalyse_id');
+        return $this->belongsTo('App\Models\TypeAnalyse', 'typeAnalyse_id');
     }
 
     /**

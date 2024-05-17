@@ -6,27 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
- * @property integer $consultation_id
+ * @property string $libMedicament
+ * @property string $formMedicament
  * @property boolean $deleted
  * @property string $created_at
  * @property string $updated_at
- * @property Consultation $consultation
  * @property PrescrireMedicament[] $prescrireMedicaments
  */
-class Ordonnance extends Model
+class Medicament extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['consultation_id', 'deleted', 'created_at', 'updated_at'];
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function consultation()
-    {
-        return $this->belongsTo('App\Models\Consultation');
-    }
+    protected $fillable = ['libMedicament', 'formMedicament', 'deleted', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -36,3 +28,6 @@ class Ordonnance extends Model
         return $this->hasMany('App\Models\PrescrireMedicament');
     }
 }
+
+
+

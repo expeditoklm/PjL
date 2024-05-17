@@ -22,7 +22,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/liste-visite-patient', [PagesController::class, 'listeVisitePatient'])->name('pages.liste-viste-patient');
     Route::get('/visite-patient/{id}', [PagesController::class, 'VisitePatient'])->name('pages.viste-patient');
     Route::get('/liste-analyse-patient', [PagesController::class, 'listeAnalysePatient'])->name('pages.liste-analyse-patient');
-    Route::get('/analyse-patient', [PagesController::class, 'analysePatient'])->name('pages.analyse-patient');
+    Route::get('/analyse-patient/{id}', [PagesController::class, 'analysePatient'])->name('pages.analyse-patient');
     Route::get('/liste-soin-patient', [PagesController::class, 'listeSoinPatient'])->name('pages.liste-soin-patient');
     Route::get('/soin-patient', [PagesController::class, 'soinPatient'])->name('pages.soin-patient');
     Route::get('/liste-patient-rechercher', [PagesController::class, 'listePatientRechercher'])->name('pages.liste-patient-rechercher');

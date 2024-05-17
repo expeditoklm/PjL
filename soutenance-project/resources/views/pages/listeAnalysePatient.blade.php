@@ -34,20 +34,21 @@ LISTE ANALYSES
               </tr>
             </thead>
             <tbody>
+            @foreach ($analyses as $item)
               <tr>
                 <td>
                   <div class="card ">
                     <div class="list-group w-auto">
-                      <a href="{{route('pages.analyse-patient')}}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                      <a href="{{route('pages.analyse-patient', ['id' =>$item->id ])}}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                         <img src="assets/images/products/product1.jpg" alt="Bootstrap Gallery" class="rounded-circle flex-shrink-0 img-3x" />
                         <div class="d-flex gap-2 w-100 justify-content-between">
                           <div>
-                            <h6 class="mb-0">Type de l'analyse</h6>
+                            <h6 class="mb-0">{{ $item->typeAnalyse->libAnalyse}}</h6>
                             <p class="mb-0 text-light">
-                              Resultat de l'analyse.
+                            {{ $item->resultatsFaireAnalyse}}
                             </p>
                           </div>
-                          <small class="text-light text-nowrap">date</small>
+                          <small class="text-light text-nowrap">{{ $item->updated_at}}</small>
                         </div>
                       </a>
                     </div>
@@ -56,15 +57,15 @@ LISTE ANALYSES
                 </td>
                 <td>
                   <div class="justify-content" style="margin-top: 30px;margin-left: 10px; ">
-                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifVisite"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
-                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supVisite"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
+                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifVisite{{ $item->id}}"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
+                    <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#supVisite{{ $item->id}}"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
                     <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#"><i class="ri-printer-line fs-4 lh-1 text-primary "></i></a>
                   </div>
                 </td>
 
 
                 <!-- Modal Modification -->
-                <div class="modal fade" id="modifVisite" tabindex="-1" aria-labelledby="modifVisiteLabel" aria-hidden="true">
+                <div class="modal fade" id="modifVisite{{ $item->id}}" tabindex="-1" aria-labelledby="modifVisiteLabel" aria-hidden="true">
                   <div class="modal-dialog modal-fullscreen">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -128,7 +129,7 @@ LISTE ANALYSES
                   </div>
                 </div>
                 <!-- Modal suppression -->
-                <div class="modal fade" id="supVisite" tabindex="-1" aria-labelledby="supVisiteLabel" aria-hidden="true">
+                <div class="modal fade" id="supVisite{{ $item->id}}" tabindex="-1" aria-labelledby="supVisiteLabel" aria-hidden="true">
                   <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                       <div class="modal-body p-4 text-center">
@@ -154,7 +155,7 @@ LISTE ANALYSES
 
 
               </tr>
-
+            @endforeach
             </tbody>
 
           </table>

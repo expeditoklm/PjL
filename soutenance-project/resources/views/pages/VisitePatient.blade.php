@@ -40,7 +40,7 @@ CONSULTATION
                 <a class="nav-link" id="tab-fourAA" data-bs-toggle="tab" href="#fourAA" role="tab" aria-controls="threeAA" aria-selected="false" tabindex="-1"><i class="ri-attachment-line"></i>Fichiers</a>
               </li>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab-fiveAA" data-bs-toggle="tab" href="#fiveAA" role="tab" aria-controls="fiveAA" aria-selected="false" tabindex="-1"><i class="ri-door-open-line "></i>Sortie Medicale</a>
+                <a class="nav-link" id="tab-fiveAA" data-bs-toggle="tab" href="#fiveAA" role="tab" aria-controls="fiveAA" aria-selected="false" tabindex="-1"><i class="ri-door-open-line "></i>Sortie Médicale</a>
               </li>
             </ul>
             <div class="tab-content" id="customTabContent3">
@@ -55,44 +55,44 @@ CONSULTATION
                   <div class="col-xl-3 col-sm-4 col-12 ">
                     <div class="mb-3">
                       <label class="form-label" for="email">Motif</label>
-                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->motif}}</textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control">{{$consultations->motif}}</textarea>
                     </div>
 
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Antécedants</label>
-                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->antecedant}}</textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control">{{$consultations->antecedant}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Anamnèse</label>
-                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->anamnèse}}</textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control">{{$consultations->anamnèse}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Signes Associé</label>
-                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->signeAssocie}}</textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control">{{$consultations->signeAssocie}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Allergies</label>
-                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->allergies}}</textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control">{{$consultations->allergies}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Diagnostique Retenu</label>
-                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->diagnostiqueRetenu}}</textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control">{{$consultations->diagnostiqueRetenu}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Bilan</label>
-                      <textarea readonly id="" cols="30" rows="5" class="form-control" >{{$consultations->bilan}}</textarea>
+                      <textarea readonly id="" cols="30" rows="5" class="form-control">{{$consultations->bilan}}</textarea>
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
@@ -137,9 +137,9 @@ CONSULTATION
                             </tr>
                           </thead>
                           <tbody>
-                          @foreach ($examen_clinique as $item)
+                            @foreach ($examen_clinique as $item)
                             <tr>
-                            <td>{{ $item->id}}</td>
+                              <td>{{ $item->id}}</td>
                               <td>{{ $item->typeExamen->libTypeExamen}}</td>
                               <td>{{ $item->description}}</td>
                               <td>{{ $item->observation}}</td>
@@ -149,7 +149,7 @@ CONSULTATION
                                 <a href="#" class="m-2"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
                               </td>
                             </tr>
-                          @endforeach
+                            @endforeach
                           </tbody>
                         </table>
                       </div>
@@ -181,10 +181,10 @@ CONSULTATION
                             </tr>
                           </thead>
                           <tbody>
-                          @foreach ($soins_prescrit as $item)
+                            @foreach ($soins_prescrit as $item)
                             <tr>
                               <td>{{ $item->id}}</td>
-                              <td>{{ $item->id}}</td>
+                              <td>{{ $item->typeSoin->libTypeSoin}}</td>
                               <td>{{ $item->detailsSoinPrescrit}}</td>
                               <td>
                                 <a href="#" class="m-2" data-bs-toggle="modal" data-bs-target="#modifSoin{{ $item->id}}"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
@@ -279,7 +279,7 @@ CONSULTATION
                                 </div>
                               </div>
                             </tr>
-                          @endforeach
+                            @endforeach
                           </tbody>
 
                         </table>
@@ -306,10 +306,11 @@ CONSULTATION
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach ($analyses_prescrit as $item)
                           <tr>
-                            <td>Donna Snider</td>
-                            <td>Customer Support</td>
-                            <td>Customer Support</td>
+                            <td>{{ $item->id}}</td>
+                            <td>{{ $item->typeAnalyse->libAnalyse}}</td>
+                            <td>{{ $item->detailsAnalyse}}</td>
                             <td>
                               <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifAnalyse"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
                               <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#suppAnalyse"><i class="ri-delete-bin-6-line   fs-4 lh-1 text-primary "></i></a>
@@ -392,26 +393,26 @@ CONSULTATION
 
 
                             <div class="modal fade" id="suppAnalyse" tabindex="-1" aria-labelledby="suppAnalyseLabel" aria-hidden="true">
-                                                                <div class="modal-dialog modal-sm">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-body p-4 text-center">
-                                                                            <h5 class="text-primary">Continuez la suppression?</h5>
-                                                                            <p class="mb-0">
-                                                                                Voulez-vous vraiment supprimer cette information
-                                                                                du patient?
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="modal-footer flex-nowrap p-0">
-                                                                            <button type="button" class="btn text-primary fs-6 col-6 m-0 border-end">
-                                                                                <strong>Oui, Supprimer</strong>
-                                                                            </button>
-                                                                            <button type="button" class="btn text-dark fs-6 col-6 m-0" data-bs-dismiss="modal">
-                                                                                Non merci
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                              <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                  <div class="modal-body p-4 text-center">
+                                    <h5 class="text-primary">Continuez la suppression?</h5>
+                                    <p class="mb-0">
+                                      Voulez-vous vraiment supprimer cette information
+                                      du patient?
+                                    </p>
+                                  </div>
+                                  <div class="modal-footer flex-nowrap p-0">
+                                    <button type="button" class="btn text-primary fs-6 col-6 m-0 border-end">
+                                      <strong>Oui, Supprimer</strong>
+                                    </button>
+                                    <button type="button" class="btn text-dark fs-6 col-6 m-0" data-bs-dismiss="modal">
+                                      Non merci
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
 
 
 
@@ -427,6 +428,7 @@ CONSULTATION
 
 
                           </tr>
+                          @endforeach
                         </tbody>
                         <tfoot>
                           <tr>
@@ -457,7 +459,7 @@ CONSULTATION
                             <th>Libellé</th>
                             <th>Dose</th>
                             <th>Forme</th>
-                            <th>Qte à Acheter</th>
+                            <th>Qte à prendre</th>
                             <th>Nb-fois</th>
                             <th>Inter.de Prise</th>
                             <th>Date-premiere-prise</th>
@@ -466,161 +468,49 @@ CONSULTATION
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2021/04/25</td>
-                            <td>$320,800</td>
-                            <td>61</td>
-                            <td>2021/04/25</td>
-                            <td>$320,800</td>
-                            <td>
-                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifOrdonnance"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
-                              <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#suppOrdonnance"><i class="ri-delete-bin-6-line   fs-4 lh-1 text-primary "></i></a>
-                              <a href="" class="m-2"><i class="ri-printer-line fs-4 lh-1 text-primary "></i></a>
-                            </td>
+                          @php $count = 0; @endphp {{-- Assigner la valeur initiale à $count --}}
+                          @foreach ($consultation->ordonnances as $ordonnance)
+                              @php $count++; @endphp {{-- Incrémenter $count à chaque itération --}}
+                              <tr>
+                                  <td>Ordonnance{{ $count }}</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>
+                                      <a href="" class="m-2"><i class="ri-printer-line fs-4 lh-1 text-primary "></i></a>
+                                      <a href="" class="m-2"><i class="ri-file-add-line fs-4 lh-1 text-primary "></i></a>
+                                  </td>
+                                  <!-- Colonne pour les détails de l'ordonnance -->
+                              </tr>
+                              @foreach ($ordonnance->prescrireMedicaments as $prescrireMedicament)
+                                  <tr>
+                                      <td></td> {{-- Colonne vide pour l'ID de l'ordonnance --}}
+                                      <td>{{ $prescrireMedicament->medicament->libMedicament }}</td>
+                                      <td>{{ $prescrireMedicament->dose }}</td>
+                                      <td>{{ $prescrireMedicament->medicament->formMedicament }}</td>
+                                      <td>{{ $prescrireMedicament->qte }}</td>
+                                      <td>{{ $prescrireMedicament->nbFois }}</td>
+                                      <td>{{ $prescrireMedicament->intervPrise }}</td>
+                                      <td>{{ $prescrireMedicament->datePremPrise }}</td>
+                                      <td>{{ $prescrireMedicament->autresInstructions }}</td>
+                                      <td>
+                                          <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#modifOrdonnance{{ $prescrireMedicament->medicament->id }}">
+                                              <i class="ri-draft-line fs-4 lh-1 text-primary "></i>
+                                          </a>
+                                          <a href="" class="m-2" data-bs-toggle="modal" data-bs-target="#suppOrdonnance{{ $prescrireMedicament->medicament->id }}">
+                                              <i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i>
+                                          </a>
+                                      </td>
+                                  </tr>
+                              @endforeach
+                          @endforeach
+                      </tbody>
 
-
-
-                            <!-- Modal Fullscreen -->
-                            <div class="modal fade" id="modifOrdonnance" tabindex="-1" aria-labelledby="modifOrdonnanceLabel" aria-hidden="true">
-                              <div class="modal-dialog modal-fullscreen">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title h4" id="modifOrdonnanceLabel">
-                                      Formulaire de Modification d'Ordonnance
-                                    </h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                    <div class="row gx-3">
-                                      <div class="col-sm-12">
-                                        <div class="card mb-3">
-                                          <div class="card-header">
-                                            <h5 class="card-title">Modifier Ordonnance</h5>
-                                          </div>
-                                          <form action="">
-                                            <div class="card-body">
-
-                                              <!-- Row start -->
-                                              <div class="row gx-3">
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                  <div class="mb-3">
-                                                    <label class="form-label" for="name">Libellé Médocs</label>
-                                                    <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
-                                                  </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                  <div class="mb-3">
-                                                    <label class="form-label" for="name">Forme Médocs</label>
-                                                    <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
-                                                  </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                  <div class="mb-3">
-                                                    <label class="form-label" for="name">Qte à Acheter</label>
-                                                    <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
-                                                  </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                  <div class="mb-3">
-                                                    <label class="form-label" for="name">Nombre de fois</label>
-                                                    <input name="" id="" class="form-control" placeholder="entrez le type d'examen">
-                                                  </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                  <div class="mb-3">
-                                                    <label class="form-label" for="name">Intervalle de prise</label>
-                                                    <select class="form-select" id="abcd" aria-label="Default select example">
-                                                      <option selected="">Selectionner l'Examen</option>
-                                                      <option value="1">One</option>
-                                                      <option value="2">Two</option>
-                                                      <option value="3">Three</option>
-                                                    </select>
-                                                  </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                  <div class="mb-3">
-                                                    <label class="form-label" for="email">Date de premiere prise</label>
-                                                    <input name="" id="" type="date" class="form-control" placeholder="entrez le type d'examen">
-                                                  </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-4 col-12">
-                                                  <div class="mb-3">
-                                                    <label class="form-label" for="email">Autres Instructions</label>
-                                                    <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <!-- Row end -->
-                                            </div>
-                                            <div class="card-footer">
-                                              <div class="d-flex gap-2 justify-content-end">
-                                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                                                <button type="button" class="btn btn-primary">Modifer</button>
-                                              </div>
-                                            </div>
-                                          </form>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-
-
-
-
-
-
-                            <div class="modal fade" id="suppOrdonnance" tabindex="-1" aria-labelledby="suppOrdonnanceLabel" aria-hidden="true">
-                                                                <div class="modal-dialog modal-sm">
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-body p-4 text-center">
-                                                                            <h5 class="text-primary">Continuez la suppression?</h5>
-                                                                            <p class="mb-0">
-                                                                                Voulez-vous vraiment supprimer cette information
-                                                                                du patient?
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="modal-footer flex-nowrap p-0">
-                                                                            <button type="button" class="btn text-primary fs-6 col-6 m-0 border-end">
-                                                                                <strong>Oui, Supprimer</strong>
-                                                                            </button>
-                                                                            <button type="button" class="btn text-dark fs-6 col-6 m-0" data-bs-dismiss="modal">
-                                                                                Non merci
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                          </tr>
-
-                        </tbody>
                       </table>
                     </div>
                   </div>
@@ -651,7 +541,7 @@ CONSULTATION
                           </div>
                           <div class="carousel-inner">
                             <div class="carousel-item active">
-                              <img src="assets/images/products/product5.jpg" class="d-block w-100" alt="Admin Templates & Dashboards">
+                              <img src="{{asset('assets/images/products/product5.jpg')}}" class="d-block w-100" alt="Admin Templates & Dashboards">
                               <div class="carousel-caption d-none d-md-block">
                                 <h5 class="text-dark" style="color: black;">Libelle Analyse</h5>
                                 <p class="text-dark" style="color: black;">Libelle Fichier</p>
@@ -764,16 +654,24 @@ CONSULTATION
 
                     <div class="card-body">
 
-                      <p><span class="text-primary">Sortie Medicale</span> : <span>Evacuation</span> <br></p>
-                      <ul>
-                        <li><span class="text-primary m-2">Motif Evacuation </span>: <span>Lorem ipsum dolor sit amet consecteturelit. Iure, doloribus!</span> </li>
-                        <li><span class="text-primary m-2">Hopital Destination</span> : <span>Loremcdz</span> </li>
-                        <li><span class="text-primary m-2">Motif Permission</span> : <span>Lorem ipsum dolor sit amet.</span> </li>
-                        <li><span class="text-primary m-2">Période Permission</span> : <span>25/05/2024 - 20/10/2024</span> </li>
-                        <li><span class="text-primary m-2">Cause Déces</span> : <span>jjqjj zdzjcj </span> </li>
-                        <li><span class="text-primary m-2">Lieu Déces</span> : <span>Evacuation</span> </li>
-                        <li><span class="text-primary m-2">Date de Déces</span> : <span>Evacuation</span> </li>
-                      </ul>
+                    <p>
+                        <span class="text-primary">Sortie Médicale</span> : <span>{{ $sortie_medicale->modeSortie }}</span> <br>
+                    </p>
+                    <ul>
+                        @if($sortie_medicale->modeSortie == 'Evacuation')
+                            <li><span class="text-primary m-2">Motif Evacuation </span>: <span>{{$sortie_medicale_info->motifEvacuation}}</span> </li>
+                            <li><span class="text-primary m-2">Hopital Destination</span> : <span>{{$sortie_medicale_info->hopitalDestination}}</span> </li>
+                            <li><span class="text-primary m-2">Date</span> : <span>{{$sortie_medicale_info->date}}</span> </li>
+                        @elseif($sortie_medicale->modeSortie == 'Permission')
+                            <li><span class="text-primary m-2">Motif Permission</span> : <span>{{$sortie_medicale_info->motifPermission}}</span> </li>
+                            <li><span class="text-primary m-2">Période Permission</span> : <span>{{$sortie_medicale_info->dateDebut}} - {{$sortie_medicale_info->dateFin}}</span> </li>
+                        @elseif($sortie_medicale->modeSortie == 'Deces')
+                            <li><span class="text-primary m-2">Cause Déces</span> : <span>{{$sortie_medicale_info->cause}}</span> </li>
+                            <li><span class="text-primary m-2">Lieu Déces</span> : <span>{{$sortie_medicale_info->lieu}}</span> </li>
+                            <li><span class="text-primary m-2">Date de Déces</span> : <span>{{$sortie_medicale_info->date}}</span> </li>
+                        @endif
+                    </ul>
+
 
                     </div>
                   </div>
@@ -1088,39 +986,39 @@ CONSULTATION
                         <input name="" id="" class="form-control" placeholder="Entrez la date depremière prise"">
                       </div>
                     </div>
-                    <div class="col-xl-3 col-sm-4 col-12">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Intervalle de prise</label>
-                        <select class="form-select" id="abcd" aria-label="Default select example">
-                          <option selected="">Selectionner l'intervalle de prise</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
-                        <input name="" id="" type="text" class="form-control" placeholder="Ou entrez l'intervalle de prise">
+                    <div class=" col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Intervalle de prise</label>
+                          <select class="form-select" id="abcd" aria-label="Default select example">
+                            <option selected="">Selectionner l'intervalle de prise</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                          <input name="" id="" type="text" class="form-control" placeholder="Ou entrez l'intervalle de prise">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="email">Date de premiere prise</label>
+                          <input name="" id="" type="date" class="form-control" placeholder="Entrez le libellé du médicament">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="email">Autres Instructions</label>
+                          <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Entrez d'autre informations"></textarea>
+                        </div>
                       </div>
                     </div>
-                    <div class="col-xl-3 col-sm-4 col-12">
-                      <div class="mb-3">
-                        <label class="form-label" for="email">Date de premiere prise</label>
-                        <input name="" id="" type="date" class="form-control" placeholder="Entrez le libellé du médicament">
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12">
-                      <div class="mb-3">
-                        <label class="form-label" for="email">Autres Instructions</label>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Entrez d'autre informations"></textarea>
-                      </div>
+                    <!-- Row end -->
+                  </div>
+                  <div class="card-footer">
+                    <div class="d-flex gap-2 justify-content-end">
+                      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                      <button type="button" class="btn btn-primary">Valider</button>
                     </div>
                   </div>
-                  <!-- Row end -->
-                </div>
-                <div class="card-footer">
-                  <div class="d-flex gap-2 justify-content-end">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Valider</button>
-                  </div>
-                </div>
               </form>
             </div>
           </div>

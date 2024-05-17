@@ -50,14 +50,14 @@ ANALYSE
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Type Analyse</label>
-                                            <input name="typeAnalyse" id="" class="form-control" value="Enter email address">
+                                            <input name="typeAnalyse" id="" class="form-control" value="{{ $item->typeAnalyse->libAnalyse}}">
                                         </div>
                                     </div>
 
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Technicien Labo</label>
-                                            <input name="technicien" id="" class="form-control" value="Enter email address">
+                                            <input name="technicien" id="" class="form-control" value="{{ $item->personnelSante->libAnalyse}}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
