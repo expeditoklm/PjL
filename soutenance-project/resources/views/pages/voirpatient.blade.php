@@ -36,73 +36,73 @@ INFORMATIONS BASIQUES
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="">Type de Pièce</label>
-                                            <input type="text" class="form-control" id="" value="{{ $personne->typeCin }}">
+                                            <input type="text" readonly class="form-control" id="" value="{{ $personne->typeCin }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="name">CIN</label>
-                                            <input type="number" class="form-control" id="name" value="{{ $personne->cin }}">
+                                            <input type="number" readonly class="form-control" id="name" value="{{ $personne->cin }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Nom</label>
-                                            <input type="text" class="form-control" id="email" value="{{ $personne->nomPers }}">
+                                            <input type="text" readonly class="form-control" id="email" value="{{ $personne->nomPers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="phn">Prenom</label>
-                                            <input type="text" class="form-control" id="phn" value="{{ $personne->prenomPers }}">
+                                            <input type="text" readonly class="form-control" id="phn" value="{{ $personne->prenomPers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="company">Sexe</label>
-                                            <input type="text" class="form-control" id="company" value="{{ $personne->sexe }}">
+                                            <input type="text" readonly class="form-control" id="company" value="{{ $personne->sexe }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="bAddress">Date de Naissance</label>
-                                            <input type="text" class="form-control" id="bAddress" value="{{ $personne->dateNaiss }}">
+                                            <input type="text" readonly class="form-control" id="bAddress" value="{{ $personne->dateNaiss }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="terri">Adresse</label>
-                                            <input type="text" class="form-control" id="terri" value="{{ $personne->adressePers }}">
+                                            <input type="text" readonly class="form-control" id="terri" value="{{ $personne->adressePers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="terri">E-mail</label>
-                                            <input type="text" class="form-control" id="terri" value="{{ $user->email }}">
+                                            <input type="text" readonly class="form-control" id="terri" value="{{ $user->email }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="">Téléphone</label>
-                                            <input type="number" class="form-control" id="" value="{{ $personne->telPers }}">
+                                            <input type="number" readonly class="form-control" id="" value="{{ $personne->telPers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="value">Profession</label>
-                                            <input type="text" class="form-control" id="" value="{{ $personne->professionPers }}">
+                                            <input type="text" readonly class="form-control" id="" value="{{ $personne->professionPers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="">Pays</label>
-                                            <input type="text" class="form-control" id="" value="{{ $personne->paysPers }}">
+                                            <input type="text" readonly class="form-control" id="" value="{{ $personne->paysPers }}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="">Ville</label>
-                                            <input type="text" class="form-control" id="" value="{{ $personne->villePers }}">
+                                            <input type="text" readonly class="form-control" id="" value="{{ $personne->villePers }}">
                                         </div>
                                     </div>
 
@@ -117,43 +117,43 @@ INFORMATIONS BASIQUES
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Nom du père</label>
-                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->nomPere }}">
+                                            <input type="text" readonly class="form-control" id="companyName" value="{{ $patient->nomPere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Prénom du père</label>
-                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->prenomPere }}">
+                                            <input type="text" readonly class="form-control" id="companyName" value="{{ $patient->prenomPere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Pathologie du père</label>
-                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->pathologiePere }}">
+                                            <input type="text" readonly class="form-control" id="companyName" value="{{ $patient->pathologiePere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Nom de la mère</label>
-                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->nomMere }}">
+                                            <input type="text" readonly class="form-control" id="companyName" value="{{ $patient->nomMere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Prenom de la mère</label>
-                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->prenomMere }}">
+                                            <input type="text" readonly class="form-control" id="companyName" value="{{ $patient->prenomMere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Pathologie de la mère</label>
-                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->pathologieMere }}">
+                                            <input type="text" readonly class="form-control" id="companyName" value="{{ $patient->pathologieMere }}">
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="companyName">Groupe sanguin</label>
-                                            <input type="text" class="form-control" id="companyName" value="{{ $patient->groupeSanguinPers }}">
+                                            <input type="text" readonly class="form-control" id="companyName" value="{{ $patient->groupeSanguinPers }}">
                                         </div>
                                     </div>
 

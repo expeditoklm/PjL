@@ -22,8 +22,10 @@ use App\Models\FaireAnalyse;
 use App\Models\Ordonnance;
 use App\Models\PrescrireAnalyse;
 use App\Models\SortieMedicale;
+use App\Models\AdministreSoin;
+use App\Models\NotePatient;
 use App\Models\Permission;
-
+use App\Models\TypeSoin;
 use App\Models\User;
 use Illuminate\Support\Carbon;
 
@@ -83,11 +85,16 @@ class PagesController extends Controller
 
     public function recherchePatient()
     {
-
+        $domainesIntervention=[];
         $personneId = session('persConnecteId');
         $personne = Personne::where('id', $personneId)->first();
+        if($personne->personnelSantes){
 
-        //return $personne;
+            $personnelSante = PersonnelSante::where('personne_id', $personne->id)->first();
+            $domainesIntervention = $personnelSante->personnelSanteDomaineInterventions;
+      
+        }
+
 
 
         $user = Auth::user();
@@ -117,7 +124,7 @@ class PagesController extends Controller
 
             //return $lesLogs ;
         }
-        return view('pages/recherchePatient', compact('lesLogs', 'personne'));
+        return view('pages/recherchePatient', compact('lesLogs', 'personne','domainesIntervention'));
     }
     public function recherchePatientPost(Request $request)
     {
@@ -241,11 +248,31 @@ class PagesController extends Controller
 
     public function listeSoinPatient()
     {
-        return view('pages/listeSoinPatient');
+        $personne_id = session('patient_init');
+        $patient = Patient::where('personne_id', $personne_id)->first();
+    
+        // Vérifier si $patient existe
+        if (!$patient) {
+            // Redirection ou affichage d'un message d'erreur
+            return redirect()->route('pages.error-404')->with('error', 'Patient introuvable.');
+        }
+    
+        $soins = AdministreSoin::where('patient_id', $patient->id)->get();
+    
+        // Vérifier si $soins existe
+        if ($soins->isEmpty()) {
+            // Redirection ou affichage d'un message d'erreur
+            return redirect()->route('pages.error-404')->with('error', 'Aucun soin trouvé pour ce patient.');
+        }
+    
+        // Retourner la vue avec les soins
+        return view('pages/listeSoinPatient', compact('soins'));
     }
-    public function SoinPatient()
+    
+    public function SoinPatient($id)
     {
-        return view('pages/soinPatient');
+        $soinAdmis = AdministreSoin::where('id', $id)->first();
+        return view('pages/soinPatient',compact('soinAdmis'));
     }
     public function listePatientRechercher()
     {
@@ -254,7 +281,11 @@ class PagesController extends Controller
 
     public function notePatient()
     {
-        return view('pages/notePatient');
+        $personne_id =session('patient_init');
+        $patient = Patient::where('personne_id', $personne_id)->first();
+        $notes = NotePatient::where('patient_id', $patient->id)->get();
+
+        return view('pages/notePatient',compact('notes'));
     }
     public function signUp()
     {

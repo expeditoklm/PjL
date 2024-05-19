@@ -41,7 +41,7 @@ SOINS
                                             <div class="col-xl-3 col-sm-4 col-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="email">Libelle Soin</label>
-                                                    <input name="" id="" class="form-control" value="Enter email address">
+                                                    <input name="" readonly id="" class="form-control" value="{{ $soinAdmis->typeSoin->libTypeSoin}}">
                                                 </div>
                                             </div>
 
@@ -49,25 +49,25 @@ SOINS
                                             <div class="col-xl-3 col-sm-4 col-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="email">infirmier(e)</label>
-                                                    <input name="" id="" class="form-control" value="Enter email address">
+                                                    <input name="" readonly id="" class="form-control" value="{{ $soinAdmis->personnelSante->personne->nomPers}} {{ $soinAdmis->personnelSante->personne->prenomPers}}">
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-sm-4 col-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="email">Hopital</label>
-                                                    <input name="" id="" class="form-control" value="Enter email address">
+                                                    <input name="" readonly id="" class="form-control" value="{{ $soinAdmis->hopital->libHopital}}">
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-sm-4 col-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="email">Date</label>
-                                                    <input name="" id="" class="form-control" value="Enter email address">
+                                                    <input name=""  readonly id="" class="form-control" value="{{ $soinAdmis->created_at}}">
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-sm-4 col-12">
                                                 <div class="mb-3">
                                                     <label class="form-label" for="email">Observations</label>
-                                                    <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                                                    <textarea readonly name="" id="" cols="30" rows="5" class="form-control">{{ $soinAdmis->detailsAdministreSoins}}</textarea>
                                                 </div>
                                             </div>
 

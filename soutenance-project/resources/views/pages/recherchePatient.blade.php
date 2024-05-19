@@ -131,7 +131,7 @@
                 <div class="dropdown-menu dropdown-menu-end">
                   @if (Auth::check() && Auth::user()->typePersonne=== 'Patient' )
                   <h5 class="fw-semibold px-3 py-2 text-primary">Messages</h5>
-                 
+
 
                   @if($lesLogs->isEmpty())
                   <div class="dropdown-item">
@@ -156,12 +156,12 @@
                     </div>
                   </div>
                   @endforeach
-                @endif
+                  @endif
 
 
-                @else
+                  @else
                   <h5 class="fw-semibold px-3 py-2 text-primary">Patients recemment consulter</h5>
-                
+
 
                   @if($lesLogs->isEmpty())
                   <div class="dropdown-item">
@@ -217,16 +217,16 @@
                   <span class="user-status busy"></span>
                 </div>
               </a>
+              
               <div class="dropdown-menu dropdown-menu-end">
                 <div class="mx-3 my-2 d-grid">
-                  <p class="mb-2">Thérapeute (ergothérapeute, physiothérapeute, orthophoniste, etc.) </p>
-                  <p class="mb-2">Chirurgien</p>
-                  <p class="mb-2">Technicien de laboratoire médical</p>
-                  <p class="mb-2">Médecin généraliste, Spécialiste</p>
+                @foreach ($domainesIntervention as $domaineIntervention)
+                  <p class="mb-2">{{ $domaineIntervention->domaineIntervention->libDomaine }}</p>
+                @endforeach
                   <form action="{{ route('logout') }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger col-md-8 ">Logout</button>
-                                    </form>
+                    @csrf
+                    <button type="submit" class="btn btn-danger col-md-8 ">Logout</button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -248,18 +248,16 @@
                 <div class="">
                   <a href="" class=" btn btn-primary col-md-12 col-12" data-bs-toggle="modal" data-bs-target="#addPatientInfo" style="color:white" id="abc">NOUVEAU</a>
                 </div>
-
-                <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-                  A simple success alert.
-                  <a href="#" class="text-decoration-underline alert-link">Check it out!</a>
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-
               </div>
             </div>
           </div>
 
           <!-- Page title ends -->
+        </div>
+        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+          A simple success alert.
+          <a href="#" class="text-decoration-underline alert-link">Check it out!</a>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <!-- App Hero header ends -->
         <form action="{{ route('pages.recherche-patient') }}" method="post">
@@ -396,7 +394,7 @@
                 <div class="card-header">
                   <h5 class="card-title">Enregistrer Patient</h5>
                 </div>
-                <form action="">
+                <form action="" method="post">
                   <div class="card-body">
 
                     <!-- Row start -->
@@ -404,58 +402,58 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Nom</label>
-                          <input name="" id="" type="text" class="form-control" placeholder="Entrez le nom du patient">
+                          <input name="nom" id="" type="text" class="form-control" placeholder="Entrez le nom du patient">
                         </div>
                       </div>
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Prénoms</label>
-                          <input name="" id="" type="text" class="form-control" placeholder="Entrez les prénoms du patient">
+                          <input name="prenom" id="" type="text" class="form-control" placeholder="Entrez les prénoms du patient">
                         </div>
                       </div>
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Sexe</label>
-                          <input name="" id="" type="text" class="form-control" placeholder="Entrez le sexe du patient">
+                          <input name="sexe" id="" type="text" class="form-control" placeholder="Entrez le sexe du patient">
                         </div>
                       </div>
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Date de Naissance</label>
-                          <input name="" id="" type="date" class="form-control" placeholder="Entrez la date de naissance du patient">
+                          <input name="dateNaiss" id="" type="date" class="form-control" placeholder="Entrez la date de naissance du patient">
                         </div>
                       </div>
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Télephone</label>
-                          <input name="" id="" type="number" class="form-control" placeholder="Entrez le télephone du patient">
+                          <input name="tel" id="" type="number" class="form-control" placeholder="Entrez le télephone du patient">
                         </div>
                       </div>
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">E-mail</label>
-                          <input name="" id="" type="email" class="form-control" placeholder="Entrez l'e-mail du patient">
+                          <input name="email" id="" type="email" class="form-control" placeholder="Entrez l'e-mail du patient">
                         </div>
                       </div>
 
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Adresse</label>
-                          <input name="" id="" type="text" class="form-control" placeholder="Entrez l'adresse du patient">
+                          <input name="addresse" id="" type="text" class="form-control" placeholder="Entrez l'adresse du patient">
                         </div>
                       </div>
 
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Profession</label>
-                          <input name="" type="text" id="" class="form-control" placeholder="Entrez la profession du patient">
+                          <input name="profession" type="text" id="" class="form-control" placeholder="Entrez la profession du patient">
                         </div>
                       </div>
 
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Pays</label>
-                          <select class="form-select" id="abcd" aria-label="Default select example">
+                          <select class="form-select" id="abcd" name="pays" aria-label="Default select example">
                             <option value="">Selectionner le pays</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -468,7 +466,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Ville</label>
-                          <select class="form-select" id="abcd" aria-label="Default select example">
+                          <select class="form-select" name="ville" id="abcd" aria-label="Default select example">
                             <option value="">Selectionner la ville</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -481,7 +479,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Nom du père</label>
-                          <input name="" type="text" id="" class="form-control" placeholder="Entrez le nom du père">
+                          <input name="nomPere" type="text" id="" class="form-control" placeholder="Entrez le nom du père">
                         </div>
                       </div>
 
@@ -490,7 +488,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Prénom du père</label>
-                          <input name="" id="" type="text" class="form-control" placeholder="Entrez le prénom du père">
+                          <input name="prenomPere" id="" type="text" class="form-control" placeholder="Entrez le prénom du père">
                         </div>
                       </div>
 
@@ -499,7 +497,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Pathologie du père</label>
-                          <input name="" id="" type="text" class="form-control" placeholder="Entrez l'antécédant du père">
+                          <input name="pathologiePere" id="" type="text" class="form-control" placeholder="Entrez l'antécédant du père">
                         </div>
                       </div>
 
@@ -507,7 +505,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Nom de la mère</label>
-                          <input name="" type="text" id="" class="form-control" placeholder="Entrez le nom de la mère">
+                          <input name="nomMere" type="text" id="" class="form-control" placeholder="Entrez le nom de la mère">
                         </div>
                       </div>
 
@@ -515,7 +513,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Prénom de la mère</label>
-                          <input name="" type="text" id="" class="form-control" placeholder="Entrez le prénom de la mère">
+                          <input name="prenomMere" type="text" id="" class="form-control" placeholder="Entrez le prénom de la mère">
                         </div>
                       </div>
 
@@ -523,7 +521,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Pathologie de la mère</label>
-                          <input name="" type="text" id="" class="form-control" placeholder="Entrez l'antécédant de la mère">
+                          <input name="pathologieMere" type="text" id="" class="form-control" placeholder="Entrez l'antécédant de la mère">
                         </div>
                       </div>
 
@@ -531,7 +529,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Groupe Sanguin</label>
-                          <select class="form-select" id="abcd" aria-label="Default select example">
+                          <select class="form-select" name="groupeS" id="abcd" aria-label="Default select example">
                             <option value="">Selectionner le groupe sanguin</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -544,7 +542,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Type de pièce</label>
-                          <select class="form-select" id="abcd" aria-label="Default select example">
+                          <select class="form-select" id="abcd" name="typePiece" aria-label="Default select example">
                             <option value="">Selectionner le type de pièce</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -557,7 +555,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Numero de pièce</label>
-                          <input name="" type="number" id="" class="form-control" placeholder="Entrez le numero de pièce du patient">
+                          <input name="numPiece" type="number" id="" class="form-control" placeholder="Entrez le numero de pièce du patient">
                         </div>
                       </div>
 
@@ -565,7 +563,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Pièce</label>
-                          <input name="" id="" type="file" class="form-control" placeholder="Entrez la pièce du patient">
+                          <input name="fichier" id="" type="file" class="form-control" placeholder="Entrez la pièce du patient">
                         </div>
                       </div>
 
@@ -576,7 +574,7 @@
                   <div class="card-footer">
                     <div class="d-flex gap-2 justify-content-end">
                       <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                      <button type="button" class="btn btn-primary">Modifer</button>
+                      <button type="submit" class="btn btn-primary">Enregistrer</button>
                     </div>
                   </div>
                 </form>

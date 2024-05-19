@@ -7,24 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property string $libDomaine
- * @property integer $personnelSante_id
  * @property boolean $deleted
  * @property string $created_at
  * @property string $updated_at
- * @property PersonnelSante $personnelSante
+ * @property PersonnelSanteDomaineIntervention[] $personnelSanteDomaineInterventions
  */
 class DomaineIntervention extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['libDomaine', 'personnelSante_id', 'deleted', 'created_at', 'updated_at'];
+    protected $fillable = ['libDomaine', 'deleted', 'created_at', 'updated_at'];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function personnelSante()
+    public function personnelSanteDomaineInterventions()
     {
-        return $this->belongsTo('App\Models\PersonnelSante', 'personnelSante_id');
+        return $this->hasMany('App\Models\PersonnelSanteDomaineIntervention', 'domaine_interv_id');
     }
 }

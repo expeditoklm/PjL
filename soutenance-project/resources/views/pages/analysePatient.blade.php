@@ -50,38 +50,38 @@ ANALYSE
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Type Analyse</label>
-                                            <input name="typeAnalyse" id="" class="form-control" value="{{ $item->typeAnalyse->libAnalyse}}">
+                                            <input name="typeAnalyse" id="" class="form-control" value="{{ $analyse->typeAnalyse->libAnalyse}}">
                                         </div>
                                     </div>
 
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Technicien Labo</label>
-                                            <input name="technicien" id="" class="form-control" value="{{ $item->personnelSante->libAnalyse}}">
+                                            <input name="technicien" id="" class="form-control" value="{{ $analyse->personnelSante->personne->nomPers}}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Hopital</label>
-                                            <input name="hopital" id="" class="form-control" value="Enter email address">
+                                            <input name="hopital" id="" class="form-control" value="{{ $analyse->hopital->libHopital}}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Date</label>
-                                            <input name="date" id="" class="form-control" value="Enter email address">
+                                            <input name="date" id="" class="form-control" value="{{ $analyse->created_at}}">
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Details</label>
-                                            <textarea name="" id="" cols="30" class="form-control" rows="5"></textarea>
+                                            <textarea name="" id="" cols="30" class="form-control" rows="5">{{ $analyse->detailsFaireAnalyse}}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-4 col-12">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">Résultats</label>
-                                            <textarea name="" id="" cols="30" class="form-control" rows="5"></textarea>
+                                            <textarea name="" id="" cols="30" class="form-control" rows="5">{{ $analyse->resultatsFaireAnalyse}}</textarea>
                                         </div>
                                     </div>
 

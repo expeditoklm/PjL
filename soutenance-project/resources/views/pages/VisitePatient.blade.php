@@ -98,13 +98,13 @@ CONSULTATION
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Médecin</label>
-                      <input name="" id="" class="form-control" value="{{$medecin->nomPers}} {{$medecin->prenomPers}}">
+                      <input name="" readonly id="" class="form-control" value="{{$medecin->nomPers}} {{$medecin->prenomPers}}">
                     </div>
                   </div>
                   <div class="col-xl-3 col-sm-4 col-12">
                     <div class="mb-3">
                       <label class="form-label" for="email">Hopital</label>
-                      <input name="" id="" class="form-control" value="{{$hopital->libHopital}}">
+                      <input name="" readonly id="" class="form-control" value="{{$hopital->libHopital}}">
                     </div>
                   </div>
 

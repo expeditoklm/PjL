@@ -147,7 +147,7 @@
                                         <div class="d-flex py-2">
                                             <img src="{{ asset('assets/images/user3.png') }}" class="img-3x me-3 rounded-5" alt="Admin Theme" />
                                             <div class="m-0">
-                                                <h6 class="mb-1 fw-semibold">{{ $log->personnel_sante_nom }}</h6>
+                                                <h6 class="mb-1 fw-semibold">{{ $log->personnel_sante_profes }} {{ $log->personnel_sante_nom }} {{ $log->personnel_sante_prenom }}</h6>
                                                 <p class="mb-1">{{ $log->objet }}</p>
                                                 <p class="small m-0 text-light">{{ $log->created_at }}</p>
                                             </div>
@@ -180,7 +180,7 @@
                                             <img src="{{ asset('assets/images/user3.png') }}" class="img-3x me-3 rounded-5" alt="Admin Theme" />
                                             <div class="m-0">
 
-                                                <h6 class="mb-1 fw-semibold">{{ $log->patient_nom }}</h6>
+                                                <h6 class="mb-1 fw-semibold">{{ $log->patient_nom }} {{ $log->patient_prenom }}</h6>
 
                                                 <p class="small m-0 text-light">{{ $log->created_at }}</p>
                                             </div>
@@ -204,14 +204,17 @@
                         </div>
                         {{-- Importez le fichier du helper --}}
                         @php
-                        use App\Helpers\base;
+                        use App\Helpers\Base;
+                        // Appel du helper pour récupérer les informations de l'utilisateur
+                        $userInfo = Base::getUserInfo();
                         @endphp
+
                         <!-- Account settings starts -->
                         <div class="dropdown ms-4">
                             <a id="userSettings" class="dropdown-toggle user-settings" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="me-2 text-truncate d-lg-block d-none">
-                                    <span class="d-flex opacity-50 small">{{ base::getUserInfo()->professionPers }}</span>
-                                    <span>{{ base::getUserInfo()->nomPers }}</span>
+                                    <span class="d-flex opacity-50 small">{{ $userInfo['personne']->nomPers }}</span>
+                                    <span>{{ $userInfo['personne']->prenomPers }}</span>
                                 </div>
                                 <div class="position-relative">
                                     <img src="{{ asset('assets/images/user4.png') }}" class="rounded-5 img-3x" alt="Bootstrap Gallery" />
@@ -220,15 +223,21 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <div class="mx-3 my-2 d-grid">
-                                    <p class="mb-2">In a meeting</p>
+                                    @if(count($userInfo['domainesIntervention']) > 0)
+                                    @foreach ($userInfo['domainesIntervention'] as $domaineIntervention)
+                                    <p class="mb-2">{{ $domaineIntervention->domaineIntervention->libDomaine }}</p>
+                                    @endforeach
+                                    @else
+                                    <p>Aucun domaine d'intervention associé à cet utilisateur.</p>
+                                    @endif
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
-                                        <button type="submit" class="btn btn-danger col-md-8 ">Logout</button>
+                                        <button type="submit" class="btn btn-danger col-md-12">Déconnexion</button>
                                     </form>
-
                                 </div>
                             </div>
                         </div>
+
                         <!-- Account settings ends -->
 
                     </div>
@@ -264,9 +273,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @php
-                    $info = App\Helpers\base::getUserOrPatientInfo();
-                    $personne = $info['personne'];
-                    $consultation = $info['consultation'];
+                $info = App\Helpers\base::getUserOrPatientInfo();
+                $personne = $info['personne'];
+                $consultation = $info['consultation'];
                 @endphp
                 <!-- App Hero header ends -->
                 <div class="app-body">

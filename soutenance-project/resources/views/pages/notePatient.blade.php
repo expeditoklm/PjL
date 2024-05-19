@@ -42,16 +42,18 @@ CONSULTATION
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @foreach ($notes as $item)
                                     <tr>
-                                        <td>5</td>
-                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere possimus modi libero incidunt ipsum deserunt ipsam maiores, aliquam magnam repellat culpa in deleniti dolorum doloremque dolor, consequatur harum dolorem? Dignissimos.</td>
-                                        <td>02 Novembre 2002</td>
+                                        <td>{{ $item->id}}</td>
+                                        <td>{{ $item->note}}</td>
+                                        <td>{{ $item->created_at}}</td>
 
                                         <td>
                                             <a href="#" class="m-2"><i class="ri-draft-line   fs-4 lh-1 text-primary "></i></a>
                                             <a href="#" class="m-2"><i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i></a>
                                         </td>
                                     </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
