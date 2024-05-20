@@ -267,11 +267,22 @@
 
                     <!-- Page title ends -->
                 </div>
-                <div class="alert alert-success alert-dismissible fade show m-2" role="alert">
-                    A simple success alert.
-                    <a href="#" class="text-decoration-underline alert-link">Check it out!</a>
+                @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
+                    <div class="text-center"> <!-- Ajoutez une classe text-center à la div parente -->
+                        <span class="fw-bold d-block mx-auto">{{ session('error') }}</span> <!-- Utilisez mx-auto pour centrer le span -->
+                    </div>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
+                @endif
+                @if(session('success'))
+                <div class="alert alert-primary alert-dismissible fade show m-2" role="alert">
+                    <div class="text-center"> <!-- Ajoutez une classe text-center à la div parente -->
+                        <span class="fw-bold d-block mx-auto">{{ session('success') }}</span> <!-- Utilisez mx-auto pour centrer le span -->
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 @php
                 $info = App\Helpers\base::getUserOrPatientInfo();
                 $personne = $info['personne'];

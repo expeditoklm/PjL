@@ -18,7 +18,7 @@ class SoinPrescrit extends Model
     /**
      * @var array
      */
-    protected $fillable = ['consultation_id', 'detailsSoinPrescrit', 'deleted', 'created_at', 'updated_at'];
+    protected $fillable = ['consultation_id', 'type_soin_id', 'detailsSoinPrescrit', 'deleted', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -254,11 +254,23 @@
 
           <!-- Page title ends -->
         </div>
-        <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-          A simple success alert.
-          <a href="#" class="text-decoration-underline alert-link">Check it out!</a>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show m-2" role="alert">
+                    <div class="text-center"> <!-- Ajoutez une classe text-center à la div parente -->
+                        <span class="fw-bold d-block mx-auto">{{ session('error') }}</span> <!-- Utilisez mx-auto pour centrer le span -->
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+
+                @if(session('success'))
+                <div class="alert alert-primary alert-dismissible fade show m-2" role="alert">
+                    <div class="text-center"> <!-- Ajoutez une classe text-center à la div parente -->
+                        <span class="fw-bold d-block mx-auto">{{ session('success') }}</span> <!-- Utilisez mx-auto pour centrer le span -->
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
         <!-- App Hero header ends -->
         <form action="{{ route('pages.recherche-patient') }}" method="post">
           @csrf
@@ -394,7 +406,8 @@
                 <div class="card-header">
                   <h5 class="card-title">Enregistrer Patient</h5>
                 </div>
-                <form action="" method="post">
+                <form method="POST" action="{{ route('pages.create-patient-post') }}" enctype="multipart/form-data">
+                  @csrf
                   <div class="card-body">
 
                     <!-- Row start -->
@@ -432,14 +445,26 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">E-mail</label>
-                          <input name="email" id="" type="email" class="form-control" placeholder="Entrez l'e-mail du patient">
+                          <input name="email" id="" require type="email" class="form-control" placeholder="Entrez l'e-mail du patient">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Mot de passe</label>
+                          <input name="password" id="" require type="password" class="form-control" placeholder="Entrez l'e-mail du patient">
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-sm-4 col-12">
+                        <div class="mb-3">
+                          <label class="form-label" for="name">Confirmer le Mot de passe</label>
+                          <input name="password_confirmation" require id="" type="password" class="form-control" placeholder="Entrez l'e-mail du patient">
                         </div>
                       </div>
 
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
-                          <label class="form-label" for="name">Adresse</label>
-                          <input name="addresse" id="" type="text" class="form-control" placeholder="Entrez l'adresse du patient">
+                          <label class="form-label" for="">Adresse</label>
+                          <input name="adresse"  id="" type="text" class="form-control" placeholder="Entrez l'adresse du patient" required>
                         </div>
                       </div>
 
@@ -529,11 +554,11 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Groupe Sanguin</label>
-                          <select class="form-select" name="groupeS" id="abcd" aria-label="Default select example">
+                          <select class="form-select" name="groupS" id="abcd" aria-label="Default select example">
                             <option value="">Selectionner le groupe sanguin</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="B+">One</option>
+                            <option value="A+">Two</option>
+                            <option value="A-">Three</option>
                           </select>
                         </div>
                       </div>
@@ -563,7 +588,7 @@
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Pièce</label>
-                          <input name="fichier" id="" type="file" class="form-control" placeholder="Entrez la pièce du patient">
+                          <input name="piece" id="" type="file" class="form-control" placeholder="Entrez la pièce du patient">
                         </div>
                       </div>
 

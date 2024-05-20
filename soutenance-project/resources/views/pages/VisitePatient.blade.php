@@ -483,7 +483,7 @@ CONSULTATION
                                   <td></td>
                                   <td>
                                       <a href="" class="m-2"><i class="ri-printer-line fs-4 lh-1 text-primary "></i></a>
-                                      <a href="" class="m-2"><i class="ri-file-add-line fs-4 lh-1 text-primary "></i></a>
+                                      <a href="" class="m-2"data-bs-toggle="modal" data-bs-target="#addMedicament{{ $ordonnance->id }}"><i class="ri-file-add-line fs-4 lh-1 text-primary "></i></a>
                                   </td>
                                   <!-- Colonne pour les détails de l'ordonnance -->
                               </tr>
@@ -506,6 +506,104 @@ CONSULTATION
                                               <i class="ri-delete-bin-6-line fs-4 lh-1 text-primary "></i>
                                           </a>
                                       </td>
+
+                                      <!-- Modal Fullscreen -->
+                                      <div class="modal fade" id="addMedicament{{$ordonnance->id }}" tabindex="-1" aria-labelledby="addMedicamentLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-fullscreen">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title h4" id="addMedicamentLabel">
+                                                Formulaire de Prescription de Médicament
+                                              </h5>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                              <div class="row gx-3">
+                                                <div class="col-sm-12">
+                                                  <div class="card mb-3">
+                                                    <div class="card-header">
+                                                      <h5 class="card-title">Nouvel Enregistrement</h5>
+                                                    </div>
+                                                    <form method="POST" action="{{ route('pages.create-medicamentPrescrit-post') }}" ">
+                                                    <input type="hidden" name="ordonnance_id" value=" {{$ordonnance->id}}">
+                                                      @csrf
+                                                      <div class="card-body">
+
+                                                        <!-- Row start -->
+                                                        <div class="row gx-3">
+                                                          
+                                                          <div class="col-xl-3 col-sm-4 col-12">
+                                                            <div class="mb-3">
+                                                              <label class="form-label" for="name">Libellé Médocs</label>
+                                                              <select class="form-select" id="abcd" aria-label="Default select example">
+                                                                <option selected="">Selectionner le médicament</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                                <option value="3">Three</option>
+                                                              </select>
+                                                            </div>
+                                                          </div>
+                                                          <div class="col-xl-3 col-sm-4 col-12">
+                                                            <div class="mb-3">
+                                                              <label class="form-label" for="name">Qte à Prendre</label>
+                                                              <input type="number" name="qte" id="" class="form-control" placeholder="Entrez la quantité à prendre">
+                                                            </div>
+                                                          </div>
+                                                          <div class="col-xl-3 col-sm-4 col-12">
+                                                            <div class="mb-3">
+                                                              <label class="form-label" for="name">Dose</label>
+                                                              <input name="dose" id="" class="form-control" placeholder="Entrez la date depremière prise"">
+                                                            </div>
+                                                          </div>
+                                                          <div class="col-xl-3 col-sm-4 col-12">
+                                                            <div class="mb-3">
+                                                              <label class="form-label" for="name">Nombre de fois</label>
+                                                              <input name="nbFois" type="number" id="" class="form-control" placeholder="Entrez la date depremière prise"">
+                                                            </div>
+                                                          </div>
+                                                          <div class=" col-xl-3 col-sm-4 col-12">
+                                                              <div class="mb-3">
+                                                                <label class="form-label" for="name">Intervalle de prise</label>
+                                                                <select class="form-select" name="intervPrise" id="abcd" aria-label="Default select example">
+                                                                  <option selected="">Selectionner l'intervalle de prise</option>
+                                                                  <option value="1">One</option>
+                                                                  <option value="2">Two</option>
+                                                                  <option value="3">Three</option>
+                                                                </select>
+                                                                <input name="" id="" type="text" class="form-control" placeholder="Ou entrez l'intervalle de prise">
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                              <div class="mb-3">
+                                                                <label class="form-label" for="email">Date de premiere prise</label>
+                                                                <input name="datePremPrise" id="" type="date" class="form-control" placeholder="Entrez le libellé du médicament">
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-xl-3 col-sm-4 col-12">
+                                                              <div class="mb-3">
+                                                                <label class="form-label" for="email">Autres Instructions</label>
+                                                                <textarea name="autresInstructions" id="" cols="30" rows="5" class="form-control" placeholder="Entrez d'autre informations"></textarea>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <!-- Row end -->
+                                                        </div>
+                                                        <div class="card-footer">
+                                                          <div class="d-flex gap-2 justify-content-end">
+                                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                            <button type="submit" class="btn btn-primary">Valider</button>
+                                                          </div>
+                                                        </div>
+                                                    </form>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
                                   </tr>
                               @endforeach
                           @endforeach
@@ -540,16 +638,17 @@ CONSULTATION
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                           </div>
                           <div class="carousel-inner">
+                          @foreach ($fichier_consultation as $item)
                             <div class="carousel-item active">
-                              <img src="{{asset('assets/images/products/product5.jpg')}}" class="d-block w-100" alt="Admin Templates & Dashboards">
-                              <div class="carousel-caption d-none d-md-block">
-                                <h5 class="text-dark" style="color: black;">Libelle Analyse</h5>
-                                <p class="text-dark" style="color: black;">Libelle Fichier</p>
+                            <img src="{{ asset('storage/app/public/uploads/' . $item->cheminFichierConsultation) }}" class="d-block w-100" alt="Admin Templates & Dashboards">
+
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 class="text-dark" style="color: black;">{{ $consultations->motif }}</h5>
+                                <p class="text-dark" style="color: black;">{{ $item->libFichierConsultation }}</p>
                                 <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modifFichierAnalyse">Modifier</button>
                                 <button class="btn btn-primary">Telecharger</button>
                                 <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#suppFichierAnalyse">Supprimer</button>
-                              </div>
-
+                            </div>
                               <!-- Modal Fullscreen -->
                               <div class="modal fade" id="modifFichierAnalyse" tabindex="-1" aria-labelledby="addFichierAnalyseLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-fullscreen">
@@ -630,7 +729,10 @@ CONSULTATION
                                 </div>
                               </div>
                             </div>
+                          @endforeach
                           </div>
+
+                          
                           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                           </button>
@@ -639,6 +741,7 @@ CONSULTATION
                           </button>
                         </div>
                       </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -719,34 +822,35 @@ CONSULTATION
               <div class="card-header">
                 <h5 class="card-title">Nouvel Enregistrement</h5>
               </div>
-              <form action="">
+              <form method="POST" action="{{ route('pages.create-examenClinique-post') }}" enctype="multipart/form-data">
+              <input type="hidden" name="consultation_id" value="{{ $consultation_id }}">
+                @csrf
                 <div class="card-body">
-
                   <!-- Row start -->
                   <div class="row gx-3">
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Type Examen</label>
-                        <select class="form-select" id="abcd" aria-label="Default select example">
+                        <select class="form-select" name="typeE" id="abcd" aria-label="Default select example">
                           <option selected="">Selectionner le type d'examen</option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
                           <option value="3">Three</option>
                         </select>
-                        <input name="" id="" class="form-control" placeholder="Ou entrez le type d'examen">
+                        <input name="typeEx" id="" class="form-control" placeholder="Ou entrez le type d'examen">
                       </div>
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="email">Description</label>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Description des resultats"></textarea>
+                        <textarea name="description" id="" cols="30" rows="5" class="form-control" placeholder="Description des resultats"></textarea>
 
                       </div>
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="phn">Observation</label>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Observation après examen"></textarea>
+                        <textarea name="observation" id="" cols="30" rows="5" class="form-control" placeholder="Observation après examen"></textarea>
 
                       </div>
                     </div>
@@ -759,7 +863,7 @@ CONSULTATION
                 <div class="card-footer">
                   <div class="d-flex gap-2 justify-content-end">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Valider</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
                   </div>
                 </div>
               </form>
@@ -796,21 +900,29 @@ CONSULTATION
               <div class="card-header">
                 <h5 class="card-title">Nouvel Enregistrement</h5>
               </div>
-              <form action="">
+              <form method="POST" action="{{ route('pages.create-soinPrescrit-post') }}" enctype="multipart/form-data">
+              <input type="hidden" name="consultation_id" value="{{ $consultation_id }}">
+                @csrf
                 <div class="card-body">
 
                   <!-- Row start -->
                   <div class="row gx-3">
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
-                        <label class="form-label" for="name">Libellé</label>
-                        <input name="" id="" class="form-control" placeholder="Entrez le libellé du soin">
+                        <label class="form-label" for="name">Type Soin</label>
+                        <select class="form-select" name="typeS" id="abcd" require aria-label="Default select example">
+                          <option selected="">Selectionner le type d'examen</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <input name="typeS" id="" class="form-control" placeholder="Ou entrez le type d'examen">
                       </div>
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="email">Details</label>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Entrez les détails du soin"></textarea>
+                        <textarea name="detailsSoinPrescrit" id="" cols="30" rows="5" require class="form-control" placeholder="Entrez les détails du soin"></textarea>
                       </div>
                     </div>
                   </div>
@@ -819,7 +931,7 @@ CONSULTATION
                 <div class="card-footer">
                   <div class="d-flex gap-2 justify-content-end">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Valider</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
                   </div>
                 </div>
               </form>
@@ -872,7 +984,9 @@ CONSULTATION
               <div class="card-header">
                 <h5 class="card-title">Nouvel Enregistrement</h5>
               </div>
-              <form action="">
+              <form method="POST" action="{{ route('pages.create-analysePrescrit-post') }}" ">
+              <input type="hidden" name="consultation_id" value="{{ $consultation_id }}">
+                @csrf
                 <div class="card-body">
 
                   <!-- Row start -->
@@ -880,7 +994,7 @@ CONSULTATION
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Type Analyse</label>
-                        <select class="form-select" id="abcd" aria-label="Default select example">
+                        <select class="form-select" require name="typeAnalyse_id" id="abcd" aria-label="Default select example">
                           <option selected="">Selectionner le type d'analyse</option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
@@ -892,7 +1006,7 @@ CONSULTATION
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="email">Détails</label>
-                        <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Entrez les détails de l'analyse"></textarea>
+                        <textarea name="detailsAnalyse" id="" require cols="30" rows="5" class="form-control" placeholder="Entrez les détails de l'analyse"></textarea>
                       </div>
                     </div>
                   </div>
@@ -901,7 +1015,7 @@ CONSULTATION
                 <div class="card-footer">
                   <div class="d-flex gap-2 justify-content-end">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Valider</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
                   </div>
                 </div>
               </form>
@@ -952,22 +1066,19 @@ CONSULTATION
               <div class="card-header">
                 <h5 class="card-title">Nouvel Enregistrement</h5>
               </div>
-              <form action="">
+              <form method="POST" action="{{ route('pages.create-ordonnancePrescrit-post') }}" ">
+              <input type="hidden" name="consultation_id" value="{{ $consultation_id }}">
+                @csrf
                 <div class="card-body">
 
                   <!-- Row start -->
                   <div class="row gx-3">
+                    
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Libellé Médocs</label>
-                        <input name="" id="" class="form-control" placeholder="Entrez le libellé du médicament">
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-4 col-12">
-                      <div class="mb-3">
-                        <label class="form-label" for="name">Forme du Médicament</label>
                         <select class="form-select" id="abcd" aria-label="Default select example">
-                          <option selected="">Selectionner la forme du médicament</option>
+                          <option selected="">Selectionner le médicament</option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
                           <option value="3">Three</option>
@@ -977,19 +1088,25 @@ CONSULTATION
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Qte à Prendre</label>
-                        <input type="number" id="" class="form-control" placeholder="Entrez la quantité à prendre">
+                        <input type="number" name="qte" id="" class="form-control" placeholder="Entrez la quantité à prendre">
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Dose</label>
+                        <input name="dose" id="" class="form-control" placeholder="Entrez la date depremière prise"">
                       </div>
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Nombre de fois</label>
-                        <input name="" id="" class="form-control" placeholder="Entrez la date depremière prise"">
+                        <input name="nbFois" id="" class="form-control" placeholder="Entrez la date depremière prise"">
                       </div>
                     </div>
                     <div class=" col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Intervalle de prise</label>
-                          <select class="form-select" id="abcd" aria-label="Default select example">
+                          <select class="form-select" name="intervPrise" id="abcd" aria-label="Default select example">
                             <option selected="">Selectionner l'intervalle de prise</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -1001,13 +1118,13 @@ CONSULTATION
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="email">Date de premiere prise</label>
-                          <input name="" id="" type="date" class="form-control" placeholder="Entrez le libellé du médicament">
+                          <input name="datePremPrise" id="" type="date" class="form-control" placeholder="Entrez le libellé du médicament">
                         </div>
                       </div>
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="email">Autres Instructions</label>
-                          <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Entrez d'autre informations"></textarea>
+                          <textarea name="autresInstructions" id="" cols="30" rows="5" class="form-control" placeholder="Entrez d'autre informations"></textarea>
                         </div>
                       </div>
                     </div>
@@ -1016,7 +1133,7 @@ CONSULTATION
                   <div class="card-footer">
                     <div class="d-flex gap-2 justify-content-end">
                       <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                      <button type="button" class="btn btn-primary">Valider</button>
+                      <button type="submit" class="btn btn-primary">Valider</button>
                     </div>
                   </div>
               </form>
@@ -1078,7 +1195,9 @@ CONSULTATION
               <div class="card-header">
                 <h5 class="card-title">Nouvel Enregistrement</h5>
               </div>
-              <form action="">
+              <form method="POST" action="{{ route('pages.create-fichierConsultation-post') }}" enctype="multipart/form-data">
+              <input type="hidden" name="consultation_id" value="{{ $consultation_id }}">
+                @csrf
                 <div class="card-body">
 
                   <!-- Row start -->
@@ -1087,7 +1206,7 @@ CONSULTATION
 
                       <div class="mb-3">
                         <label class="form-label" for="name">Libellé Fichier</label>
-                        <input name="" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
+                        <input name="libFichierConsultation" id="" type="text" class="form-control" placeholder="Ou entrez le type d'examen">
                       </div>
 
 
@@ -1097,7 +1216,7 @@ CONSULTATION
 
                       <div class="mb-3">
                         <label class="form-label" for="name"> Fichier</label>
-                        <input name="" id="" type="file" class="form-control" placeholder="Ou entrez le type d'examen">
+                        <input name="chemin" id="" type="file" class="form-control" placeholder="Ou entrez le type d'examen">
                       </div>
                     </div>
 
@@ -1107,7 +1226,7 @@ CONSULTATION
                 <div class="card-footer">
                   <div class="d-flex gap-2 justify-content-end">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Valider</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
                   </div>
                 </div>
               </form>

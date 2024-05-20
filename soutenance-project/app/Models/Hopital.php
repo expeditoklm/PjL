@@ -16,14 +16,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property AdministreSoin[] $administreSoins
  * @property Consultation[] $consultations
  * @property FaireAnalysis[] $faireAnalyses
- * @property PersonnelSante_Hopital[] $personnelSanteHopitals
+ * @property Log[] $logs
+ * @property PersonnelSanteHopital[] $personnelSanteHopitals
  */
 class Hopital extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['logo', 'libHopital', 'paysHopital', 'ville','Hopital', 'deleted', 'created_at', 'updated_at'];
+    protected $fillable = ['logo', 'libHopital', 'paysHopital', 'villeHopital', 'deleted', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -52,8 +53,16 @@ class Hopital extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    public function logs()
+    {
+        return $this->hasMany('App\Models\Log');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function personnelSanteHopitals()
     {
-        return $this->hasMany('App\Models\PersonnelSante_Hopital');
+        return $this->hasMany('App\Models\PersonnelSanteHopital');
     }
 }

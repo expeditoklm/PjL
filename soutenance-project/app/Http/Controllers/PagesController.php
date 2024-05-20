@@ -23,6 +23,7 @@ use App\Models\Ordonnance;
 use App\Models\PrescrireAnalyse;
 use App\Models\SortieMedicale;
 use App\Models\AdministreSoin;
+use App\Models\FichierConsultation;
 use App\Models\NotePatient;
 use App\Models\Permission;
 use App\Models\TypeSoin;
@@ -45,11 +46,16 @@ class PagesController extends Controller
     }
     public function voirPatient($id)
     {
+        $hopital_id=session('hopital_interv_id');
+        $personnSante_id = session('patientOuPersSanteConnecteId');
+        //$personneConnecte_id = session('persConnecteId');
+
         session()->put('patient_init', $id);
         $personne = Personne::findOrFail($id);
         $patient = Patient::where('personne_id', $personne->id)->first();
         $user = User::where('id', $patient->user_id)->first();
-        
+        $patientPersonne_id = session('patient_init');
+        $patient = Patient::where('personne_id', $patientPersonne_id)->first();
         // Récupérer les consultations du patient directement à partir de la relation
         $consultations = $patient->consultations;
     
@@ -77,6 +83,14 @@ class PagesController extends Controller
             }
         }
         
+
+        Log::create([
+            'patient_id' => $patient->id,
+            'personnel_sante_id' => $personnSante_id,
+            'objet' => 'a visité votre dossier médical',
+            'hopital_id' => $hopital_id,
+            'deleted' => 0,
+        ]);
         // Maintenant $correspondants contient une liste d'informations sur les correspondants de toutes les consultations du patient
         
         return view('pages/voirPatient', compact('personne', 'patient', 'user', 'consultations', 'correspondants'));
@@ -225,12 +239,13 @@ class PagesController extends Controller
         }elseif($sortie_medicale->modeSortie == "Deces"){
             $sortie_medicale_info = Deces::where('sortieMedicale_id', $sortie_medicale->id)->first();
         }
-
+        $consultation_id = $id;
+        $fichier_consultation = FichierConsultation::where('consultation_id', $consultations->id)->get();
 
 
 
        // dd( $consultations->id);
-        return view('pages/VisitePatient',compact('consultations','medecin','hopital','examen_clinique','soins_prescrit','analyses_prescrit','consultation','sortie_medicale','sortie_medicale_info'));
+        return view('pages/VisitePatient',compact('consultations','medecin','hopital','examen_clinique','soins_prescrit','analyses_prescrit','consultation','sortie_medicale','sortie_medicale_info','consultation_id','fichier_consultation'));
     }
     public function listeAnalysePatient()
     {

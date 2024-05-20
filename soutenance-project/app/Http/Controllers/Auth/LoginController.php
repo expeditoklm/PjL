@@ -82,6 +82,7 @@ class LoginController extends Controller
                                     session()->put('patientOuPersSanteConnecteId',$personnelSante->id);
                                     session()->put('persConnecteId',$personne->id);
                                     session()->put('patient_init',0);
+                                    session()->put('hopital_interv_id',$idHopital);
 
                                     
                                     return redirect()->intended('/recherche-patient');

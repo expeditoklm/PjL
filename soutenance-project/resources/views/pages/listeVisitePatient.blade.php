@@ -264,70 +264,73 @@ LISTE CONSULTATIONS
               <div class="card-header">
                 <h5 class="card-title">Nouvel Enregistrement</h5>
               </div>
-              <div class="card-body">
+              <form method="POST" action="{{ route('pages.create-consultation-post') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="card-body">
 
-                <!-- Row start -->
-                <div class="row gx-3">
-                  <div class="col-xl-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                      <label class="form-label" for="name">Motif</label>
-                      <div class="simpleEditor"></div>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Motif de consultation"></textarea>
+                  <!-- Row start -->
+                  <div class="row gx-3">
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="name">Motif</label>
+                        <div class="simpleEditor"></div>
+                        <textarea name="motif" id="" required cols="30" rows="5" class="form-control" placeholder="Motif de consultation"></textarea>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-xl-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                      <label class="form-label" for="email">Anamnèse</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Anamnèse / Avant et Début de maladie "></textarea>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="email">Anamnèse</label>
+                        <textarea name="anamnese" id="" cols="30" rows="5" class="form-control" placeholder="Anamnèse / Avant et Début de maladie "></textarea>
 
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-xl-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                      <label class="form-label" for="phn">Signes Associés</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Signes Associés"></textarea>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="phn">Signes Associés</label>
+                        <textarea name="signeAssocie" id="" cols="30" rows="5" class="form-control" placeholder="Signes Associés"></textarea>
 
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-xl-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                      <label class="form-label" for="company">Antécedants</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Antécedants"></textarea>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="company">Antécedants</label>
+                        <textarea name="antecedant" id="" cols="30" rows="5" class="form-control" placeholder="Antécedants"></textarea>
 
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-xl-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                      <label class="form-label" for="bAddress">Diagnostique Retenu</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Diagnostique retenu après consultation"></textarea>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="bAddress">Diagnostique Retenu</label>
+                        <textarea name="diagnostiqueRetenu" id="" cols="30" rows="5" class="form-control" placeholder="Diagnostique retenu après consultation"></textarea>
 
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-xl-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                      <label class="form-label" for="terri">Bilan</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Bilan de consultation"></textarea>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="terri">Bilan</label>
+                        <textarea name="bilan" id="" cols="30" rows="5" class="form-control" placeholder="Bilan de consultation"></textarea>
 
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-xl-3 col-sm-4 col-12">
-                    <div class="mb-3">
-                      <label class="form-label" for="idType">Allergies</label>
-                      <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Allergies après consultation"></textarea>
+                    <div class="col-xl-3 col-sm-4 col-12">
+                      <div class="mb-3">
+                        <label class="form-label" for="idType">Allergies</label>
+                        <textarea name="allergies" id="" cols="30" rows="5" class="form-control" placeholder="Allergies après consultation"></textarea>
 
+                      </div>
                     </div>
+
                   </div>
+                  <!-- Row end -->
 
                 </div>
-                <!-- Row end -->
-
-              </div>
-              <div class="card-footer">
-                <div class="d-flex gap-2 justify-content-end">
-                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                  <button type="button" class="btn btn-primary">Valider</button>
+                <div class="card-footer">
+                  <div class="d-flex gap-2 justify-content-end">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

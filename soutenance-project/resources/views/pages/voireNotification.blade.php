@@ -24,12 +24,12 @@
 </div>
 @endsection
 @section('titre')
-@auth 
-    @if (auth()->user()->typePersonne !== 'Patient') 
-        Listes des patients recemment consulter
-    @else
-        Histoirique des modifications du DME
-    @endif
+@auth
+@if (auth()->user()->typePersonne !== 'Patient')
+Listes des patients recemment consulter
+@else
+Histoirique des modifications du DME
+@endif
 @endauth
 @endsection
 
@@ -41,52 +41,104 @@
 
     <!-- Row start -->
     <div class="row gx-3">
-    @auth 
-        @if (auth()->user()->typePersonne === 'Patient') 
-            @foreach ($lesLogs as $item)
-                <div class="col-6">
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <h5 class="card-title">{{ $item->personnel_sante_nom }}</h5>
-                        </div>
-                        <div class="card-body">{{ $item->objet}}</div>
-                        <div class="card-footer small m-0 text-light">
-                        {{ $item->created_at}}
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        @else
-        @foreach ($lesLogs as $item)
-        <div class="col-6">
-            <div class="card mb-3">
-                <a href="#">
-                    <div class="card-header">
-                        <h5 class="card-title">{{ $item->patient_nom}}</h5>
-                    </div>
-                    <div class="card-footer small m-0 text-light">
-                        {{ $item->created_at}}
-                    </div>
-                </a>
+        @auth
+        @if (auth()->user()->typePersonne === 'Patient')
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="toggleButtons" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($lesLogs as $item)
+                        <tr>
+                            <td>
+                                <div class="col-12">
+                                    <div class="card mb-3">
+                                        <div class="card-header d-flex justify-content-between">
+                                            <h5 class="card-title">{{ $item->personnel_sante_nom }}</h5>
+                                            <span class="ml-auto small m-0 text-light">{{ $item->created_at}}</span>
+                                        </div>
+                                        <div class="card-body">{{ $item->objet}}</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+
+                </table>
             </div>
         </div>
-        @endforeach
+        @else
+
+
+
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="toggleButtons" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($lesLogs as $item)
+                        <tr>
+                            <td>
+                                <div class="col-12">
+                                    <div class="card mb-3">
+                                        <div class="card-header d-flex justify-content-between">
+                                            <h5 class="card-title">{{ $item->patient_nom}}</h5>
+                                            <span class="ml-auto small m-0 text-light">{{ $item->created_at}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
     </div>
     @endif
     @endauth
     <!-- Row end -->
 
 </div>
-<!-- App body ends --
 
 
-<!-- Row end -->
 
 
-<!-- App content ends -->
 
 
-<!-- App body ends -->
+@section('script')
+
+<!-- Quill Editor JS -->
+<script src="assets/vendor/quill/quill.min.js"></script>
+<script src="assets/vendor/quill/custom.js"></script>
+<!-- Data Tables -->
+<script src="assets/vendor/datatables/dataTables.min.js"></script>
+<script src="assets/vendor/datatables/dataTables.bootstrap.min.js"></script>
+<script src="assets/vendor/datatables/custom/custom-datatables.js"></script>
+<!-- DataTable Buttons -->
+<script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
+<script src="assets/vendor/datatables/buttons/jszip.min.js"></script>
+<script src="assets/vendor/datatables/buttons/dataTables.buttons.min.js"></script>
+<script src="assets/vendor/datatables/buttons/pdfmake.min.js"></script>
+<script src="assets/vendor/datatables/buttons/vfs_fonts.js"></script>
+<script src="assets/vendor/datatables/buttons/buttons.html5.min.js"></script>
+<script src="assets/vendor/datatables/buttons/buttons.print.min.js"></script>
+<script src="assets/vendor/datatables/buttons/buttons.colVis.min.js"></script>
+@endsection
+
+
+
 
 
 

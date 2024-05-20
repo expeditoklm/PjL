@@ -271,7 +271,7 @@ class RegisterController extends Controller
             if (isset($personne)) {
                 $personne->delete();
             }
-            dd('Une exception a été attrapée : ',  $e->getMessage(), "\n");
+            //dd('Une exception a été attrapée : ',  $e->getMessage(), "\n");
             // Gérer les erreurs spécifiques
             if ($request->password != $request->password_confirmation) {
                 return redirect()->back()->with('error', 'Mots de passe non conformes.');

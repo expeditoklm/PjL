@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -28,6 +29,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/liste-patient-rechercher', [PagesController::class, 'listePatientRechercher'])->name('pages.liste-patient-rechercher');
     Route::get('/note-patient', [PagesController::class, 'notePatient'])->name('pages.note-patient');
     Route::get('/voire-notification', [PagesController::class, 'voireNotification'])->name('pages.voire-notification');
+    Route::post('/create-patient', [PostController::class, 'createPatientPost'])->name('pages.create-patient-post');
+    Route::post('/create-consultation', [PostController::class, 'createConsultationPost'])->name('pages.create-consultation-post');
+    Route::post('/create-examenClinique', [PostController::class, 'createExamenCliniquePost'])->name('pages.create-examenClinique-post');
+    Route::post('/create-soinPrescrit', [PostController::class, 'createSoinPrescritPost'])->name('pages.create-soinPrescrit-post');
+    Route::post('/create-analysePrescrit', [PostController::class, 'createAnalysePrescritPost'])->name('pages.create-analysePrescrit-post');
+    Route::post('/create-ordonnancePrescrit', [PostController::class, 'createOrdonnancePrescritPost'])->name('pages.create-ordonnancePrescrit-post');
+    Route::post('/create-medicamentPrescrit', [PostController::class, 'createMedicamentPrescritPost'])->name('pages.create-medicamentPrescrit-post');
+    Route::post('/create-fichierConsultation', [PostController::class, 'createfichierConsultationPost'])->name('pages.create-fichierConsultation-post');
+
 });
 
 
@@ -51,4 +61,4 @@ Route::get('/page-attente', [PagesController::class, 'pageAttente'])->name('page
 
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\PagesController::class, 'recherchePatient'])->name('home');
