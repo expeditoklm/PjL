@@ -121,79 +121,79 @@
 
                             <!-- Messages starts -->
                             <div class="dropdown">
-                <a class="dropdown-toggle d-flex position-relative" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="ri-message-3-line fs-4 lh-1 text-primary"></i>
-                  <span class="count-label"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-end">
-                  @if (Auth::check() && Auth::user()->typePersonne=== 'Patient' )
-                  <h5 class="fw-semibold px-3 py-2 text-primary">Messages</h5>
-                 
-
-                  @if($lesLogs->isEmpty())
-                  <div class="dropdown-item">
-                    <div class="d-flex py-2">
-                      <div class="m-0">
-
-                        <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
-
-                      </div>
-                    </div>
-                  </div>
-                  @else
-                  @foreach($lesLogs as $log)
-                  <div class="dropdown-item">
-                    <div class="d-flex py-2">
-                      <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
-                      <div class="m-0">
-                        <h6 class="mb-1 fw-semibold">{{ $log->personnel_sante_nom }}</h6>
-                        <p class="mb-1">{{ $log->objet }}</p>
-                        <p class="small m-0 text-light">{{ $log->created_at }}</p>
-                      </div>
-                    </div>
-                  </div>
-                  @endforeach
-                @endif
+                                <a class="dropdown-toggle d-flex position-relative" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-message-3-line fs-4 lh-1 text-primary"></i>
+                                    <span class="count-label"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    @if (Auth::check() && Auth::user()->typePersonne=== 'Patient' )
+                                    <h5 class="fw-semibold px-3 py-2 text-primary">Messages</h5>
 
 
-                @else
-                  <h5 class="fw-semibold px-3 py-2 text-primary">Patients recemment consulter</h5>
-                
+                                    @if($lesLogs->isEmpty())
+                                    <div class="dropdown-item">
+                                        <div class="d-flex py-2">
+                                            <div class="m-0">
 
-                  @if($lesLogs->isEmpty())
-                  <div class="dropdown-item">
-                    <div class="d-flex py-2">
-                      <div class="m-0">
+                                                <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
 
-                        <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
-
-                      </div>
-                    </div>
-                  </div>
-                  @else
-                  @foreach($lesLogs as $log)
-                  <div class="dropdown-item">
-                    <div class="d-flex py-2">
-                      <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
-                      <div class="m-0">
-
-                        <h6 class="mb-1 fw-semibold">{{ $log->patient_nom }}</h6>
-
-                        <p class="small m-0 text-light">{{ $log->created_at }}</p>
-                      </div>
-                    </div>
-                  </div>
-                  @endforeach
-                  @endif
-                  @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @else
+                                    @foreach($lesLogs as $log)
+                                    <div class="dropdown-item">
+                                        <div class="d-flex py-2">
+                                            <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                                            <div class="m-0">
+                                                <h6 class="mb-1 fw-semibold">{{ $log->personnel_sante_nom }}</h6>
+                                                <p class="mb-1">{{ $log->objet }}</p>
+                                                <p class="small m-0 text-light">{{ $log->created_at }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    @endif
 
 
+                                    @else
+                                    <h5 class="fw-semibold px-3 py-2 text-primary">Patients recemment consulter</h5>
 
-                  <div class="d-grid mx-3 my-1">
-                    <a href="{{ route('pages.voire-notification') }}" class="btn btn-primary">View all</a>
-                  </div>
-                </div>
-              </div>
+
+                                    @if($lesLogs->isEmpty())
+                                    <div class="dropdown-item">
+                                        <div class="d-flex py-2">
+                                            <div class="m-0">
+
+                                                <h6 class="mb-1 fw-semibold">Aucun log disponible.</h6>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @else
+                                    @foreach($lesLogs as $log)
+                                    <div class="dropdown-item">
+                                        <div class="d-flex py-2">
+                                            <img src="assets/images/user3.png" class="img-3x me-3 rounded-5" alt="Admin Theme" />
+                                            <div class="m-0">
+
+                                                <h6 class="mb-1 fw-semibold">{{ $log->patient_nom }}</h6>
+
+                                                <p class="small m-0 text-light">{{ $log->created_at }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    @endif
+                                    @endif
+
+
+
+                                    <div class="d-grid mx-3 my-1">
+                                        <a href="{{ route('pages.voire-notification') }}" class="btn btn-primary">View all</a>
+                                    </div>
+                                </div>
+                            </div>
                             <!-- Messages ends -->
 
 
@@ -273,8 +273,8 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        
-                                        @foreach ($personnes as $item)
+
+                                            @foreach ($personnes as $item)
                                             <tr>
                                                 <td>{{ $item->cin}}</td>
                                                 <td>{{ $item->nomPers}} {{ $item->prenomPers}}</td>
@@ -314,34 +314,34 @@
 
                                                                                     <!-- Row start -->
                                                                                     <div class="row gx-3">
-                                                                                    <div class="col-xl-3 col-sm-4 col-12">
+                                                                                        <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Nom</label>
-                                                                                                <input name="" id="" type="text" class="form-control" >
+                                                                                                <input name="" id="" type="text" class="form-control">
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Prénoms</label>
-                                                                                                <input name="" id="" type="text" class="form-control" >
+                                                                                                <input name="" id="" type="text" class="form-control">
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Sexe</label>
-                                                                                                <input name="" id="" type="text" class="form-control" >
+                                                                                                <input name="" id="" type="text" class="form-control">
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Date de Naissance</label>
-                                                                                                <input name="" id="" type="date" class="form-control" >
+                                                                                                <input name="" id="" type="date" class="form-control">
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Télephone</label>
-                                                                                                <input name="" id="" type="number" class="form-control" >
+                                                                                                <input name="" id="" type="number" class="form-control">
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
@@ -361,7 +361,7 @@
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Profession</label>
-                                                                                                <input name="" type="text" id="" class="form-control" >
+                                                                                                <input name="" type="text" id="" class="form-control">
                                                                                             </div>
                                                                                         </div>
 
@@ -370,9 +370,9 @@
                                                                                                 <label class="form-label" for="name">Pays</label>
                                                                                                 <select class="form-select" id="abcd" aria-label="Default select example">
                                                                                                     <option selected="">Selectionner le pays</option>
-                                                                                                    <option value="1">One</option>
-                                                                                                    <option value="2">Two</option>
-                                                                                                    <option value="3">Three</option>
+                                                                                                    <option value="Benin">Bénin</option>
+                                                                                                    <option value="Nigeria">Nigéria</option>
+                                                                                                    <option value="Togo">Togo</option>
                                                                                                 </select>
                                                                                             </div>
                                                                                         </div>
@@ -383,9 +383,9 @@
                                                                                                 <label class="form-label" for="name">Ville</label>
                                                                                                 <select class="form-select" id="abcd" aria-label="Default select example">
                                                                                                     <option selected="">Selectionner la ville</option>
-                                                                                                    <option value="1">One</option>
-                                                                                                    <option value="2">Two</option>
-                                                                                                    <option value="3">Three</option>
+                                                                                                    <option value="Cotonou">Cotonou</option>
+                                                                                                    <option value="Abuja">Abuja</option>
+                                                                                                    <option value="Lomé">Lomé</option>
                                                                                                 </select>
                                                                                             </div>
                                                                                         </div>
@@ -394,7 +394,7 @@
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Nom du père</label>
-                                                                                                <input name=""   type="text" id="" class="form-control" >
+                                                                                                <input name="" type="text" id="" class="form-control">
                                                                                             </div>
                                                                                         </div>
 
@@ -412,7 +412,7 @@
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Pathologie du père</label>
-                                                                                                <input name="" id="" type="text"  class="form-control" >
+                                                                                                <input name="" id="" type="text" class="form-control">
                                                                                             </div>
                                                                                         </div>
 
@@ -420,7 +420,7 @@
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Nom de la mère</label>
-                                                                                                <input name=""   type="text"  id="" class="form-control" >
+                                                                                                <input name="" type="text" id="" class="form-control">
                                                                                             </div>
                                                                                         </div>
 
@@ -428,7 +428,7 @@
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Prénom de la mère</label>
-                                                                                                <input name=""  type="text" id="" class="form-control">
+                                                                                                <input name="" type="text" id="" class="form-control">
                                                                                             </div>
                                                                                         </div>
 
@@ -436,19 +436,24 @@
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Pathologie de la mère</label>
-                                                                                                <input name="" type="text" id="" class="form-control" >
+                                                                                                <input name="" type="text" id="" class="form-control">
                                                                                             </div>
                                                                                         </div>
-                                                                                        
-                                                                                        
+
+
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Groupe Sanguin</label>
                                                                                                 <select class="form-select" id="abcd" aria-label="Default select example">
                                                                                                     <option selected="">Selectionner le groupe sanguin</option>
-                                                                                                    <option value="1">One</option>
-                                                                                                    <option value="2">Two</option>
-                                                                                                    <option value="3">Three</option>
+                                                                                                    <option value="A+">A+</option>
+                                                                                                    <option value="A-">A-</option>
+                                                                                                    <option value="B+">B+</option>
+                                                                                                    <option value="B-">B-</option>
+                                                                                                    <option value="AB+">AB+</option>
+                                                                                                    <option value="AB-">AB-</option>
+                                                                                                    <option value="O+">O+</option>
+                                                                                                    <option value="O-">O-</option>
                                                                                                 </select>
                                                                                             </div>
                                                                                         </div>
@@ -459,9 +464,9 @@
                                                                                                 <label class="form-label" for="name">Type de pièce</label>
                                                                                                 <select class="form-select" id="abcd" aria-label="Default select example">
                                                                                                     <option selected="">Selectionner le type de pièce</option>
-                                                                                                    <option value="1">One</option>
-                                                                                                    <option value="2">Two</option>
-                                                                                                    <option value="3">Three</option>
+                                                                                                    <option value="Carte d'identite">Carte d'identite</option>
+                                                                                                    <option value="CIP">CIP</option>
+                                                                                                    <option value="Carte Biométrique">Carte Biométrique</option>
                                                                                                 </select>
                                                                                             </div>
                                                                                         </div>
@@ -470,7 +475,7 @@
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Numero de pièce</label>
-                                                                                                <input name="" type="number" id="" class="form-control" >
+                                                                                                <input name="" type="number" id="" class="form-control">
                                                                                             </div>
                                                                                         </div>
 
@@ -478,11 +483,11 @@
                                                                                         <div class="col-xl-3 col-sm-4 col-12">
                                                                                             <div class="mb-3">
                                                                                                 <label class="form-label" for="name">Pièce</label>
-                                                                                                <input name="" id="" type="file"   class="form-control" >
+                                                                                                <input name="" id="" type="file" class="form-control">
                                                                                             </div>
                                                                                         </div>
-                                                                                        
-                                                                                       
+
+
                                                                                     </div>
                                                                                     <!-- Row end -->
                                                                                 </div>
@@ -520,7 +525,7 @@
 
 
                                             </tr>
-                                        @endforeach
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\PersonnelSante;
 use App\Models\PersonnelSante_Hopital;
 use App\Http\Controllers\Controller;
+use App\Models\Hopital;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -53,6 +54,8 @@ class LoginController extends Controller
 
         // Recherche de l'utilisateur dans la table User
         $user = User::where('email', $credentials['email'])->first();
+
+        $hopitalList = [];
 
         if ($user) {
             if ($user->typePersonne === $type) {
@@ -115,7 +118,7 @@ class LoginController extends Controller
                 return redirect('login')->with('error', 'choix type personne incorrect');
             }
         }
-
+        
         return redirect('login')->with('error', 'Identifiants incorrects');
     }
 }

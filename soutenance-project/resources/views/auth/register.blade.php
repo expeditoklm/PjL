@@ -186,9 +186,9 @@
                                                                     <label class="form-label" for="name">Type de pièce</label>
                                                                     <select class="form-select" name="typePiece" id="abcd" aria-label="Default select example">
                                                                         <option selected="">Selectionner le type de pièce</option>
-                                                                        <option value="1">Carte d'identite</option>
-                                                                        <option value="2">CIP</option>
-                                                                        <option value="3">Carte Biométrique</option>
+                                                                        <option value="Carte d'identite">Carte d'identite</option>
+                                                                        <option value="CIP">CIP</option>
+                                                                        <option value="Carte Biométrique">Carte Biométrique</option>
                                                                     </select>
                                                                  
                                                                 </div>

@@ -24,8 +24,11 @@ use App\Models\PrescrireAnalyse;
 use App\Models\SortieMedicale;
 use App\Models\AdministreSoin;
 use App\Models\FichierConsultation;
+use App\Models\Medicament;
 use App\Models\NotePatient;
 use App\Models\Permission;
+use App\Models\TypeAnalyse;
+use App\Models\TypeExamen;
 use App\Models\TypeSoin;
 use App\Models\User;
 use Illuminate\Support\Carbon;
@@ -247,11 +250,15 @@ class PagesController extends Controller
         }
         $consultation_id = $id;
         $fichier_consultation = FichierConsultation::where('consultation_id', $consultations->id)->get();
-
+        $typeExamen = TypeExamen::get();
+        $typeSoin = TypeSoin::get();
+        $typeAnalyse = TypeAnalyse::get();
+        $medocs = Medicament::get();
+        
 
 
        // dd( $consultations->id);
-        return view('pages/VisitePatient',compact('consultations','medecin','hopital','examen_clinique','soins_prescrit','analyses_prescrit','consultation','sortie_medicale','sortie_medicale_info','consultation_id','fichier_consultation'));
+        return view('pages/VisitePatient',compact('medocs','typeAnalyse','typeSoin','typeExamen','consultations','medecin','hopital','examen_clinique','soins_prescrit','analyses_prescrit','consultation','sortie_medicale','sortie_medicale_info','consultation_id','fichier_consultation'));
     }
     public function listeAnalysePatient()
     {
@@ -259,7 +266,9 @@ class PagesController extends Controller
         $patient = Patient::where('personne_id', $personne_id)->first();
         
         $analyses = FaireAnalyse::where('patient_id', $patient->id)->get();
-        return view('pages/listeAnalysePatient',compact('analyses'));
+        $typeAnalyses = TypeAnalyse::get();
+
+        return view('pages/listeAnalysePatient',compact('analyses','typeAnalyses'));
     }
     public function AnalysePatient($id)
     {

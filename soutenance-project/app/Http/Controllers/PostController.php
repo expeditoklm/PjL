@@ -75,11 +75,11 @@ class PostController extends Controller
             'groupS' => ['nullable', 'string', 'max:255'],
 
 
-          
+
 
         ];
-       
-        return Validator::make($data,$rules);
+
+        return Validator::make($data, $rules);
     }
 
 
@@ -224,18 +224,18 @@ class PostController extends Controller
     }
 
 
-    
 
- 
+
+
     public function createConsultationPost(Request $request)
     {
-        $hopital_id=session('hopital_interv_id');
+        $hopital_id = session('hopital_interv_id');
         $personnelSante_id = session('patientOuPersSanteConnecteId');
         $personneConnecte_id = session('persConnecteId');
         $patientPersonne_id = session('patient_init');
         $patient = Patient::where('personne_id', $patientPersonne_id)->first();
 
-        
+
         $consultation = Consultation::create([
             'motif' => $request->motif,
             'anamnèse' => $request->anamnese,
@@ -249,30 +249,32 @@ class PostController extends Controller
             'hopital_id' => $hopital_id,
             'deleted' => 0,
         ]);
-        if($consultation){
+        if ($consultation) {
             SortieMedicale::create([
-            'modeSortie' => 'Sortie Normale',
-            'DetailsSortie' => 'Sortie libre',
-            'consultation_id' => $consultation->id,
-            'deleted' => 0,
-        ]);
+                'modeSortie' => 'Sortie Normale',
+                'DetailsSortie' => 'Sortie libre',
+                'consultation_id' => $consultation->id,
+                'deleted' => 0,
+            ]);
 
 
+            $user = auth()->user();
 
-        Log::create([
-            'patient_id' => $patient->id,
-            'personnel_sante_id' => $personnelSante_id,
-            'objet' => 'vous a enregistré une consultaion',
-            'hopital_id' => $hopital_id,
-            'deleted' => 0,
-        ]);
 
+            if ($user->typePersonne === 'Personnel de santé') {
+                Log::create([
+                    'patient_id' => $patient->id,
+                    'personnel_sante_id' => $personnelSante_id,
+                    'objet' => 'vous a enregistré une consultaion',
+                    'hopital_id' => $hopital_id,
+                    'deleted' => 0,
+                ]);
+            }
         }
 
-        
+
 
         return redirect()->back()->with('success', 'La consultation a été créé avec succès !');
-
     }
 
 
@@ -284,118 +286,130 @@ class PostController extends Controller
 
     public function createExamenCliniquePost(Request $request)
     {
-        $hopital_id=session('hopital_interv_id');
+        $hopital_id = session('hopital_interv_id');
         $personnelSante_id = session('patientOuPersSanteConnecteId');
         $personneConnecte_id = session('persConnecteId');
         $patientPersonne_id = session('patient_init');
         $patient = Patient::where('personne_id', $patientPersonne_id)->first();
 
-        
+
         $examenClinique = ExamenClinique::create([
             'description' => $request->description,
             'observation' => $request->observation,
             'consultation_id' => $request->consultation_id,
-            'typeExamen_id' => 2,
+            'typeExamen_id' => $request->typeExamen_id,
             'deleted' => 0,
         ]);
-        if($examenClinique){
-            Log::create([
-                'patient_id' => $patient->id,
-                'personnel_sante_id' => $personnelSante_id,
-                'objet' => 'vous a enregistré un examen clinique',
-                'hopital_id' => $hopital_id,
-                'deleted' => 0,
-            ]);
+        if ($examenClinique) {
+            $user = auth()->user();
+
+
+            if ($user->typePersonne === 'Personnel de santé') {
+                Log::create([
+                    'patient_id' => $patient->id,
+                    'personnel_sante_id' => $personnelSante_id,
+                    'objet' => 'vous a enregistré un examen clinique',
+                    'hopital_id' => $hopital_id,
+                    'deleted' => 0,
+                ]);
+            }
         }
 
-        
+
 
         return redirect()->back()->with('success', 'L\'examen clinique a été créé avec succès !');
-
     }
-    
+
 
     public function createSoinPrescritPost(Request $request)
     {
-        $hopital_id=session('hopital_interv_id');
+        $hopital_id = session('hopital_interv_id');
         $personnelSante_id = session('patientOuPersSanteConnecteId');
         $personneConnecte_id = session('persConnecteId');
         $patientPersonne_id = session('patient_init');
         $patient = Patient::where('personne_id', $patientPersonne_id)->first();
 
-        
+
         $soinPrescrit = SoinPrescrit::create([
             'detailsSoinPrescrit' => $request->detailsSoinPrescrit,
             'consultation_id' => $request->consultation_id,
-            'type_soin_id' => 2,
+            'type_soin_id' =>$request->typeSoin_id,
             'deleted' => 0,
         ]);
-        if($soinPrescrit){
-            Log::create([
-                'patient_id' => $patient->id,
-                'personnel_sante_id' => $personnelSante_id,
-                'objet' => 'vous a prescrit un soin',
-                'hopital_id' => $hopital_id,
-                'deleted' => 0,
-            ]);
+        if ($soinPrescrit) {
+            $user = auth()->user();
+
+
+            if ($user->typePersonne === 'Personnel de santé') {
+                Log::create([
+                    'patient_id' => $patient->id,
+                    'personnel_sante_id' => $personnelSante_id,
+                    'objet' => 'vous a prescrit un soin',
+                    'hopital_id' => $hopital_id,
+                    'deleted' => 0,
+                ]);
+            }
         }
 
-        
+
 
         return redirect()->back()->with('success', 'Le soin a été prescrit avec succès !');
-
     }
-    
+
 
 
 
 
     public function createAnalysePrescritPost(Request $request)
     {
-        $hopital_id=session('hopital_interv_id');
+        $hopital_id = session('hopital_interv_id');
         $personnelSante_id = session('patientOuPersSanteConnecteId');
         $personneConnecte_id = session('persConnecteId');
         $patientPersonne_id = session('patient_init');
         $patient = Patient::where('personne_id', $patientPersonne_id)->first();
 
-        
+
         $analysePrescrit = PrescrireAnalyse::create([
             'detailsAnalyse' => $request->detailsAnalyse,
             'consultation_id' => $request->consultation_id,
-            'typeAnalyse_id' => 2,
+            'typeAnalyse_id' => $request->typeAnalyse_id,
             'deleted' => 0,
         ]);
-        if($analysePrescrit){
-            Log::create([
-                'patient_id' => $patient->id,
-                'personnel_sante_id' => $personnelSante_id,
-                'objet' => 'vous a prescrit une analyse',
-                'hopital_id' => $hopital_id,
-                'deleted' => 0,
-            ]);
+        if ($analysePrescrit) {
+            $user = auth()->user();
+
+
+            if ($user->typePersonne === 'Personnel de santé') {
+                Log::create([
+                    'patient_id' => $patient->id,
+                    'personnel_sante_id' => $personnelSante_id,
+                    'objet' => 'vous a prescrit une analyse',
+                    'hopital_id' => $hopital_id,
+                    'deleted' => 0,
+                ]);
+            }
         }
 
-        
+
 
         return redirect()->back()->with('success', 'Le soin a été prescrit avec succès !');
-
     }
-    
+
 
     public function createOrdonnancePrescritPost(Request $request)
     {
-        $hopital_id=session('hopital_interv_id');
+        $hopital_id = session('hopital_interv_id');
         $personnelSante_id = session('patientOuPersSanteConnecteId');
         $personneConnecte_id = session('persConnecteId');
         $patientPersonne_id = session('patient_init');
         $patient = Patient::where('personne_id', $patientPersonne_id)->first();
 
-        
+
         $ordonnancePrescrit = Ordonnance::create([
             'consultation_id' => $request->consultation_id,
             'deleted' => 0,
         ]);
-        if($ordonnancePrescrit){
+        if ($ordonnancePrescrit) {
             PrescrireMedicament::create([
                 'qte' => $request->qte,
                 'dose' => $request->dose,
@@ -404,35 +418,37 @@ class PostController extends Controller
                 'datePremPrise' => $request->datePremPrise,
                 'autresInstructions' => $request->autresInstructions,
                 'ordonnance_id' => $ordonnancePrescrit->id,
-                'medicament_id' => 4,
+                'medicament_id' => $request->medicament_id,
                 'deleted' => 0,
             ]);
-            Log::create([
-                'patient_id' => $patient->id,
-                'personnel_sante_id' => $personnelSante_id,
-                'objet' => 'vous a prescrit une Ordonnance',
-                'hopital_id' => $hopital_id,
-                'deleted' => 0,
-            ]);
+            $user = auth()->user();
 
-            
+
+            if ($user->typePersonne === 'Personnel de santé') {
+                Log::create([
+                    'patient_id' => $patient->id,
+                    'personnel_sante_id' => $personnelSante_id,
+                    'objet' => 'vous a prescrit une Ordonnance',
+                    'hopital_id' => $hopital_id,
+                    'deleted' => 0,
+                ]);
+            }
         }
 
         return redirect()->back()->with('success', 'L\'ordonnance a été prescrit avec succès !');
-
     }
-    
+
 
 
     public function createMedicamentPrescritPost(Request $request)
     {
-        $hopital_id=session('hopital_interv_id');
+        $hopital_id = session('hopital_interv_id');
         $personnelSante_id = session('patientOuPersSanteConnecteId');
         $personneConnecte_id = session('persConnecteId');
         $patientPersonne_id = session('patient_init');
         $patient = Patient::where('personne_id', $patientPersonne_id)->first();
 
-        
+
         $medicamentPrescrit = PrescrireMedicament::create([
             'qte' => $request->qte,
             'dose' => $request->dose,
@@ -441,91 +457,73 @@ class PostController extends Controller
             'datePremPrise' => $request->datePremPrise,
             'autresInstructions' => $request->autresInstructions,
             'ordonnance_id' => $request->ordonnance_id,
-            'medicament_id' => 4,
+            'medicament_id' =>$request->medicament_id,
             'deleted' => 0,
         ]);
-        if($medicamentPrescrit){
-            
-            Log::create([
-                'patient_id' => $patient->id,
-                'personnel_sante_id' => $personnelSante_id,
-                'objet' => 'a mis à jour une Ordonnance',
-                'hopital_id' => $hopital_id,
-                'deleted' => 0,
-            ]);
+        if ($medicamentPrescrit) {
+            $user = auth()->user();
 
-            
+
+            if ($user->typePersonne === 'Personnel de santé') {
+                Log::create([
+                    'patient_id' => $patient->id,
+                    'personnel_sante_id' => $personnelSante_id,
+                    'objet' => 'a mis à jour une Ordonnance',
+                    'hopital_id' => $hopital_id,
+                    'deleted' => 0,
+                ]);
+            }
         }
 
         return redirect()->back()->with('success', 'Le médicament a été ajouté avec succès !');
-
     }
-    
+
     public function createfichierConsultationPost(Request $request)
     {
-        $hopital_id=session('hopital_interv_id');
+        $hopital_id = session('hopital_interv_id');
         $personnelSante_id = session('patientOuPersSanteConnecteId');
         $personneConnecte_id = session('persConnecteId');
         $patientPersonne_id = session('patient_init');
         $patient = Patient::where('personne_id', $patientPersonne_id)->first();
 
         if ($request->hasFile('chemin') && $request->file('chemin')->isValid()) {
-                
+
             // Récupérer le fichier téléversé
             $chemin = $request->file('chemin');
-            
+
             // Déplacer le fichier vers le dossier "uploads"
             $imageName = $request->libFichierConsultation . '.' . $chemin->getClientOriginalExtension();
             $chemin->storeAs('uploads', $imageName);
-            
+
             // Ajouter le nom du fichier à l'array des données
             $var['chemin'] = $imageName;
-            
         }
-        if($imageName){
+        if ($imageName) {
             $fichierConsultation = FichierConsultation::create([
                 'libFichierConsultation' => $request->libFichierConsultation,
                 'cheminFichierConsultation' => $imageName,
                 'consultation_id' => $request->consultation_id,
                 'deleted' => 0,
             ]);
-            if($fichierConsultation){
-               
-                Log::create([
-                    'patient_id' => $patient->id,
-                    'personnel_sante_id' => $personnelSante_id,
-                    'objet' => 'a ajouté un fichier pour la consultation ',
-                    'hopital_id' => $hopital_id,
-                    'deleted' => 0,
-                ]);
-    
-                
+            if ($fichierConsultation) {
+
+                // Récupérer l'utilisateur connecté
+                $user = auth()->user();
+
+
+                if ($user->typePersonne === 'Personnel de santé') {
+                    Log::create([
+                        'patient_id' => $patient->id,
+                        'personnel_sante_id' => $personnelSante_id,
+                        'objet' => 'a ajouté un fichier pour la consultation ',
+                        'hopital_id' => $hopital_id,
+                        'deleted' => 0,
+                    ]);
+                }
             }
-
+            return redirect()->back()->with('success', 'Le fichier a été ajouté avec succès !');
         }
-        
-
-        return redirect()->back()->with('success', 'Le fichier a été ajouté avec succès !');
-
     }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

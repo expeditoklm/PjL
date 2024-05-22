@@ -7,6 +7,7 @@ use App\Models\Patient;
 use App\Models\Personne;
 use App\Models\PersonnelSante;
 use App\Models\Consultation;
+use App\Models\Hopital;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
@@ -81,5 +82,13 @@ class base
         $consultation = Consultation::where('patient_id', $patient->id)->first();
 
         return ['personne' => $personne, 'consultation' => $consultation];
+    }
+
+    public static function getHospital()
+    {
+
+     
+        $hopitalList = Hopital::get();
+        return $hopitalList;
     }
 }

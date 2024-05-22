@@ -286,9 +286,9 @@
                       <label class="form-label" for="abcd">Pays</label>
                       <select class="form-select" name="pays" id="abcd" aria-label="Default select example">
                         <option value="">Selectionner le pays</option>
-                        <option value="Benin">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="Benin">Bénin</option>
+                                                                                                    <option value="Nigeria">Nigéria</option>
+                                                                                                    <option value="Togo">Togo</option>
                       </select>
                     </div>
                   </div>
@@ -301,9 +301,9 @@
                       <label class="form-label" for="abcd">Ville</label>
                       <select class="form-select" name="ville" id="abcd" aria-label="Default select example">
                         <option value="">Selectionner la ville</option>
-                        <option value="Benin">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="Cotonou">Cotonou</option>
+                                                                                                    <option value="Abuja">Abuja</option>
+                                                                                                    <option value="Lomé">Lomé</option>
                       </select>
                     </div>
                   </div>
@@ -316,9 +316,9 @@
                       <label class="form-label" for="abcd">Type de Pièce</label>
                       <select class="form-select" name="typePiece" id="abcd" aria-label="Default select example">
                         <option value="">Selectionner le type de pièce</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="Carte d'identite">Carte d'identite</option>
+                                                                                                    <option value="CIP">CIP</option>
+                                                                                                    <option value="Carte Biométrique">Carte Biométrique</option>
                       </select>
                     </div>
                   </div>
@@ -480,9 +480,9 @@
                           <label class="form-label" for="name">Pays</label>
                           <select class="form-select" id="abcd" name="pays" aria-label="Default select example">
                             <option value="">Selectionner le pays</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Benin">Bénin</option>
+                                                                                                    <option value="Nigeria">Nigéria</option>
+                                                                                                    <option value="Togo">Togo</option>
                           </select>
                         </div>
                       </div>
@@ -493,9 +493,9 @@
                           <label class="form-label" for="name">Ville</label>
                           <select class="form-select" name="ville" id="abcd" aria-label="Default select example">
                             <option value="">Selectionner la ville</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Cotonou">Cotonou</option>
+                                                                                                    <option value="Abuja">Abuja</option>
+                                                                                                    <option value="Lomé">Lomé</option>
                           </select>
                         </div>
                       </div>
@@ -556,9 +556,14 @@
                           <label class="form-label" for="name">Groupe Sanguin</label>
                           <select class="form-select" name="groupS" id="abcd" aria-label="Default select example">
                             <option value="">Selectionner le groupe sanguin</option>
-                            <option value="B+">One</option>
-                            <option value="A+">Two</option>
-                            <option value="A-">Three</option>
+                            <option value="A+">A+</option>
+                                                                                                    <option value="A-">A-</option>
+                                                                                                    <option value="B+">B+</option>
+                                                                                                    <option value="B-">B-</option>
+                                                                                                    <option value="AB+">AB+</option>
+                                                                                                    <option value="AB-">AB-</option>
+                                                                                                    <option value="O+">O+</option>
+                                                                                                    <option value="O-">O-</option>
                           </select>
                         </div>
                       </div>
@@ -569,9 +574,9 @@
                           <label class="form-label" for="name">Type de pièce</label>
                           <select class="form-select" id="abcd" name="typePiece" aria-label="Default select example">
                             <option value="">Selectionner le type de pièce</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Carte d'identite">Carte d'identite</option>
+                                                                                                    <option value="CIP">CIP</option>
+                                                                                                    <option value="Carte Biométrique">Carte Biométrique</option>
                           </select>
                         </div>
                       </div>

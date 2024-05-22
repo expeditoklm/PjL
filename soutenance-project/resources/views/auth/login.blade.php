@@ -118,29 +118,32 @@
                     <div class="mb-3">
                         <label class="form-label" for="name">Pays</label>
                         <select class="form-select" name="pays" id="abcd" aria-label="Default select example">
-                            <option selected="">Selectionner votre Pays</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option selected="">Selectionner votre pays</option>
+                            <option value="Benin">Bénin</option>
+                            <option value="Nigeria">Nigéria</option>
+                            <option value="Togo">Togo</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="name">Ville</label>
                         <select class="form-select" name="ville" id="abcd" aria-label="Default select example">
                             <option selected="">Selectionner votre ville</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Cotonou">Cotonou</option>
+                            <option value="Abuja">Abuja</option>
+                            <option value="Lomé">Lomé</option>
                         </select>
 
                     </div>
+                    @php
+                    $hopitalList = \App\Helpers\Base::getHospital();
+                    @endphp
                     <div class="mb-3">
                         <label class="form-label" for="name">Hopital d'Intervention</label>
                         <select class="form-select" name="idHopital" id="abcd" aria-label="Default select example">
                             <option selected="">Selectionner l'hopital d'intervention</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            @foreach ($hopitalList as $item)
+                            <option value="{{ $item->id}}">{{ $item->libHopital}}</option>
+                            @endforeach
                         </select>
 
                     </div>

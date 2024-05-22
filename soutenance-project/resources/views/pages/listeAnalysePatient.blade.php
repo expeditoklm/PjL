@@ -241,9 +241,10 @@ LISTE ANALYSES
                         <div class="mb-3">
                           <label class="form-label" for="name">Type Analyse</label>
                           <select class="form-select" aria-label="Default select example">
-                            <option selected="">Selectionner le Mode de Sortie</option>
-                            <option value="S">Sortie Normale</option>
-                            <option value=" Médical">Contre Aical</option>
+                            <option selected="">Selectionner le type d'analyse</option>
+                            @foreach ($typeAnalyses as $item)
+                            <option value="{{ $item->id}}">{{ $item->libAnalyse}}</option>
+                            @endforeach
                           </select>
                           <input name="" class="form-control" placeholder="Ou entrez le type d'examen">
 

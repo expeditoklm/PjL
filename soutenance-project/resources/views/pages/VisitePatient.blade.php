@@ -351,7 +351,7 @@ CONSULTATION
                                                 <div class="col-xl-3 col-sm-4 col-12">
                                                   <div class="mb-3">
                                                     <label class="form-label" for="name">Type Analyse</label>
-                                                    <select class="form-select" id="abcd" aria-label="Default select example">
+                                                    <select name="" class="form-select" id="abcd" aria-label="Default select example">
                                                       <option selected="">Selectionner l'Examen</option>
                                                       <option value="1">One</option>
                                                       <option value="2">Two</option>
@@ -460,7 +460,7 @@ CONSULTATION
                             <th>Dose</th>
                             <th>Forme</th>
                             <th>Qte à prendre</th>
-                            <th>Nb-fois</th>
+                            <th>Nb-fois / Jour</th>
                             <th>Inter.de Prise</th>
                             <th>Date-premiere-prise</th>
                             <th>Autres Instructions</th>
@@ -494,7 +494,7 @@ CONSULTATION
                                       <td>{{ $prescrireMedicament->dose }}</td>
                                       <td>{{ $prescrireMedicament->medicament->formMedicament }}</td>
                                       <td>{{ $prescrireMedicament->qte }}</td>
-                                      <td>{{ $prescrireMedicament->nbFois }}</td>
+                                      <td>{{ $prescrireMedicament->nbFois }} fois / j</td>
                                       <td>{{ $prescrireMedicament->intervPrise }}</td>
                                       <td>{{ $prescrireMedicament->datePremPrise }}</td>
                                       <td>{{ $prescrireMedicament->autresInstructions }}</td>
@@ -535,11 +535,11 @@ CONSULTATION
                                                           <div class="col-xl-3 col-sm-4 col-12">
                                                             <div class="mb-3">
                                                               <label class="form-label" for="name">Libellé Médocs</label>
-                                                              <select class="form-select" id="abcd" aria-label="Default select example">
+                                                              <select name="medicament_id" class="form-select" id="abcd" aria-label="Default select example">
                                                                 <option selected="">Selectionner le médicament</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                                <option value="3">Three</option>
+                                                                @foreach ($medocs as $item)
+                          <option value="{{ $item->id}}">{{ $item->libMedicament}}</option>
+                          @endforeach>>
                                                               </select>
                                                             </div>
                                                           </div>
@@ -566,9 +566,9 @@ CONSULTATION
                                                                 <label class="form-label" for="name">Intervalle de prise</label>
                                                                 <select class="form-select" name="intervPrise" id="abcd" aria-label="Default select example">
                                                                   <option selected="">Selectionner l'intervalle de prise</option>
-                                                                  <option value="1">One</option>
-                                                                  <option value="2">Two</option>
-                                                                  <option value="3">Three</option>
+                                                                  <option value="Avant de dormir">Avant de dormir</option>
+                            <option value="Avant les repas">Avant les repas</option>
+                            <option value="Après le déjeuner">Après le déjeuner</option>
                                                                 </select>
                                                                 <input name="" id="" type="text" class="form-control" placeholder="Ou entrez l'intervalle de prise">
                                                               </div>
@@ -831,11 +831,11 @@ CONSULTATION
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Type Examen</label>
-                        <select class="form-select" name="typeE" id="abcd" aria-label="Default select example">
+                        <select class="form-select" name="typeExamen_id" id="abcd" aria-label="Default select example">
                           <option selected="">Selectionner le type d'examen</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          @foreach ($typeExamen as $item)
+                          <option value="{{ $item->id}}">{{ $item->libTypeExamen}}</option>
+                          @endforeach
                         </select>
                         <input name="typeEx" id="" class="form-control" placeholder="Ou entrez le type d'examen">
                       </div>
@@ -910,11 +910,11 @@ CONSULTATION
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Type Soin</label>
-                        <select class="form-select" name="typeS" id="abcd" require aria-label="Default select example">
-                          <option selected="">Selectionner le type d'examen</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                        <select class="form-select" name="typeSoin_id" id="abcd" require aria-label="Default select example">
+                          <option selected="">Selectionner le type de soin</option>
+                          @foreach ($typeSoin as $item)
+                          <option value="{{ $item->id}}">{{ $item->libTypeSoin}}</option>
+                          @endforeach
                         </select>
                         <input name="typeS" id="" class="form-control" placeholder="Ou entrez le type d'examen">
                       </div>
@@ -996,9 +996,9 @@ CONSULTATION
                         <label class="form-label" for="name">Type Analyse</label>
                         <select class="form-select" require name="typeAnalyse_id" id="abcd" aria-label="Default select example">
                           <option selected="">Selectionner le type d'analyse</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          @foreach ($typeAnalyse as $item)
+                          <option value="{{ $item->id}}">{{ $item->libAnalyse}}</option>
+                          @endforeach>
                         </select>
                         <input name="" id="" class="form-control" placeholder="Ou entrez le type d'analyse">
                       </div>
@@ -1077,11 +1077,11 @@ CONSULTATION
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Libellé Médocs</label>
-                        <select class="form-select" id="abcd" aria-label="Default select example">
+                        <select name="medicament_id" class="form-select" id="abcd" aria-label="Default select example">
                           <option selected="">Selectionner le médicament</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          @foreach ($medocs as $item)
+                          <option value="{{ $item->id}}">{{ $item->libMedicament}}</option>
+                          @endforeach>
                         </select>
                       </div>
                     </div>
@@ -1094,13 +1094,13 @@ CONSULTATION
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Dose</label>
-                        <input name="dose" id="" class="form-control" placeholder="Entrez la date depremière prise"">
+                        <input name="dose" id="" class="form-control" placeholder="Entrez la date depremière prise">
                       </div>
                     </div>
                     <div class="col-xl-3 col-sm-4 col-12">
                       <div class="mb-3">
                         <label class="form-label" for="name">Nombre de fois</label>
-                        <input name="nbFois" id="" class="form-control" placeholder="Entrez la date depremière prise"">
+                        <input name="nbFois" type="number" id="" class="form-control" placeholder="Entrez la date depremière prise">
                       </div>
                     </div>
                     <div class=" col-xl-3 col-sm-4 col-12">
@@ -1108,9 +1108,9 @@ CONSULTATION
                           <label class="form-label" for="name">Intervalle de prise</label>
                           <select class="form-select" name="intervPrise" id="abcd" aria-label="Default select example">
                             <option selected="">Selectionner l'intervalle de prise</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="Avant de dormir">Avant de dormir</option>
+                            <option value="Avant les repas">Avant les repas</option>
+                            <option value="Après le déjeuner">Après le déjeuner</option>
                           </select>
                           <input name="" id="" type="text" class="form-control" placeholder="Ou entrez l'intervalle de prise">
                         </div>
@@ -1374,7 +1374,7 @@ CONSULTATION
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title h4" id="addSortieMedicaleLabel">
-          Formulaire de Sortie Médicale
+          Formulaire de modification de Sortie Médicale
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -1384,7 +1384,7 @@ CONSULTATION
             <div class="col-sm-12">
               <div class="card mb-3">
                 <div class="card-header">
-                  <h5 class="card-title">Nouvel Enregistrement</h5>
+                  <h5 class="card-title">Modifier Sortie Médicale</h5>
                 </div>
                 <form action="">
                   <div class="card-body">
