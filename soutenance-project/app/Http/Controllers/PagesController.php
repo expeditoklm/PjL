@@ -83,14 +83,20 @@ class PagesController extends Controller
             }
         }
         
+        // Récupérer l'utilisateur connecté
+        $user = auth()->user();
 
-        Log::create([
-            'patient_id' => $patient->id,
-            'personnel_sante_id' => $personnSante_id,
-            'objet' => 'a visité votre dossier médical',
-            'hopital_id' => $hopital_id,
-            'deleted' => 0,
-        ]);
+
+        if ($user->typePersonne === 'Personnel de santé') {
+            Log::create([
+                'patient_id' => $patient->id,
+                'personnel_sante_id' => $personnSante_id,
+                'objet' => 'a visité votre dossier médical',
+                'hopital_id' => $hopital_id,
+                'deleted' => 0,
+            ]);
+        }
+        
         // Maintenant $correspondants contient une liste d'informations sur les correspondants de toutes les consultations du patient
         
         return view('pages/voirPatient', compact('personne', 'patient', 'user', 'consultations', 'correspondants'));

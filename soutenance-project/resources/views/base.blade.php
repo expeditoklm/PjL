@@ -213,8 +213,8 @@
                         <div class="dropdown ms-4">
                             <a id="userSettings" class="dropdown-toggle user-settings" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="me-2 text-truncate d-lg-block d-none">
-                                    <span class="d-flex opacity-50 small">{{ $userInfo['personne']->nomPers }}</span>
-                                    <span>{{ $userInfo['personne']->prenomPers }}</span>
+                                    <span class="d-flex opacity-50 small">{{ $userInfo['personne']->professionPers }}</span>
+                                    <span>{{ $userInfo['personne']->nomPers }} {{ $userInfo['personne']->prenomPers }}</span>
                                 </div>
                                 <div class="position-relative">
                                     <img src="{{ asset('assets/images/user4.png') }}" class="rounded-5 img-3x" alt="Bootstrap Gallery" />

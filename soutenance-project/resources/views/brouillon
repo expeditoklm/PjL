@@ -1,8 +1,0 @@
-
-@yield('content') ; //trou
-*
-
-@extends('base')
-@section('content')
-
-@endsection 
