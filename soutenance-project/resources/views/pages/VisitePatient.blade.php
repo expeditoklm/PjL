@@ -640,7 +640,7 @@ CONSULTATION
                           <div class="carousel-inner">
                           @foreach ($fichier_consultation as $item)
                             <div class="carousel-item active">
-                            <img src="{{ asset('storage/app/public/uploads/' . $item->cheminFichierConsultation) }}" class="d-block w-100" alt="Admin Templates & Dashboards">
+                            <img src="{{ asset('storage/uploads/' . $item->cheminFichierConsultation) }}" class="d-block w-100" alt="Admin Templates & Dashboards">
 
                             <div class="carousel-caption d-none d-md-block">
                                 <h5 class="text-dark" style="color: black;">{{ $consultations->motif }}</h5>

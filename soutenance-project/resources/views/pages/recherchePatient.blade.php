@@ -425,11 +425,27 @@
                         </div>
                       </div>
                       <div class="col-xl-3 col-sm-4 col-12">
-                        <div class="mb-3">
-                          <label class="form-label" for="name">Sexe</label>
-                          <input name="sexe" id="" type="text" class="form-control" placeholder="Entrez le sexe du patient">
-                        </div>
-                      </div>
+                                                                <div class="mb-3">
+                                                                    <div>
+                                                                        <div class="col-sm-6 col-12">
+                                                                            <div class="mb-3">
+                                                                                <label class="form-label" for="inlineRadio1">Sexe</label>
+                                                                                <div class="m-0 d-flex">
+                                                                                    <div class="form-check form-check-inline d-flex" >
+                                                                                        <input class="form-check-input" type="radio" name="sexe" id="typePnne1" value="Masculin" checked>
+                                                                                        <label class="form-check-label" for="typePenne1">Masculin</label>
+                                                                                    </div>
+                                                                                    <div class="form-check form-check-inline d-flex" >
+                                                                                        <input class="form-check-input" type="radio" name="sexe" id="typePe2" value="Feminin">
+                                                                                        <label class="form-check-label" for="typenne2">Féminin</label>
+                                                                                    </div>
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                       <div class="col-xl-3 col-sm-4 col-12">
                         <div class="mb-3">
                           <label class="form-label" for="name">Date de Naissance</label>

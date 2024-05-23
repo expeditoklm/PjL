@@ -211,7 +211,7 @@ class PostController extends Controller
             if (isset($personne)) {
                 $personne->delete();
             }
-            //dd('Une exception a été attrapée : ',  $e->getMessage(), "\n");
+            dd('Une exception a été attrapée : ',  $e->getMessage(), "\n");
             // Gérer les erreurs spécifiques
             if ($request->password != $request->password_confirmation) {
                 return redirect()->back()->with('error', 'Mot de passe non conformes.');
@@ -493,7 +493,7 @@ class PostController extends Controller
 
             // Déplacer le fichier vers le dossier "uploads"
             $imageName = $request->libFichierConsultation . '.' . $chemin->getClientOriginalExtension();
-            $chemin->storeAs('uploads', $imageName);
+            $chemin->storeAs('public/uploads', $imageName);
 
             // Ajouter le nom du fichier à l'array des données
             $var['chemin'] = $imageName;
